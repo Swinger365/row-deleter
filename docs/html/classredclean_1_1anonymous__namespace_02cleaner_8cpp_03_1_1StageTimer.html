@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Класс redclean::anonymous_namespace{cleaner.cpp}::StageTimer</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс redclean::anonymous_namespace{cleaner.cpp}::StageTimer</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Замеряет длительность этапов и складывает её в <a class="el" href="structredclean_1_1CleanReport.html#ae6c97c5645c048b23627107910a6daff" title="Длительность этапов в секундах.">CleanReport::stageSeconds</a>.  
+ <a href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a7631419c9baad6ce4847d1b274ad6187" id="r_a7631419c9baad6ce4847d1b274ad6187"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html#a7631419c9baad6ce4847d1b274ad6187">StageTimer</a> (<a class="el" href="structredclean_1_1CleanReport.html">CleanReport</a> &amp;report)</td></tr>
+<tr class="memdesc:a7631419c9baad6ce4847d1b274ad6187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Начинает отсчёт первого этапа.  <br /></td></tr>
+<tr class="separator:a7631419c9baad6ce4847d1b274ad6187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fcace0bcfec7388c8e477bc72e4c3d3" id="r_a2fcace0bcfec7388c8e477bc72e4c3d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html#a2fcace0bcfec7388c8e477bc72e4c3d3">mark</a> (const char *stage)</td></tr>
+<tr class="memdesc:a2fcace0bcfec7388c8e477bc72e4c3d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Завершает текущий этап под именем <code>stage</code> и начинает следующий.  <br /></td></tr>
+<tr class="separator:a2fcace0bcfec7388c8e477bc72e4c3d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Замеряет длительность этапов и складывает её в <a class="el" href="structredclean_1_1CleanReport.html#ae6c97c5645c048b23627107910a6daff" title="Длительность этапов в секундах.">CleanReport::stageSeconds</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="cleaner_8cpp_source.html">cleaner.cpp</a> строка <a class="el" href="cleaner_8cpp_source.html#l00030">30</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a7631419c9baad6ce4847d1b274ad6187" name="a7631419c9baad6ce4847d1b274ad6187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7631419c9baad6ce4847d1b274ad6187">&#9670;&#160;</a></span>StageTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">redclean::anonymous_namespace{cleaner.cpp}::StageTimer::StageTimer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structredclean_1_1CleanReport.html">CleanReport</a> &amp;&#160;</td>
+          <td class="paramname"><em>report</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Начинает отсчёт первого этапа. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="cleaner_8cpp_source.html">cleaner.cpp</a> строка <a class="el" href="cleaner_8cpp_source.html#l00034">34</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a2fcace0bcfec7388c8e477bc72e4c3d3" name="a2fcace0bcfec7388c8e477bc72e4c3d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fcace0bcfec7388c8e477bc72e4c3d3">&#9670;&#160;</a></span>mark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::anonymous_namespace{cleaner.cpp}::StageTimer::mark </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>stage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Завершает текущий этап под именем <code>stage</code> и начинает следующий. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="cleaner_8cpp_source.html">cleaner.cpp</a> строка <a class="el" href="cleaner_8cpp_source.html#l00037">37</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>src/<a class="el" href="cleaner_8cpp_source.html">cleaner.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceredclean.html">redclean</a></li><li class="navelem"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02cleaner_8cpp_03.html">anonymous_namespace{cleaner.cpp}</a></li><li class="navelem"><a class="el" href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html">StageTimer</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

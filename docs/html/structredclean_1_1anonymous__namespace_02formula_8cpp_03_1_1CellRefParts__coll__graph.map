@@ -1,0 +1,5 @@
+<map id="redclean::anonymous_namespace{formula.cpp}::CellRefParts" name="redclean::anonymous_namespace{formula.cpp}::CellRefParts">
+<area shape="rect" id="Node000001" title="Разобранная ссылка на ячейку." alt="" coords="5,137,204,192"/>
+<area shape="rect" id="Node000002" href="$structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html" title="Часть ссылки: номер строки или столбца и признак абсолютности." alt="" coords="5,5,204,60"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,74,107,137,102,137,102,74"/>
+</map>

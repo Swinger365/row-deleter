@@ -1,0 +1,25 @@
+<map id="src/color.hpp" name="src/color.hpp">
+<area shape="rect" id="Node000001" title="Цвета: разбор, преобразования RGB/HSV/HLS, палитра Excel и критерий «красного»." alt="" coords="201,5,305,31"/>
+<area shape="rect" id="Node000002" href="$color_8cpp.html" title="Реализация работы с цветами." alt="" coords="136,79,239,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,43,200,80,196,77,231,39"/>
+<area shape="rect" id="Node000003" href="$styles_8hpp.html" title="Анализ xl/styles.xml: какие стили ячеек считаются красными." alt="" coords="263,79,375,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="275,39,310,77,307,80,271,43"/>
+<area shape="rect" id="Node000004" href="$cleaner_8hpp.html" title="Верхнеуровневая операция: очистка красных строк в книге." alt="" coords="133,225,253,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="276,112,246,130,220,154,210,171,202,191,196,226,191,225,197,189,205,169,216,150,243,125,273,108"/>
+<area shape="rect" id="Node000009" href="$sheet__processor_8hpp.html" title="Поиск и очистка строк с красными ячейками на одном листе." alt="" coords="230,152,409,177"/>
+<area shape="poly" id="edge9_Node000003_Node000009" title=" " alt="" coords="322,118,322,152,317,152,317,118"/>
+<area shape="rect" id="Node000011" href="$styles_8cpp.html" title="Реализация анализа стилей." alt="" coords="433,152,544,177"/>
+<area shape="poly" id="edge12_Node000003_Node000011" title=" " alt="" coords="360,107,462,149,460,154,358,112"/>
+<area shape="rect" id="Node000005" href="$cleaner_8cpp.html" title="Реализация cleanWorkbook: параллельные этапы обработки книги." alt="" coords="5,299,124,324"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="161,260,87,301,84,296,159,255"/>
+<area shape="rect" id="Node000006" href="$cli_8hpp.html" title="Командная строка программы." alt="" coords="149,299,237,324"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="195,264,195,299,190,299,190,264"/>
+<area shape="rect" id="Node000008" href="$main_8cpp.html" title="Точка входа консольной утилиты xlsx_red_cleaner." alt="" coords="221,372,327,397"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="219,258,236,276,251,297,267,337,275,371,270,372,262,339,246,300,232,280,215,262"/>
+<area shape="rect" id="Node000007" href="$cli_8cpp.html" title="Разбор аргументов командной строки и текст справки." alt="" coords="111,372,197,397"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="182,338,163,373,158,371,177,335"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="218,331,262,370,259,374,214,335"/>
+<area shape="poly" id="edge10_Node000009_Node000004" title=" " alt="" coords="288,186,215,227,212,223,286,182"/>
+<area shape="rect" id="Node000010" href="$sheet__processor_8cpp.html" title="Реализация обработки листа." alt="" coords="277,225,455,251"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="337,187,361,224,356,227,332,190"/>
+</map>

@@ -1,0 +1,21 @@
+<map id="src/color.cpp" name="src/color.cpp">
+<area shape="rect" id="Node000001" title="Реализация работы с цветами." alt="" coords="315,5,418,31"/>
+<area shape="rect" id="Node000002" href="$color_8hpp.html" title="Цвета: разбор, преобразования RGB/HSV/HLS, палитра Excel и критерий «красного»." alt="" coords="218,79,299,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="351,33,289,73,286,69,348,28"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="324,79,409,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="369,31,369,65,364,65,364,31"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="434,79,497,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="384,29,440,68,437,73,381,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,61,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,107,75,153,74,148,222,101"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="85,152,152,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="237,106,155,148,152,143,235,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="176,152,251,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="253,106,230,142,226,139,249,103"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="275,152,333,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="268,103,292,139,287,142,264,106"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="358,152,455,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="284,102,371,144,369,148,281,106"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="479,152,542,177"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="300,101,467,148,465,153,298,107"/>
+</map>

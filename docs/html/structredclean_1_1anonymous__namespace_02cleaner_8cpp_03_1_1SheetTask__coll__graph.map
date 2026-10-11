@@ -1,0 +1,14 @@
+<map id="redclean::anonymous_namespace{cleaner.cpp}::SheetTask" name="redclean::anonymous_namespace{cleaner.cpp}::SheetTask">
+<area shape="rect" id="Node000001" title="Состояние обработки одного листа." alt="" coords="91,300,285,355"/>
+<area shape="rect" id="Node000002" href="$structredclean_1_1SheetInfo.html" title="Рабочий лист книги." alt="" coords="114,205,262,230"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,244,191,300,185,300,185,244"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="31,95,118,120"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="59,132,45,155,33,182,29,210,36,236,50,255,68,272,110,298,107,302,65,276,46,259,31,238,23,210,28,180,40,153,55,129"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,128,178,203,174,207,95,131"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="77,59,77,94,72,94,72,59"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="286,197,477,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="337,246,236,302,234,298,334,242"/>
+<area shape="rect" id="Node000006" href="$classredclean_1_1SheetProcessor.html" title="Обработка одного листа (xl/worksheets/sheetN.xml) в три этапа." alt="" coords="288,95,475,120"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="384,134,384,197,379,197,379,134"/>
+</map>

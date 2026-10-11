@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Файл tests/test_helpers.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('test__helpers_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#namespaces">Пространства имен</a> &#124;
+<a href="#enum-members">Перечисления</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Файл test_helpers.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Вспомогательные средства тестов: временные папки и генерация .xlsx.  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &lt;pugixml.hpp&gt;</code><br />
+<code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для test_helpers.hpp:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="test__helpers_8hpp__incl.svg" width="498" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+<p><a href="test__helpers_8hpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtestutil_1_1TempDir.html">testutil::TempDir</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Временная папка, удаляемая вместе с содержимым в деструкторе.  <a href="classtestutil_1_1TempDir.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtestutil_1_1FixtureSheet.html">testutil::FixtureSheet</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Лист тестовой книги.  <a href="structtestutil_1_1FixtureSheet.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtestutil_1_1FixtureOptions.html">testutil::FixtureOptions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Параметры тестовой книги.  <a href="structtestutil_1_1FixtureOptions.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtestutil_1_1CellView.html">testutil::CellView</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разобранная ячейка листа.  <a href="structtestutil_1_1CellView.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Пространства имен</h2></td></tr>
+<tr class="memitem:namespacetestutil" id="r_namespacetestutil"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetestutil.html">testutil</a></td></tr>
+<tr class="memdesc:namespacetestutil"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вспомогательные средства тестов. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:af39864bc329e30de4afcc5ae5a14e021" id="r_af39864bc329e30de4afcc5ae5a14e021"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021">testutil::Style</a> : unsigned { <br />
+&#160;&#160;<a class="el" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a56e598c88c94c790652a5617f42b15a6">testutil::kDefault</a> = 0
+, <a class="el" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a74df7ab9fe4830f1b87cea36b7aa412a">testutil::kRedFill</a> = 1
+, <a class="el" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ad700c4a9ed6ab3f2dde6e0cf5b8483b3">testutil::kGreenFill</a> = 2
+, <a class="el" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a6052886b5f4cac014ab455307be282e5">testutil::kRedFont</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021adbf60ddc839cb6055b0f96bfbbc6cb4a">testutil::kThemeOrange</a> = 4
+, <a class="el" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a9970f7fa19658011a286c4045bc8cb88">testutil::kIndexedRed</a> = 5
+, <a class="el" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ae913aa9ec1fd62a8f3dc612b200f6bf0">testutil::kDarkRedFill</a> = 6
+, <a class="el" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ae17fce1aea049ed2d0d1994b60659a59">testutil::kStyleCount</a> = 7
+<br />
+ }</td></tr>
+<tr class="memdesc:af39864bc329e30de4afcc5ae5a14e021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Индексы стилей (cellXfs) в testStylesXml().  <a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021">Подробнее...</a><br /></td></tr>
+<tr class="separator:af39864bc329e30de4afcc5ae5a14e021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a289aeea5f6f01afe3def0150e59b80ee" id="r_a289aeea5f6f01afe3def0150e59b80ee"><td class="memItemLeft" align="right" valign="top"><a id="a289aeea5f6f01afe3def0150e59b80ee" name="a289aeea5f6f01afe3def0150e59b80ee"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>testutil::testStylesXml</b> ()</td></tr>
+<tr class="memdesc:a289aeea5f6f01afe3def0150e59b80ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">styles.xml со стилями из перечисления Style. <br /></td></tr>
+<tr class="separator:a289aeea5f6f01afe3def0150e59b80ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6311e10dd690266ebfcd583c2486f91" id="r_aa6311e10dd690266ebfcd583c2486f91"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetestutil.html#aa6311e10dd690266ebfcd583c2486f91">testutil::cell</a> (const std::string &amp;ref, unsigned style, const std::string &amp;value=&quot;&quot;, const std::string &amp;type=&quot;&quot;, const std::string &amp;formula=&quot;&quot;)</td></tr>
+<tr class="memdesc:aa6311e10dd690266ebfcd583c2486f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">XML ячейки <code>&lt;c&gt;</code>.  <br /></td></tr>
+<tr class="separator:aa6311e10dd690266ebfcd583c2486f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa059a22048495c43f0c64a9e05a68ffa" id="r_aa059a22048495c43f0c64a9e05a68ffa"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetestutil.html#aa059a22048495c43f0c64a9e05a68ffa">testutil::row</a> (unsigned number, const std::vector&lt; std::string &gt; &amp;cells)</td></tr>
+<tr class="memdesc:aa059a22048495c43f0c64a9e05a68ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">XML строки <code>&lt;row&gt;</code>.  <br /></td></tr>
+<tr class="separator:aa059a22048495c43f0c64a9e05a68ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fae05efa184b37a1bca3420ae7ee8f2" id="r_a3fae05efa184b37a1bca3420ae7ee8f2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetestutil.html#a3fae05efa184b37a1bca3420ae7ee8f2">testutil::worksheetXml</a> (const std::string &amp;sheetDataInner)</td></tr>
+<tr class="memdesc:a3fae05efa184b37a1bca3420ae7ee8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">XML листа целиком.  <br /></td></tr>
+<tr class="separator:a3fae05efa184b37a1bca3420ae7ee8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6912d1890ca0b44046d0d58c6587746" id="r_ad6912d1890ca0b44046d0d58c6587746"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetestutil.html#ad6912d1890ca0b44046d0d58c6587746">testutil::writeWorkbook</a> (const fs::path &amp;path, const std::vector&lt; <a class="el" href="structtestutil_1_1FixtureSheet.html">FixtureSheet</a> &gt; &amp;sheets, const <a class="el" href="structtestutil_1_1FixtureOptions.html">FixtureOptions</a> &amp;options={})</td></tr>
+<tr class="memdesc:ad6912d1890ca0b44046d0d58c6587746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт настоящий .xlsx.  <br /></td></tr>
+<tr class="separator:ad6912d1890ca0b44046d0d58c6587746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b43e28c62139d77ea6cf08db3f5b7b3" id="r_a9b43e28c62139d77ea6cf08db3f5b7b3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetestutil.html#a9b43e28c62139d77ea6cf08db3f5b7b3">testutil::readPart</a> (const fs::path &amp;xlsx, const std::string &amp;partPath)</td></tr>
+<tr class="memdesc:a9b43e28c62139d77ea6cf08db3f5b7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Читает часть из .xlsx.  <br /></td></tr>
+<tr class="separator:a9b43e28c62139d77ea6cf08db3f5b7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4d29dbaee66569073d9cd3f52ac238" id="r_a9b4d29dbaee66569073d9cd3f52ac238"><td class="memItemLeft" align="right" valign="top"><a id="a9b4d29dbaee66569073d9cd3f52ac238" name="a9b4d29dbaee66569073d9cd3f52ac238"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>testutil::hasPart</b> (const fs::path &amp;xlsx, const std::string &amp;partPath)</td></tr>
+<tr class="memdesc:a9b4d29dbaee66569073d9cd3f52ac238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Есть ли часть <code>partPath</code> в книге <code>xlsx</code>. <br /></td></tr>
+<tr class="separator:a9b4d29dbaee66569073d9cd3f52ac238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab180f4ce267963b1f91a21a083ec071b" id="r_ab180f4ce267963b1f91a21a083ec071b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtestutil_1_1CellView.html">CellView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetestutil.html#ab180f4ce267963b1f91a21a083ec071b">testutil::findCell</a> (const std::string &amp;sheetXml, const std::string &amp;ref)</td></tr>
+<tr class="memdesc:ab180f4ce267963b1f91a21a083ec071b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Находит ячейку в XML листа.  <br /></td></tr>
+<tr class="separator:ab180f4ce267963b1f91a21a083ec071b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Вспомогательные средства тестов: временные папки и генерация .xlsx. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="test__helpers_8hpp_source.html">test_helpers.hpp</a></p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="test__helpers_8hpp.html">test_helpers.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

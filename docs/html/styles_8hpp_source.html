@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Исходный файл src/styles.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('styles_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">styles.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="styles_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="color_8hpp.html">color.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceredclean.html">redclean</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016c">   19</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016c">ColorTarget</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <a class="code hl_enumvalue" href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016cadb3e3f51c9107e26c9bccf9a188ce2ed">Fill</a>,    </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_enumvalue" href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016ca194f5394ae2e9c74dc3c441b92862d1d">Font</a>,    </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_enumvalue" href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016caed36a1ef76a59ee3f15180e0441188ad">Any</a>      </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structredclean_1_1StyleOptions.html">   26</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structredclean_1_1StyleOptions.html">StyleOptions</a></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structredclean_1_1StyleOptions.html#a5bfa7744ed9e92fc6cb11b449d7d6a0a">   28</a></span>    <a class="code hl_struct" href="structredclean_1_1RedCriteria.html">RedCriteria</a> <a class="code hl_variable" href="structredclean_1_1StyleOptions.html#a5bfa7744ed9e92fc6cb11b449d7d6a0a">criteria</a>;                     </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structredclean_1_1StyleOptions.html#abe0f29e436d1154aad02e7cef51363a9">   29</a></span>    <a class="code hl_enumeration" href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016c">ColorTarget</a> <a class="code hl_variable" href="structredclean_1_1StyleOptions.html#abe0f29e436d1154aad02e7cef51363a9">target</a> = <a class="code hl_enumvalue" href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016cadb3e3f51c9107e26c9bccf9a188ce2ed">ColorTarget::Fill</a>;   </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="namespaceredclean.html#a0e0cd7a1ea5b7133a0c5394b917ed2a0">   37</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespaceredclean.html#a0e0cd7a1ea5b7133a0c5394b917ed2a0">ThemePalette</a> = std::array&lt;Rgb, 12&gt;;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><a class="code hl_typedef" href="namespaceredclean.html#a0e0cd7a1ea5b7133a0c5394b917ed2a0">ThemePalette</a> <a class="code hl_function" href="namespaceredclean.html#af2f314b996cc7a9569309a3c02a791b1">defaultThemePalette</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><a class="code hl_typedef" href="namespaceredclean.html#a0e0cd7a1ea5b7133a0c5394b917ed2a0">ThemePalette</a> <a class="code hl_function" href="namespaceredclean.html#af8b697d4d1ef2f1c0683dea062584e07">parseThemePalette</a>(<span class="keyword">const</span> std::string&amp; themeXml);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classredclean_1_1RedStyleTable.html">   58</a></span><span class="keyword">class </span><a class="code hl_class" href="classredclean_1_1RedStyleTable.html">RedStyleTable</a></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classredclean_1_1RedStyleTable.html#a1ddb3e2f31d7edd9de440e5376405d06">   62</a></span>    <a class="code hl_function" href="classredclean_1_1RedStyleTable.html#a1ddb3e2f31d7edd9de440e5376405d06">RedStyleTable</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classredclean_1_1RedStyleTable.html#a1ddb3e2f31d7edd9de440e5376405d06">RedStyleTable</a>(std::vector&lt;bool&gt; redFlags);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keyword">static</span> <a class="code hl_class" href="classredclean_1_1RedStyleTable.html">RedStyleTable</a> <a class="code hl_function" href="classredclean_1_1RedStyleTable.html#a8488eba5c6a15b1115a5ea090e300f74">build</a>(<span class="keyword">const</span> std::string&amp; stylesXml, <span class="keyword">const</span> std::string&amp; themeXml, <span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1StyleOptions.html">StyleOptions</a>&amp; options);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classredclean_1_1RedStyleTable.html#a1d46dd4122450eb60e1a9236a9d3fd84">   88</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classredclean_1_1RedStyleTable.html#a1d46dd4122450eb60e1a9236a9d3fd84">isRed</a>(std::uint32_t styleIndex)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> styleIndex &lt; m_red.size() &amp;&amp; m_red[styleIndex]; }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classredclean_1_1RedStyleTable.html#a68393aaf3003e79991fbdfa2695bf629">   91</a></span>    std::size_t <a class="code hl_function" href="classredclean_1_1RedStyleTable.html#a68393aaf3003e79991fbdfa2695bf629">styleCount</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_red.size(); }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    std::size_t <a class="code hl_function" href="classredclean_1_1RedStyleTable.html#a66dd7ac3ec28d727032cf94146f059f7">redCount</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    std::vector&lt;bool&gt; m_red;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}    <span class="comment">// namespace redclean</span></div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html">redclean::RedStyleTable</a></div><div class="ttdoc">Таблица «индекс стиля ячейки (атрибут s) → красный или нет».</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00058">styles.hpp:59</a></div></div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html_a1d46dd4122450eb60e1a9236a9d3fd84"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html#a1d46dd4122450eb60e1a9236a9d3fd84">redclean::RedStyleTable::isRed</a></div><div class="ttdeci">bool isRed(std::uint32_t styleIndex) const</div><div class="ttdoc">Проверяет стиль.</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00088">styles.hpp:88</a></div></div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html_a1ddb3e2f31d7edd9de440e5376405d06"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html#a1ddb3e2f31d7edd9de440e5376405d06">redclean::RedStyleTable::RedStyleTable</a></div><div class="ttdeci">RedStyleTable()=default</div><div class="ttdoc">Пустая таблица: ни один стиль не красный.</div></div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html_a66dd7ac3ec28d727032cf94146f059f7"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html#a66dd7ac3ec28d727032cf94146f059f7">redclean::RedStyleTable::redCount</a></div><div class="ttdeci">std::size_t redCount() const</div><div class="ttdoc">Число красных стилей.</div><div class="ttdef"><b>Definition</b> <a href="styles_8cpp_source.html#l00205">styles.cpp:205</a></div></div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html_a68393aaf3003e79991fbdfa2695bf629"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html#a68393aaf3003e79991fbdfa2695bf629">redclean::RedStyleTable::styleCount</a></div><div class="ttdeci">std::size_t styleCount() const</div><div class="ttdoc">Число стилей ячеек в книге.</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00091">styles.hpp:91</a></div></div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html_a8488eba5c6a15b1115a5ea090e300f74"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html#a8488eba5c6a15b1115a5ea090e300f74">redclean::RedStyleTable::build</a></div><div class="ttdeci">static RedStyleTable build(const std::string &amp;stylesXml, const std::string &amp;themeXml, const StyleOptions &amp;options)</div><div class="ttdoc">Строит таблицу по частям книги.</div><div class="ttdef"><b>Definition</b> <a href="styles_8cpp_source.html#l00171">styles.cpp:171</a></div></div>
+<div class="ttc" id="acolor_8hpp_html"><div class="ttname"><a href="color_8hpp.html">color.hpp</a></div><div class="ttdoc">Цвета: разбор, преобразования RGB/HSV/HLS, палитра Excel и критерий «красного».</div></div>
+<div class="ttc" id="anamespaceredclean_html"><div class="ttname"><a href="namespaceredclean.html">redclean</a></div><div class="ttdoc">Корневое пространство имён проекта.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00017">cleaner.cpp:17</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a0e0cd7a1ea5b7133a0c5394b917ed2a0"><div class="ttname"><a href="namespaceredclean.html#a0e0cd7a1ea5b7133a0c5394b917ed2a0">redclean::ThemePalette</a></div><div class="ttdeci">std::array&lt; Rgb, 12 &gt; ThemePalette</div><div class="ttdoc">12 цветов темы в порядке индексов атрибута theme=&quot;N&quot; в styles.xml.</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00037">styles.hpp:37</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a598cc23ee5b7c1efa62e1fc5ad7c016c"><div class="ttname"><a href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016c">redclean::ColorTarget</a></div><div class="ttdeci">ColorTarget</div><div class="ttdoc">Какой цвет ячейки проверять.</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00019">styles.hpp:19</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a598cc23ee5b7c1efa62e1fc5ad7c016ca194f5394ae2e9c74dc3c441b92862d1d"><div class="ttname"><a href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016ca194f5394ae2e9c74dc3c441b92862d1d">redclean::ColorTarget::Font</a></div><div class="ttdeci">@ Font</div><div class="ttdoc">Цвет шрифта.</div></div>
+<div class="ttc" id="anamespaceredclean_html_a598cc23ee5b7c1efa62e1fc5ad7c016cadb3e3f51c9107e26c9bccf9a188ce2ed"><div class="ttname"><a href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016cadb3e3f51c9107e26c9bccf9a188ce2ed">redclean::ColorTarget::Fill</a></div><div class="ttdeci">@ Fill</div><div class="ttdoc">Цвет заливки.</div></div>
+<div class="ttc" id="anamespaceredclean_html_a598cc23ee5b7c1efa62e1fc5ad7c016caed36a1ef76a59ee3f15180e0441188ad"><div class="ttname"><a href="namespaceredclean.html#a598cc23ee5b7c1efa62e1fc5ad7c016caed36a1ef76a59ee3f15180e0441188ad">redclean::ColorTarget::Any</a></div><div class="ttdeci">@ Any</div><div class="ttdoc">Заливка или шрифт.</div></div>
+<div class="ttc" id="anamespaceredclean_html_af2f314b996cc7a9569309a3c02a791b1"><div class="ttname"><a href="namespaceredclean.html#af2f314b996cc7a9569309a3c02a791b1">redclean::defaultThemePalette</a></div><div class="ttdeci">ThemePalette defaultThemePalette()</div><div class="ttdoc">Палитра темы Office 2013+ по умолчанию.</div><div class="ttdef"><b>Definition</b> <a href="styles_8cpp_source.html#l00129">styles.cpp:129</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_af8b697d4d1ef2f1c0683dea062584e07"><div class="ttname"><a href="namespaceredclean.html#af8b697d4d1ef2f1c0683dea062584e07">redclean::parseThemePalette</a></div><div class="ttdeci">ThemePalette parseThemePalette(const std::string &amp;themeXml)</div><div class="ttdoc">Разбирает палитру из xl/theme/themeN.xml.</div><div class="ttdef"><b>Definition</b> <a href="styles_8cpp_source.html#l00136">styles.cpp:136</a></div></div>
+<div class="ttc" id="astructredclean_1_1RedCriteria_html"><div class="ttname"><a href="structredclean_1_1RedCriteria.html">redclean::RedCriteria</a></div><div class="ttdoc">Критерий, по которому цвет считается красным.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00084">color.hpp:85</a></div></div>
+<div class="ttc" id="astructredclean_1_1StyleOptions_html"><div class="ttname"><a href="structredclean_1_1StyleOptions.html">redclean::StyleOptions</a></div><div class="ttdoc">Параметры анализа стилей.</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00026">styles.hpp:27</a></div></div>
+<div class="ttc" id="astructredclean_1_1StyleOptions_html_a5bfa7744ed9e92fc6cb11b449d7d6a0a"><div class="ttname"><a href="structredclean_1_1StyleOptions.html#a5bfa7744ed9e92fc6cb11b449d7d6a0a">redclean::StyleOptions::criteria</a></div><div class="ttdeci">RedCriteria criteria</div><div class="ttdoc">Что считать красным.</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00028">styles.hpp:28</a></div></div>
+<div class="ttc" id="astructredclean_1_1StyleOptions_html_abe0f29e436d1154aad02e7cef51363a9"><div class="ttname"><a href="structredclean_1_1StyleOptions.html#abe0f29e436d1154aad02e7cef51363a9">redclean::StyleOptions::target</a></div><div class="ttdeci">ColorTarget target</div><div class="ttdoc">Что проверять у ячейки.</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00029">styles.hpp:29</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="styles_8hpp.html">styles.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

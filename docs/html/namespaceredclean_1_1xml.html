@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Пространство имен redclean::xml</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('namespaceredclean_1_1xml.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a> &#124;
+<a href="#var-members">Переменные</a>  </div>
+  <div class="headertitle"><div class="title">Пространство имен redclean::xml</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Работа с XML-частями пакета.  
+<a href="namespaceredclean_1_1xml.html#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a9c4d69652768eb715db24f3e1359092d" id="r_a9c4d69652768eb715db24f3e1359092d"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1xml.html#a9c4d69652768eb715db24f3e1359092d">localName</a> (const char *qualifiedName)</td></tr>
+<tr class="memdesc:a9c4d69652768eb715db24f3e1359092d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отбрасывает префикс пространства имён.  <br /></td></tr>
+<tr class="separator:a9c4d69652768eb715db24f3e1359092d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0971543b9d887885db785d0c06923d1a" id="r_a0971543b9d887885db785d0c06923d1a"><td class="memItemLeft" align="right" valign="top">pugi::xml_node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1xml.html#a0971543b9d887885db785d0c06923d1a">child</a> (const pugi::xml_node &amp;parent, std::string_view name)</td></tr>
+<tr class="memdesc:a0971543b9d887885db785d0c06923d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Первый дочерний элемент с заданным локальным именем.  <br /></td></tr>
+<tr class="separator:a0971543b9d887885db785d0c06923d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c71fd7c90ea8c1090157967f28750e6" id="r_a9c71fd7c90ea8c1090157967f28750e6"><td class="memItemLeft" align="right" valign="top">pugi::xml_node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1xml.html#a9c71fd7c90ea8c1090157967f28750e6">nextSibling</a> (const pugi::xml_node &amp;node, std::string_view name)</td></tr>
+<tr class="memdesc:a9c71fd7c90ea8c1090157967f28750e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Следующий соседний элемент с заданным локальным именем.  <br /></td></tr>
+<tr class="separator:a9c71fd7c90ea8c1090157967f28750e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdd32c6a5fc082838db4bb97ea3329ce" id="r_abdd32c6a5fc082838db4bb97ea3329ce"><td class="memItemLeft" align="right" valign="top">pugi::xml_attribute&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1xml.html#abdd32c6a5fc082838db4bb97ea3329ce">attribute</a> (const pugi::xml_node &amp;node, std::string_view name)</td></tr>
+<tr class="memdesc:abdd32c6a5fc082838db4bb97ea3329ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Атрибут по имени с откатом на локальное имя.  <br /></td></tr>
+<tr class="separator:abdd32c6a5fc082838db4bb97ea3329ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3a40f30a6becc2036fab4d429c00d2" id="r_afa3a40f30a6becc2036fab4d429c00d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1xml.html#afa3a40f30a6becc2036fab4d429c00d2">load</a> (pugi::xml_document &amp;doc, const std::string &amp;data, const std::string &amp;what)</td></tr>
+<tr class="memdesc:afa3a40f30a6becc2036fab4d429c00d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбирает XML в документ.  <br /></td></tr>
+<tr class="separator:afa3a40f30a6becc2036fab4d429c00d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6306b6b38ad20c7c582e01ba293d295c" id="r_a6306b6b38ad20c7c582e01ba293d295c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1xml.html#a6306b6b38ad20c7c582e01ba293d295c">serialize</a> (const pugi::xml_document &amp;doc)</td></tr>
+<tr class="memdesc:a6306b6b38ad20c7c582e01ba293d295c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сериализует документ без переформатирования, в UTF-8.  <br /></td></tr>
+<tr class="separator:a6306b6b38ad20c7c582e01ba293d295c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268407e55e0b818a3228dce55a0728ee" id="r_a268407e55e0b818a3228dce55a0728ee"><td class="memItemLeft" align="right" valign="top">std::string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1xml.html#a268407e55e0b818a3228dce55a0728ee">localName</a> (const pugi::xml_node &amp;node)</td></tr>
+<tr class="memdesc:a268407e55e0b818a3228dce55a0728ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Локальное имя узла без префикса.  <br /></td></tr>
+<tr class="separator:a268407e55e0b818a3228dce55a0728ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d010f842dcd35656f94cde634f64e1" id="r_ab4d010f842dcd35656f94cde634f64e1"><td class="memTemplParams" colspan="2">template&lt;typename Fn &gt; </td></tr>
+<tr class="memitem:ab4d010f842dcd35656f94cde634f64e1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1xml.html#ab4d010f842dcd35656f94cde634f64e1">forEachChild</a> (const pugi::xml_node &amp;parent, std::string_view name, Fn &amp;&amp;fn)</td></tr>
+<tr class="memdesc:ab4d010f842dcd35656f94cde634f64e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вызывает <code>fn</code> для каждого дочернего элемента с локальным именем <code>name</code>.  <br /></td></tr>
+<tr class="separator:ab4d010f842dcd35656f94cde634f64e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Переменные</h2></td></tr>
+<tr class="memitem:a1f3f82543def40d468d9b2b964f38c8a" id="r_a1f3f82543def40d468d9b2b964f38c8a"><td class="memItemLeft" align="right" valign="top">constexpr unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1xml.html#a1f3f82543def40d468d9b2b964f38c8a">kParseFlags</a> = pugi::parse_default | pugi::parse_declaration | pugi::parse_ws_pcdata</td></tr>
+<tr class="memdesc:a1f3f82543def40d468d9b2b964f38c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Флаги разбора, сохраняющие документ максимально близким к исходному.  <br /></td></tr>
+<tr class="separator:a1f3f82543def40d468d9b2b964f38c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Работа с XML-частями пакета. </p>
+</div><h2 class="groupheader">Функции</h2>
+<a id="abdd32c6a5fc082838db4bb97ea3329ce" name="abdd32c6a5fc082838db4bb97ea3329ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd32c6a5fc082838db4bb97ea3329ce">&#9670;&#160;</a></span>attribute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pugi::xml_attribute redclean::xml::attribute </td>
+          <td>(</td>
+          <td class="paramtype">const pugi::xml_node &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Атрибут по имени с откатом на локальное имя. </p>
+<p>Сначала ищется точное совпадение, затем атрибут с префиксом и тем же локальным именем (так <code>"id"</code> находит <code>"r:id"</code>). </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Элемент. </td></tr>
+    <tr><td class="paramname">name</td><td>Имя атрибута. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Найденный атрибут или пустой атрибут. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xml__utils_8cpp_source.html">xml_utils.cpp</a> строка <a class="el" href="xml__utils_8cpp_source.html#l00034">34</a></p>
+
+</div>
+</div>
+<a id="a0971543b9d887885db785d0c06923d1a" name="a0971543b9d887885db785d0c06923d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0971543b9d887885db785d0c06923d1a">&#9670;&#160;</a></span>child()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pugi::xml_node redclean::xml::child </td>
+          <td>(</td>
+          <td class="paramtype">const pugi::xml_node &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Первый дочерний элемент с заданным локальным именем. </p>
+<p>Префикс игнорируется: <code>&lt;row&gt;</code> и <code>&lt;x:row&gt;</code> считаются одинаковыми. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский узел. </td></tr>
+    <tr><td class="paramname">name</td><td>Локальное имя искомого элемента. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Найденный элемент или пустой узел. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xml__utils_8cpp_source.html">xml_utils.cpp</a> строка <a class="el" href="xml__utils_8cpp_source.html#l00020">20</a></p>
+
+</div>
+</div>
+<a id="ab4d010f842dcd35656f94cde634f64e1" name="ab4d010f842dcd35656f94cde634f64e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d010f842dcd35656f94cde634f64e1">&#9670;&#160;</a></span>forEachChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Fn &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::xml::forEachChild </td>
+          <td>(</td>
+          <td class="paramtype">const pugi::xml_node &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Fn &amp;&amp;&#160;</td>
+          <td class="paramname"><em>fn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Вызывает <code>fn</code> для каждого дочернего элемента с локальным именем <code>name</code>. </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Fn</td><td>Вызываемый объект с сигнатурой <code>void(const pugi::xml_node&amp;)</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский узел. </td></tr>
+    <tr><td class="paramname">name</td><td>Локальное имя элементов. </td></tr>
+    <tr><td class="paramname">fn</td><td>Обработчик. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xml__utils_8hpp_source.html">xml_utils.hpp</a> строка <a class="el" href="xml__utils_8hpp_source.html#l00065">65</a></p>
+
+</div>
+</div>
+<a id="afa3a40f30a6becc2036fab4d429c00d2" name="afa3a40f30a6becc2036fab4d429c00d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa3a40f30a6becc2036fab4d429c00d2">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::xml::load </td>
+          <td>(</td>
+          <td class="paramtype">pugi::xml_document &amp;&#160;</td>
+          <td class="paramname"><em>doc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>what</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Разбирает XML в документ. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>Документ-приёмник. </td></tr>
+    <tr><td class="paramname">data</td><td>Текст XML. </td></tr>
+    <tr><td class="paramname">what</td><td>Описание части для сообщения об ошибке. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Если XML некорректен. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xml__utils_8cpp_source.html">xml_utils.cpp</a> строка <a class="el" href="xml__utils_8cpp_source.html#l00044">44</a></p>
+
+</div>
+</div>
+<a id="a9c4d69652768eb715db24f3e1359092d" name="a9c4d69652768eb715db24f3e1359092d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c4d69652768eb715db24f3e1359092d">&#9670;&#160;</a></span>localName() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string_view redclean::xml::localName </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>qualifiedName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отбрасывает префикс пространства имён. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">qualifiedName</td><td>Полное имя, например <code>"x:row"</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Локальное имя, например <code>"row"</code>. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xml__utils_8cpp_source.html">xml_utils.cpp</a> строка <a class="el" href="xml__utils_8cpp_source.html#l00013">13</a></p>
+
+</div>
+</div>
+<a id="a268407e55e0b818a3228dce55a0728ee" name="a268407e55e0b818a3228dce55a0728ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268407e55e0b818a3228dce55a0728ee">&#9670;&#160;</a></span>localName() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string_view redclean::xml::localName </td>
+          <td>(</td>
+          <td class="paramtype">const pugi::xml_node &amp;&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Локальное имя узла без префикса. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Узел XML. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Имя узла без префикса пространства имён. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xml__utils_8hpp_source.html">xml_utils.hpp</a> строка <a class="el" href="xml__utils_8hpp_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a id="a9c71fd7c90ea8c1090157967f28750e6" name="a9c71fd7c90ea8c1090157967f28750e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c71fd7c90ea8c1090157967f28750e6">&#9670;&#160;</a></span>nextSibling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">pugi::xml_node redclean::xml::nextSibling </td>
+          <td>(</td>
+          <td class="paramtype">const pugi::xml_node &amp;&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Следующий соседний элемент с заданным локальным именем. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>Текущий элемент. </td></tr>
+    <tr><td class="paramname">name</td><td>Локальное имя искомого элемента. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Найденный элемент или пустой узел. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xml__utils_8cpp_source.html">xml_utils.cpp</a> строка <a class="el" href="xml__utils_8cpp_source.html#l00027">27</a></p>
+
+</div>
+</div>
+<a id="a6306b6b38ad20c7c582e01ba293d295c" name="a6306b6b38ad20c7c582e01ba293d295c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6306b6b38ad20c7c582e01ba293d295c">&#9670;&#160;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string redclean::xml::serialize </td>
+          <td>(</td>
+          <td class="paramtype">const pugi::xml_document &amp;&#160;</td>
+          <td class="paramname"><em>doc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сериализует документ без переформатирования, в UTF-8. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">doc</td><td>Документ. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Текст XML. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xml__utils_8cpp_source.html">xml_utils.cpp</a> строка <a class="el" href="xml__utils_8cpp_source.html#l00052">52</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Переменные</h2>
+<a id="a1f3f82543def40d468d9b2b964f38c8a" name="a1f3f82543def40d468d9b2b964f38c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f3f82543def40d468d9b2b964f38c8a">&#9670;&#160;</a></span>kParseFlags</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr unsigned redclean::xml::kParseFlags = pugi::parse_default | pugi::parse_declaration | pugi::parse_ws_pcdata</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Флаги разбора, сохраняющие документ максимально близким к исходному. </p>
+<p>Сохраняются объявление XML и текстовые узлы из одних пробелов (важно для <code>&lt;t</code> xml:space="preserve"&gt;). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="xml__utils_8hpp_source.html">xml_utils.hpp</a> строка <a class="el" href="xml__utils_8hpp_source.html#l00075">75</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceredclean.html">redclean</a></li><li class="navelem"><a class="el" href="namespaceredclean_1_1xml.html">xml</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

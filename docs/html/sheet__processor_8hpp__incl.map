@@ -1,0 +1,31 @@
+<map id="src/sheet_processor.hpp" name="src/sheet_processor.hpp">
+<area shape="rect" id="Node000001" title="Поиск и очистка строк с красными ячейками на одном листе." alt="" coords="379,5,557,31"/>
+<area shape="rect" id="Node000002" href="$styles_8hpp.html" title="Анализ xl/styles.xml: какие стили ячеек считаются красными." alt="" coords="253,79,342,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="442,33,339,76,337,71,440,28"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,225,72,251"/>
+<area shape="poly" id="edge16_Node000001_Node000005" title=" " alt="" coords="391,33,324,49,248,73,172,107,136,129,103,154,75,184,54,215,50,212,71,181,100,150,133,125,169,103,246,68,323,43,390,28"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="485,225,544,251"/>
+<area shape="poly" id="edge17_Node000001_Node000007" title=" " alt="" coords="477,30,499,78,512,150,517,212,512,212,507,151,493,79,472,32"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="398,225,461,251"/>
+<area shape="poly" id="edge18_Node000001_Node000009" title=" " alt="" coords="473,30,479,94,478,136,471,178,462,198,451,216,446,213,457,196,465,177,473,136,474,94,468,31"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="386,152,457,177"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="467,32,432,140,427,138,462,30"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="583,79,686,104"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="496,28,596,71,594,76,494,33"/>
+<area shape="rect" id="Node000003" href="$color_8hpp.html" title="Цвета: разбор, преобразования RGB/HSV/HLS, палитра Excel и критерий «красного»." alt="" coords="178,152,259,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,106,243,145,240,141,283,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="96,225,152,251"/>
+<area shape="poly" id="edge9_Node000002_Node000004" title=" " alt="" coords="254,107,209,125,187,138,167,154,146,183,133,213,128,211,142,180,163,150,184,134,207,120,252,102"/>
+<area shape="poly" id="edge11_Node000002_Node000005" title=" " alt="" coords="259,107,203,126,144,154,99,186,62,217,59,213,96,181,141,150,201,121,257,102"/>
+<area shape="poly" id="edge12_Node000002_Node000007" title=" " alt="" coords="307,103,335,138,375,175,424,203,473,222,471,227,422,208,372,179,331,142,303,106"/>
+<area shape="poly" id="edge13_Node000002_Node000009" title=" " alt="" coords="302,104,311,138,320,158,331,176,358,199,388,217,386,222,355,204,327,179,315,160,306,140,297,105"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="319,102,391,143,388,147,316,106"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="205,179,152,219,149,215,202,175"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="191,180,82,223,80,218,189,175"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="299,225,373,251"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="239,175,306,216,304,220,236,180"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="260,173,473,223,473,223,472,228,471,228,259,178"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="177,225,274,251"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="222,177,226,212,220,212,217,178"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="253,175,386,219,384,224,252,180"/>
+</map>

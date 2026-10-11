@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Исходный файл src/formula.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('formula_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">formula.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="formula_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="formula_8hpp.html">formula.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cctype&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceredclean.html">redclean</a> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html">   12</a></span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a3c4439d1aa2e709ab3896b18414f2422">   19</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a3c4439d1aa2e709ab3896b18414f2422">isWordChar</a>(<span class="keywordtype">char</span> c)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">const</span> <span class="keyword">auto</span> u = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span> std::isalnum(u) || c == <span class="charliteral">&#39;_&#39;</span> || c == <span class="charliteral">&#39;.&#39;</span> || c == <span class="charliteral">&#39;$&#39;</span> || c == <span class="charliteral">&#39;\\&#39;</span> || u &gt;= 0x80;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a1d8219ba49fd584e31eda68d0ec44960">   26</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a1d8219ba49fd584e31eda68d0ec44960">isLetter</a>(<span class="keywordtype">char</span> c) { <span class="keywordflow">return</span> std::isalpha(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c)) != 0; }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a0e04ff1bf8638f89ff528517929378ba">   28</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a0e04ff1bf8638f89ff528517929378ba">isDigit</a>(<span class="keywordtype">char</span> c) { <span class="keywordflow">return</span> std::isdigit(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c)) != 0; }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">   31</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a7d849a746556632d9e3c4f51881caca9">   33</a></span>    <span class="keywordtype">bool</span> absolute = <span class="keyword">false</span>;      </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a50d2088e7601c8909c526aef47802428">   34</a></span>    std::uint32_t value = 0;    </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#ad4ddcc14c09c2398f1b98de89fd22659">   42</a></span>std::optional&lt;RefPart&gt; <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#ad4ddcc14c09c2398f1b98de89fd22659">parseColumnPart</a>(std::string_view s)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> part;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordflow">if</span> (!s.empty() &amp;&amp; s.front() == <span class="charliteral">&#39;$&#39;</span>) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a7d849a746556632d9e3c4f51881caca9">absolute</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        s.remove_prefix(1);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">if</span> (s.empty() || s.size() &gt; 3) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">for</span> (<span class="keywordtype">char</span> c : s)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a1d8219ba49fd584e31eda68d0ec44960">isLetter</a>(c)) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a50d2088e7601c8909c526aef47802428">value</a> = <a class="code hl_function" href="namespaceredclean.html#a44347080a132855c0abe0316c8fcd506">columnFromLetters</a>(s);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordflow">if</span> (part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a50d2088e7601c8909c526aef47802428">value</a> == 0) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> part;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a78bee20d27a42d57d35dc1c4da8151e6">   62</a></span>std::optional&lt;RefPart&gt; <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a78bee20d27a42d57d35dc1c4da8151e6">parseRowPart</a>(std::string_view s)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> part;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> (!s.empty() &amp;&amp; s.front() == <span class="charliteral">&#39;$&#39;</span>) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a7d849a746556632d9e3c4f51881caca9">absolute</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        s.remove_prefix(1);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> (s.empty() || s.size() &gt; 7) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    std::uint64_t value = 0;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">for</span> (<span class="keywordtype">char</span> c : s) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keywordflow">if</span> (!<a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a0e04ff1bf8638f89ff528517929378ba">isDigit</a>(c)) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        value = value * 10 + <span class="keyword">static_cast&lt;</span>std::uint64_t<span class="keyword">&gt;</span>(c - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordflow">if</span> (value == 0 || value &gt; <a class="code hl_variable" href="namespaceredclean.html#a1e66703b037f583681ec393d99c7e2a0">kMaxRows</a>) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a50d2088e7601c8909c526aef47802428">value</a> = <span class="keyword">static_cast&lt;</span>std::uint32_t<span class="keyword">&gt;</span>(value);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">return</span> part;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html">   81</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html">CellRefParts</a></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html#a52c536d844e6f282c0b7510380cb2bab">   83</a></span>    <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> <a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html#a52c536d844e6f282c0b7510380cb2bab">col</a>;    </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html#a287fcb7f47c61897d3a839c9b74d28f5">   84</a></span>    <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> <a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html#a287fcb7f47c61897d3a839c9b74d28f5">row</a>;    </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
+</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a7631134104cac6762faeb2e9bf66aadf">   92</a></span>std::optional&lt;CellRefParts&gt; <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a7631134104cac6762faeb2e9bf66aadf">parseCellParts</a>(std::string_view s)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    std::size_t i = 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (i &lt; s.size() &amp;&amp; s[i] == <span class="charliteral">&#39;$&#39;</span>) ++i;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">while</span> (i &lt; s.size() &amp;&amp; <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a1d8219ba49fd584e31eda68d0ec44960">isLetter</a>(s[i])) ++i;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">const</span> <span class="keyword">auto</span> col = <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#ad4ddcc14c09c2398f1b98de89fd22659">parseColumnPart</a>(s.substr(0, i));</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">if</span> (!col) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">const</span> <span class="keyword">auto</span> row = <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a78bee20d27a42d57d35dc1c4da8151e6">parseRowPart</a>(s.substr(i));</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (!row) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html">CellRefParts</a>{*col, *row};</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00111" data-start="{" data-end="}">
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#aea70f8b91385326fa03e6535a1265376">  111</a></span>std::optional&lt;std::uint32_t&gt; <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#aea70f8b91385326fa03e6535a1265376">shifted</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a>&amp; part, std::int64_t delta, std::uint32_t limit)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">if</span> (part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a7d849a746556632d9e3c4f51881caca9">absolute</a>) <span class="keywordflow">return</span> part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a50d2088e7601c8909c526aef47802428">value</a>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">const</span> std::int64_t v = <span class="keyword">static_cast&lt;</span>std::int64_t<span class="keyword">&gt;</span>(part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a50d2088e7601c8909c526aef47802428">value</a>) + delta;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (v &lt; 1 || v &gt; <span class="keyword">static_cast&lt;</span>std::int64_t<span class="keyword">&gt;</span>(limit)) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>std::uint32_t<span class="keyword">&gt;</span>(v);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>}</div>
+</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="foldopen" id="foldopen00120" data-start="{" data-end="}">
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a6862789ac00d3619b70e56327bc8675b">  120</a></span>std::string <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a6862789ac00d3619b70e56327bc8675b">formatColumn</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a>&amp; part, std::uint32_t value)</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">return</span> (part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a7d849a746556632d9e3c4f51881caca9">absolute</a> ? <span class="stringliteral">&quot;$&quot;</span> : <span class="stringliteral">&quot;&quot;</span>) + <a class="code hl_function" href="namespaceredclean.html#ac156955b1f7520c3c29aa75b25a46cd4">columnToLetters</a>(value);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a70e2240ecf6c7381eb8c6a12f7071d61">  126</a></span>std::string <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a70e2240ecf6c7381eb8c6a12f7071d61">formatRow</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a>&amp; part, std::uint32_t value)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">return</span> (part.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a7d849a746556632d9e3c4f51881caca9">absolute</a> ? <span class="stringliteral">&quot;$&quot;</span> : <span class="stringliteral">&quot;&quot;</span>) + std::to_string(value);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#abda2b46cae7ec8de580655e5bc041794">  138</a></span>std::size_t <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#abda2b46cae7ec8de580655e5bc041794">skipQuoted</a>(std::string_view s, std::size_t i, <span class="keywordtype">char</span> quote)</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>{</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    ++i;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">while</span> (i &lt; s.size()) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <span class="keywordflow">if</span> (s[i] == quote) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="keywordflow">if</span> (i + 1 &lt; s.size() &amp;&amp; s[i + 1] == quote) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                i += 2;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <span class="keywordflow">return</span> i + 1;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        ++i;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>}</div>
+</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="foldopen" id="foldopen00160" data-start="{" data-end="}">
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a8db594f98c7876d89581bbea60c352a6">  160</a></span>std::size_t <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a8db594f98c7876d89581bbea60c352a6">skipBrackets</a>(std::string_view s, std::size_t i)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>{</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">int</span> depth = 0;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">while</span> (i &lt; s.size()) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">if</span> (s[i] == <span class="charliteral">&#39;[&#39;</span>) ++depth;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordflow">if</span> (s[i] == <span class="charliteral">&#39;]&#39;</span> &amp;&amp; --depth == 0) <span class="keywordflow">return</span> i + 1;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        ++i;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}</div>
+</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a2335210dab42d10d45c543ac7e2236bc">  172</a></span>std::size_t <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a2335210dab42d10d45c543ac7e2236bc">wordEnd</a>(std::string_view s, std::size_t i)</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>{</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">while</span> (i &lt; s.size() &amp;&amp; <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a3c4439d1aa2e709ab3896b18414f2422">isWordChar</a>(s[i])) ++i;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
+</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>}    <span class="comment">// namespace</span></div>
+</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="foldopen" id="foldopen00180" data-start="{" data-end="}">
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="namespaceredclean.html#a44347080a132855c0abe0316c8fcd506">  180</a></span>std::uint32_t <a class="code hl_function" href="namespaceredclean.html#a44347080a132855c0abe0316c8fcd506">columnFromLetters</a>(std::string_view letters)</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>{</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">if</span> (letters.empty() || letters.size() &gt; 3) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    std::uint32_t value = 0;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">for</span> (<span class="keywordtype">char</span> c : letters) {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">if</span> (!isLetter(c)) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        value = value * 26 + <span class="keyword">static_cast&lt;</span>std::uint32_t<span class="keyword">&gt;</span>(std::toupper(<span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(c)) - <span class="charliteral">&#39;A&#39;</span> + 1);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">return</span> value &lt;= <a class="code hl_variable" href="namespaceredclean.html#a54785a5f9c99df626171113363a6cb13">kMaxColumns</a> ? value : 0;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
+</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="foldopen" id="foldopen00191" data-start="{" data-end="}">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="namespaceredclean.html#ac156955b1f7520c3c29aa75b25a46cd4">  191</a></span>std::string <a class="code hl_function" href="namespaceredclean.html#ac156955b1f7520c3c29aa75b25a46cd4">columnToLetters</a>(std::uint32_t column)</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>{</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    std::string out;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">while</span> (column &gt; 0) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keyword">const</span> std::uint32_t rem = (column - 1) % 26;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        out.insert(out.begin(), <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(<span class="charliteral">&#39;A&#39;</span> + rem));</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        column = (column - 1) / 26;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
+</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="namespaceredclean.html#a1bb917982aa08471aeda9dca1db823c9">  202</a></span>std::optional&lt;CellPos&gt; <a class="code hl_function" href="namespaceredclean.html#a1bb917982aa08471aeda9dca1db823c9">parseCellRef</a>(std::string_view ref)</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>{</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keyword">const</span> <span class="keyword">auto</span> parts = parseCellParts(ref);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keywordflow">if</span> (!parts) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structredclean_1_1CellPos.html">CellPos</a>{parts-&gt;<a class="code hl_variable" href="structredclean_1_1CellPos.html#ad905efb45508b28995b5de1bbd07ccf3">row</a>.value, parts-&gt;col.value};</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="foldopen" id="foldopen00209" data-start="{" data-end="}">
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="namespaceredclean.html#a8b148f5f6c288ec187fc7d2c1d6ffa4d">  209</a></span>std::string <a class="code hl_function" href="namespaceredclean.html#a8b148f5f6c288ec187fc7d2c1d6ffa4d">shiftFormula</a>(std::string_view f, std::int64_t dRow, std::int64_t dCol)</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>{</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    std::string out;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    out.reserve(f.size() + 8);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    std::size_t i = 0;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keywordflow">while</span> (i &lt; f.size()) {</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keyword">const</span> <span class="keywordtype">char</span> c = f[i];</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;&quot;&#39;</span> || c == <span class="charliteral">&#39;\&#39;&#39;</span>) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keyword">const</span> std::size_t end = skipQuoted(f, i, c);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            out.append(f.substr(i, end - i));</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            i = end;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        }</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        <span class="keywordflow">if</span> (c == <span class="charliteral">&#39;[&#39;</span>) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            <span class="keyword">const</span> std::size_t end = skipBrackets(f, i);</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            out.append(f.substr(i, end - i));</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            i = end;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keywordflow">if</span> (!isWordChar(c)) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>            out.push_back(c);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            ++i;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keyword">const</span> std::size_t end = wordEnd(f, i);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        <span class="keyword">const</span> std::string_view word = f.substr(i, end - i);</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        <span class="keyword">const</span> <span class="keywordtype">char</span> next = end &lt; f.size() ? f[end] : <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;(&#39;</span> || next == <span class="charliteral">&#39;!&#39;</span>) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>            out.append(word);</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>            i = end;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> cell = parseCellParts(word)) {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <span class="keyword">const</span> <span class="keyword">auto</span> col = shifted(cell-&gt;col, dCol, <a class="code hl_variable" href="namespaceredclean.html#a54785a5f9c99df626171113363a6cb13">kMaxColumns</a>);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            <span class="keyword">const</span> <span class="keyword">auto</span> row = shifted(cell-&gt;row, dRow, <a class="code hl_variable" href="namespaceredclean.html#a1e66703b037f583681ec393d99c7e2a0">kMaxRows</a>);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <span class="keywordflow">if</span> (col &amp;&amp; row)</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                out += formatColumn(cell-&gt;col, *col) + formatRow(cell-&gt;row, *row);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                out += <span class="stringliteral">&quot;#REF!&quot;</span>;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            i = end;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>        <span class="keywordflow">if</span> (next == <span class="charliteral">&#39;:&#39;</span> &amp;&amp; end + 1 &lt; f.size() &amp;&amp; isWordChar(f[end + 1])) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            <span class="keyword">const</span> std::size_t end2 = wordEnd(f, end + 1);</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            <span class="keyword">const</span> std::string_view word2 = f.substr(end + 1, end2 - end - 1);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            <span class="keyword">const</span> <span class="keywordtype">char</span> after = end2 &lt; f.size() ? f[end2] : <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>            <span class="keywordflow">if</span> (after != <span class="charliteral">&#39;(&#39;</span> &amp;&amp; after != <span class="charliteral">&#39;!&#39;</span>) {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                <span class="keyword">const</span> <span class="keyword">auto</span> c1 = parseColumnPart(word), c2 = parseColumnPart(word2);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                <span class="keywordflow">if</span> (c1 &amp;&amp; c2) {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                    <span class="keyword">const</span> <span class="keyword">auto</span> s1 = shifted(*c1, dCol, <a class="code hl_variable" href="namespaceredclean.html#a54785a5f9c99df626171113363a6cb13">kMaxColumns</a>), s2 = shifted(*c2, dCol, <a class="code hl_variable" href="namespaceredclean.html#a54785a5f9c99df626171113363a6cb13">kMaxColumns</a>);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                    out += (s1 &amp;&amp; s2) ? formatColumn(*c1, *s1) + <span class="stringliteral">&quot;:&quot;</span> + formatColumn(*c2, *s2) : <span class="stringliteral">&quot;#REF!&quot;</span>;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                    i = end2;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>                <span class="keyword">const</span> <span class="keyword">auto</span> r1 = parseRowPart(word), r2 = parseRowPart(word2);</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                <span class="keywordflow">if</span> (r1 &amp;&amp; r2) {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                    <span class="keyword">const</span> <span class="keyword">auto</span> s1 = shifted(*r1, dRow, <a class="code hl_variable" href="namespaceredclean.html#a1e66703b037f583681ec393d99c7e2a0">kMaxRows</a>), s2 = shifted(*r2, dRow, <a class="code hl_variable" href="namespaceredclean.html#a1e66703b037f583681ec393d99c7e2a0">kMaxRows</a>);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>                    out += (s1 &amp;&amp; s2) ? formatRow(*r1, *s1) + <span class="stringliteral">&quot;:&quot;</span> + formatRow(*r2, *s2) : <span class="stringliteral">&quot;#REF!&quot;</span>;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                    i = end2;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>                }</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>            }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        }</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        out.append(word);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        i = end;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    }</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>}</div>
+</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>}    <span class="comment">// namespace redclean</span></div>
+<div class="ttc" id="aformula_8hpp_html"><div class="ttname"><a href="formula_8hpp.html">formula.hpp</a></div><div class="ttdoc">Адреса ячеек и сдвиг относительных ссылок в формулах.</div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_a0e04ff1bf8638f89ff528517929378ba"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a0e04ff1bf8638f89ff528517929378ba">redclean::anonymous_namespace{formula.cpp}::isDigit</a></div><div class="ttdeci">bool isDigit(char c)</div><div class="ttdoc">Десятичная цифра.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00028">formula.cpp:28</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_a1d8219ba49fd584e31eda68d0ec44960"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a1d8219ba49fd584e31eda68d0ec44960">redclean::anonymous_namespace{formula.cpp}::isLetter</a></div><div class="ttdeci">bool isLetter(char c)</div><div class="ttdoc">Латинская буква.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00026">formula.cpp:26</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_a2335210dab42d10d45c543ac7e2236bc"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a2335210dab42d10d45c543ac7e2236bc">redclean::anonymous_namespace{formula.cpp}::wordEnd</a></div><div class="ttdeci">std::size_t wordEnd(std::string_view s, std::size_t i)</div><div class="ttdoc">Позиция конца слова, начинающегося в i.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00172">formula.cpp:172</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_a3c4439d1aa2e709ab3896b18414f2422"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a3c4439d1aa2e709ab3896b18414f2422">redclean::anonymous_namespace{formula.cpp}::isWordChar</a></div><div class="ttdeci">bool isWordChar(char c)</div><div class="ttdoc">Символ, который может входить в «слово» формулы: ссылку, имя, число.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00019">formula.cpp:19</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_a6862789ac00d3619b70e56327bc8675b"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a6862789ac00d3619b70e56327bc8675b">redclean::anonymous_namespace{formula.cpp}::formatColumn</a></div><div class="ttdeci">std::string formatColumn(const RefPart &amp;part, std::uint32_t value)</div><div class="ttdoc">Форматирует столбец с сохранением знака $.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00120">formula.cpp:120</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_a70e2240ecf6c7381eb8c6a12f7071d61"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a70e2240ecf6c7381eb8c6a12f7071d61">redclean::anonymous_namespace{formula.cpp}::formatRow</a></div><div class="ttdeci">std::string formatRow(const RefPart &amp;part, std::uint32_t value)</div><div class="ttdoc">Форматирует строку с сохранением знака $.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00126">formula.cpp:126</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_a7631134104cac6762faeb2e9bf66aadf"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a7631134104cac6762faeb2e9bf66aadf">redclean::anonymous_namespace{formula.cpp}::parseCellParts</a></div><div class="ttdeci">std::optional&lt; CellRefParts &gt; parseCellParts(std::string_view s)</div><div class="ttdoc">Разбирает ссылку на ячейку вида &quot;$A$1&quot; целиком.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00092">formula.cpp:92</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_a78bee20d27a42d57d35dc1c4da8151e6"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a78bee20d27a42d57d35dc1c4da8151e6">redclean::anonymous_namespace{formula.cpp}::parseRowPart</a></div><div class="ttdeci">std::optional&lt; RefPart &gt; parseRowPart(std::string_view s)</div><div class="ttdoc">Разбирает часть-строку &quot;$?DIGITS&quot; целиком.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00062">formula.cpp:62</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_a8db594f98c7876d89581bbea60c352a6"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a8db594f98c7876d89581bbea60c352a6">redclean::anonymous_namespace{formula.cpp}::skipBrackets</a></div><div class="ttdeci">std::size_t skipBrackets(std::string_view s, std::size_t i)</div><div class="ttdoc">Пропускает выражение в квадратных скобках с учётом вложенности.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00160">formula.cpp:160</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_abda2b46cae7ec8de580655e5bc041794"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#abda2b46cae7ec8de580655e5bc041794">redclean::anonymous_namespace{formula.cpp}::skipQuoted</a></div><div class="ttdeci">std::size_t skipQuoted(std::string_view s, std::size_t i, char quote)</div><div class="ttdoc">Пропускает литерал в кавычках с учётом удвоенных кавычек внутри.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00138">formula.cpp:138</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_ad4ddcc14c09c2398f1b98de89fd22659"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#ad4ddcc14c09c2398f1b98de89fd22659">redclean::anonymous_namespace{formula.cpp}::parseColumnPart</a></div><div class="ttdeci">std::optional&lt; RefPart &gt; parseColumnPart(std::string_view s)</div><div class="ttdoc">Разбирает часть-столбец &quot;$?LETTERS&quot; целиком.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00042">formula.cpp:42</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02formula_8cpp_03_html_aea70f8b91385326fa03e6535a1265376"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#aea70f8b91385326fa03e6535a1265376">redclean::anonymous_namespace{formula.cpp}::shifted</a></div><div class="ttdeci">std::optional&lt; std::uint32_t &gt; shifted(const RefPart &amp;part, std::int64_t delta, std::uint32_t limit)</div><div class="ttdoc">Сдвигает часть ссылки, если она относительная.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00111">formula.cpp:111</a></div></div>
+<div class="ttc" id="anamespaceredclean_html"><div class="ttname"><a href="namespaceredclean.html">redclean</a></div><div class="ttdoc">Корневое пространство имён проекта.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00017">cleaner.cpp:17</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a1bb917982aa08471aeda9dca1db823c9"><div class="ttname"><a href="namespaceredclean.html#a1bb917982aa08471aeda9dca1db823c9">redclean::parseCellRef</a></div><div class="ttdeci">std::optional&lt; CellPos &gt; parseCellRef(std::string_view ref)</div><div class="ttdoc">Разбирает адрес ячейки.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00202">formula.cpp:202</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a1e66703b037f583681ec393d99c7e2a0"><div class="ttname"><a href="namespaceredclean.html#a1e66703b037f583681ec393d99c7e2a0">redclean::kMaxRows</a></div><div class="ttdeci">constexpr std::uint32_t kMaxRows</div><div class="ttdoc">Число строк листа Excel.</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00015">formula.hpp:15</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a44347080a132855c0abe0316c8fcd506"><div class="ttname"><a href="namespaceredclean.html#a44347080a132855c0abe0316c8fcd506">redclean::columnFromLetters</a></div><div class="ttdeci">std::uint32_t columnFromLetters(std::string_view letters)</div><div class="ttdoc">Номер столбца по буквам.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00180">formula.cpp:180</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a54785a5f9c99df626171113363a6cb13"><div class="ttname"><a href="namespaceredclean.html#a54785a5f9c99df626171113363a6cb13">redclean::kMaxColumns</a></div><div class="ttdeci">constexpr std::uint32_t kMaxColumns</div><div class="ttdoc">Число столбцов листа Excel (XFD).</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00016">formula.hpp:16</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a8b148f5f6c288ec187fc7d2c1d6ffa4d"><div class="ttname"><a href="namespaceredclean.html#a8b148f5f6c288ec187fc7d2c1d6ffa4d">redclean::shiftFormula</a></div><div class="ttdeci">std::string shiftFormula(std::string_view f, std::int64_t dRow, std::int64_t dCol)</div><div class="ttdoc">Сдвигает относительные ссылки формулы так, как Excel делает при копировании.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00209">formula.cpp:209</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_ac156955b1f7520c3c29aa75b25a46cd4"><div class="ttname"><a href="namespaceredclean.html#ac156955b1f7520c3c29aa75b25a46cd4">redclean::columnToLetters</a></div><div class="ttdeci">std::string columnToLetters(std::uint32_t column)</div><div class="ttdoc">Буквы столбца по номеру.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00191">formula.cpp:191</a></div></div>
+<div class="ttc" id="astructredclean_1_1CellPos_html"><div class="ttname"><a href="structredclean_1_1CellPos.html">redclean::CellPos</a></div><div class="ttdoc">Позиция ячейки, нумерация с 1.</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00019">formula.hpp:20</a></div></div>
+<div class="ttc" id="astructredclean_1_1CellPos_html_ad905efb45508b28995b5de1bbd07ccf3"><div class="ttname"><a href="structredclean_1_1CellPos.html#ad905efb45508b28995b5de1bbd07ccf3">redclean::CellPos::row</a></div><div class="ttdeci">std::uint32_t row</div><div class="ttdoc">Номер строки.</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00021">formula.hpp:21</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts_html"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html">redclean::anonymous_namespace{formula.cpp}::CellRefParts</a></div><div class="ttdoc">Разобранная ссылка на ячейку.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00081">formula.cpp:82</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts_html_a287fcb7f47c61897d3a839c9b74d28f5"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html#a287fcb7f47c61897d3a839c9b74d28f5">redclean::anonymous_namespace{formula.cpp}::CellRefParts::row</a></div><div class="ttdeci">RefPart row</div><div class="ttdoc">Строка.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00084">formula.cpp:84</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts_html_a52c536d844e6f282c0b7510380cb2bab"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html#a52c536d844e6f282c0b7510380cb2bab">redclean::anonymous_namespace{formula.cpp}::CellRefParts::col</a></div><div class="ttdeci">RefPart col</div><div class="ttdoc">Столбец.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00083">formula.cpp:83</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart_html"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">redclean::anonymous_namespace{formula.cpp}::RefPart</a></div><div class="ttdoc">Часть ссылки: номер строки или столбца и признак абсолютности.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00031">formula.cpp:32</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart_html_a50d2088e7601c8909c526aef47802428"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a50d2088e7601c8909c526aef47802428">redclean::anonymous_namespace{formula.cpp}::RefPart::value</a></div><div class="ttdeci">std::uint32_t value</div><div class="ttdoc">Номер строки или столбца.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00034">formula.cpp:34</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart_html_a7d849a746556632d9e3c4f51881caca9"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#a7d849a746556632d9e3c4f51881caca9">redclean::anonymous_namespace{formula.cpp}::RefPart::absolute</a></div><div class="ttdeci">bool absolute</div><div class="ttdoc">Был ли знак $.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00033">formula.cpp:33</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="formula_8cpp.html">formula.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

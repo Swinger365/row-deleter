@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Класс redclean::SheetProcessor</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classredclean_1_1SheetProcessor.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classredclean_1_1SheetProcessor-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс redclean::SheetProcessor</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Обработка одного листа (<code>xl/worksheets/sheetN.xml</code>) в три этапа.  
+ <a href="classredclean_1_1SheetProcessor.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:adab70e80b00575aeacaa66e5f238ef30" id="r_adab70e80b00575aeacaa66e5f238ef30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#adab70e80b00575aeacaa66e5f238ef30">SheetProcessor</a> (std::string <a class="el" href="classredclean_1_1SheetProcessor.html#a3e0ae8340f31604288528a5625c5f0bb">name</a>, std::uint32_t <a class="el" href="classredclean_1_1SheetProcessor.html#a4068a3c0c983ee5bf624c98ec92b7fcf">startRow</a>)</td></tr>
+<tr class="memdesc:adab70e80b00575aeacaa66e5f238ef30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт обработчик.  <br /></td></tr>
+<tr class="separator:adab70e80b00575aeacaa66e5f238ef30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9af01cf295ebbef4359b0f136d5b9358" id="r_a9af01cf295ebbef4359b0f136d5b9358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#a9af01cf295ebbef4359b0f136d5b9358">load</a> (const std::string &amp;xml)</td></tr>
+<tr class="memdesc:a9af01cf295ebbef4359b0f136d5b9358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбирает XML листа и собирает строки-кандидаты.  <br /></td></tr>
+<tr class="separator:a9af01cf295ebbef4359b0f136d5b9358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0750a49a9ff5f8051165bc2792433067" id="r_a0750a49a9ff5f8051165bc2792433067"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#a0750a49a9ff5f8051165bc2792433067">candidateRowCount</a> () const</td></tr>
+<tr class="memdesc:a0750a49a9ff5f8051165bc2792433067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Число строк-кандидатов (номер не меньше начального).  <br /></td></tr>
+<tr class="separator:a0750a49a9ff5f8051165bc2792433067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a540c0dcc1b665d72af3f67de3c834e01" id="r_a540c0dcc1b665d72af3f67de3c834e01"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#a540c0dcc1b665d72af3f67de3c834e01">detect</a> (std::size_t begin, std::size_t end, const <a class="el" href="classredclean_1_1RedStyleTable.html">RedStyleTable</a> &amp;styles)</td></tr>
+<tr class="memdesc:a540c0dcc1b665d72af3f67de3c834e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отмечает кандидатов из диапазона [<code>begin</code>, <code>end</code>), содержащих красную ячейку.  <br /></td></tr>
+<tr class="separator:a540c0dcc1b665d72af3f67de3c834e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab437db97705e2f42dcc04d005afcfc3" id="r_aab437db97705e2f42dcc04d005afcfc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#aab437db97705e2f42dcc04d005afcfc3">apply</a> ()</td></tr>
+<tr class="memdesc:aab437db97705e2f42dcc04d005afcfc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищает отмеченные строки.  <br /></td></tr>
+<tr class="separator:aab437db97705e2f42dcc04d005afcfc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24910b6f997eaff41d3c6f4280c996f3" id="r_a24910b6f997eaff41d3c6f4280c996f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#a24910b6f997eaff41d3c6f4280c996f3">modified</a> () const</td></tr>
+<tr class="memdesc:a24910b6f997eaff41d3c6f4280c996f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Был ли документ изменён в <a class="el" href="classredclean_1_1SheetProcessor.html#aab437db97705e2f42dcc04d005afcfc3">apply</a>.  <br /></td></tr>
+<tr class="separator:a24910b6f997eaff41d3c6f4280c996f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c48f579766d809bd6cabbb7aec7cee6" id="r_a9c48f579766d809bd6cabbb7aec7cee6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#a9c48f579766d809bd6cabbb7aec7cee6">serialize</a> () const</td></tr>
+<tr class="memdesc:a9c48f579766d809bd6cabbb7aec7cee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Текущий XML листа.  <br /></td></tr>
+<tr class="separator:a9c48f579766d809bd6cabbb7aec7cee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e0ae8340f31604288528a5625c5f0bb" id="r_a3e0ae8340f31604288528a5625c5f0bb"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#a3e0ae8340f31604288528a5625c5f0bb">name</a> () const</td></tr>
+<tr class="memdesc:a3e0ae8340f31604288528a5625c5f0bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Имя листа.  <br /></td></tr>
+<tr class="separator:a3e0ae8340f31604288528a5625c5f0bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4068a3c0c983ee5bf624c98ec92b7fcf" id="r_a4068a3c0c983ee5bf624c98ec92b7fcf"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#a4068a3c0c983ee5bf624c98ec92b7fcf">startRow</a> () const</td></tr>
+<tr class="memdesc:a4068a3c0c983ee5bf624c98ec92b7fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Начальная строка.  <br /></td></tr>
+<tr class="separator:a4068a3c0c983ee5bf624c98ec92b7fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbdddd07e11d8d5de50d8a2b40f01237" id="r_adbdddd07e11d8d5de50d8a2b40f01237"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structredclean_1_1SheetStats.html">SheetStats</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1SheetProcessor.html#adbdddd07e11d8d5de50d8a2b40f01237">stats</a> () const</td></tr>
+<tr class="memdesc:adbdddd07e11d8d5de50d8a2b40f01237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Статистика; полностью заполнена после <a class="el" href="classredclean_1_1SheetProcessor.html#aab437db97705e2f42dcc04d005afcfc3">apply</a>.  <br /></td></tr>
+<tr class="separator:adbdddd07e11d8d5de50d8a2b40f01237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Обработка одного листа (<code>xl/worksheets/sheetN.xml</code>) в три этапа. </p>
+<ol type="1">
+<li><a class="el" href="classredclean_1_1SheetProcessor.html#a9af01cf295ebbef4359b0f136d5b9358">load</a> — разбор XML; разные листы можно разбирать параллельно.</li>
+<li><a class="el" href="classredclean_1_1SheetProcessor.html#a540c0dcc1b665d72af3f67de3c834e01">detect</a> — поиск красных строк; можно вызывать параллельно для непересекающихся диапазонов, документ при этом только читается.</li>
+<li><a class="el" href="classredclean_1_1SheetProcessor.html#aab437db97705e2f42dcc04d005afcfc3">apply</a> — очистка найденных строк; pugixml не допускает одновременных изменений одного документа, поэтому этап выполняется одним потоком на лист.</li>
+</ol>
+<p>Очистка удаляет значения, формулы и тип ячейки, оставляя адрес и стиль, — как команда «Очистить содержимое» в Excel. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00041">41</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="adab70e80b00575aeacaa66e5f238ef30" name="adab70e80b00575aeacaa66e5f238ef30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adab70e80b00575aeacaa66e5f238ef30">&#9670;&#160;</a></span>SheetProcessor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">redclean::SheetProcessor::SheetProcessor </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint32_t&#160;</td>
+          <td class="paramname"><em>startRow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт обработчик. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Имя листа (для сообщений и отчёта). </td></tr>
+    <tr><td class="paramname">startRow</td><td>Номер строки, начиная с которой ищутся красные ячейки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>Если <code>startRow</code> равен 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8cpp_source.html">sheet_processor.cpp</a> строка <a class="el" href="sheet__processor_8cpp_source.html#l00078">78</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="aab437db97705e2f42dcc04d005afcfc3" name="aab437db97705e2f42dcc04d005afcfc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab437db97705e2f42dcc04d005afcfc3">&#9670;&#160;</a></span>apply()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::SheetProcessor::apply </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Очищает отмеченные строки. </p>
+<p>Если очищается мастер-ячейка общей формулы (<code>t="shared"</code>), зависимые ячейки получают собственные формулы со сдвинутыми ссылками, иначе Excel посчитал бы файл повреждённым. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8cpp_source.html">sheet_processor.cpp</a> строка <a class="el" href="sheet__processor_8cpp_source.html#l00113">113</a></p>
+
+</div>
+</div>
+<a id="a0750a49a9ff5f8051165bc2792433067" name="a0750a49a9ff5f8051165bc2792433067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0750a49a9ff5f8051165bc2792433067">&#9670;&#160;</a></span>candidateRowCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t redclean::SheetProcessor::candidateRowCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Число строк-кандидатов (номер не меньше начального). </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00061">61</a></p>
+
+</div>
+</div>
+<a id="a540c0dcc1b665d72af3f67de3c834e01" name="a540c0dcc1b665d72af3f67de3c834e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a540c0dcc1b665d72af3f67de3c834e01">&#9670;&#160;</a></span>detect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::SheetProcessor::detect </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classredclean_1_1RedStyleTable.html">RedStyleTable</a> &amp;&#160;</td>
+          <td class="paramname"><em>styles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отмечает кандидатов из диапазона [<code>begin</code>, <code>end</code>), содержащих красную ячейку. </p>
+<p>Безопасен для одновременного вызова из разных потоков с непересекающимися диапазонами. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>Первый индекс кандидата. </td></tr>
+    <tr><td class="paramname">end</td><td>Индекс после последнего; ограничивается <a class="el" href="classredclean_1_1SheetProcessor.html#a0750a49a9ff5f8051165bc2792433067">candidateRowCount()</a>. </td></tr>
+    <tr><td class="paramname">styles</td><td>Таблица красных стилей. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8cpp_source.html">sheet_processor.cpp</a> строка <a class="el" href="sheet__processor_8cpp_source.html#l00101">101</a></p>
+
+</div>
+</div>
+<a id="a9af01cf295ebbef4359b0f136d5b9358" name="a9af01cf295ebbef4359b0f136d5b9358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af01cf295ebbef4359b0f136d5b9358">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::SheetProcessor::load </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>xml</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Разбирает XML листа и собирает строки-кандидаты. </p>
+<p>Номер строки берётся из атрибута <code>r</code>, а при его отсутствии — как предыдущий + 1. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">xml</td><td>Текст части листа. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Если XML некорректен. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8cpp_source.html">sheet_processor.cpp</a> строка <a class="el" href="sheet__processor_8cpp_source.html#l00083">83</a></p>
+
+</div>
+</div>
+<a id="a24910b6f997eaff41d3c6f4280c996f3" name="a24910b6f997eaff41d3c6f4280c996f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24910b6f997eaff41d3c6f4280c996f3">&#9670;&#160;</a></span>modified()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool redclean::SheetProcessor::modified </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Был ли документ изменён в <a class="el" href="classredclean_1_1SheetProcessor.html#aab437db97705e2f42dcc04d005afcfc3">apply</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00081">81</a></p>
+
+</div>
+</div>
+<a id="a3e0ae8340f31604288528a5625c5f0bb" name="a3e0ae8340f31604288528a5625c5f0bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e0ae8340f31604288528a5625c5f0bb">&#9670;&#160;</a></span>name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; redclean::SheetProcessor::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Имя листа. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00087">87</a></p>
+
+</div>
+</div>
+<a id="a9c48f579766d809bd6cabbb7aec7cee6" name="a9c48f579766d809bd6cabbb7aec7cee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c48f579766d809bd6cabbb7aec7cee6">&#9670;&#160;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string redclean::SheetProcessor::serialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Текущий XML листа. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8cpp_source.html">sheet_processor.cpp</a> строка <a class="el" href="sheet__processor_8cpp_source.html#l00157">157</a></p>
+
+</div>
+</div>
+<a id="a4068a3c0c983ee5bf624c98ec92b7fcf" name="a4068a3c0c983ee5bf624c98ec92b7fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4068a3c0c983ee5bf624c98ec92b7fcf">&#9670;&#160;</a></span>startRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::uint32_t redclean::SheetProcessor::startRow </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Начальная строка. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00089">89</a></p>
+
+</div>
+</div>
+<a id="adbdddd07e11d8d5de50d8a2b40f01237" name="adbdddd07e11d8d5de50d8a2b40f01237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbdddd07e11d8d5de50d8a2b40f01237">&#9670;&#160;</a></span>stats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structredclean_1_1SheetStats.html">SheetStats</a> &amp; redclean::SheetProcessor::stats </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Статистика; полностью заполнена после <a class="el" href="classredclean_1_1SheetProcessor.html#aab437db97705e2f42dcc04d005afcfc3">apply</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00091">91</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/<a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a></li>
+<li>src/<a class="el" href="sheet__processor_8cpp_source.html">sheet_processor.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceredclean.html">redclean</a></li><li class="navelem"><a class="el" href="classredclean_1_1SheetProcessor.html">SheetProcessor</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

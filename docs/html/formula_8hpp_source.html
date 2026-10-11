@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Исходный файл src/formula.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('formula_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">formula.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="formula_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceredclean.html">redclean</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespaceredclean.html#a1e66703b037f583681ec393d99c7e2a0">   15</a></span><span class="keyword">constexpr</span> std::uint32_t <a class="code hl_variable" href="namespaceredclean.html#a1e66703b037f583681ec393d99c7e2a0">kMaxRows</a> = 1048576;    </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespaceredclean.html#a54785a5f9c99df626171113363a6cb13">   16</a></span><span class="keyword">constexpr</span> std::uint32_t <a class="code hl_variable" href="namespaceredclean.html#a54785a5f9c99df626171113363a6cb13">kMaxColumns</a> = 16384;   </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structredclean_1_1CellPos.html">   19</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structredclean_1_1CellPos.html">CellPos</a></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structredclean_1_1CellPos.html#ad905efb45508b28995b5de1bbd07ccf3">   21</a></span>    std::uint32_t <a class="code hl_variable" href="structredclean_1_1CellPos.html#ad905efb45508b28995b5de1bbd07ccf3">row</a> = 0;    </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structredclean_1_1CellPos.html#acc402e7739e41ab7a5c06b4840c71995">   22</a></span>    std::uint32_t <a class="code hl_variable" href="structredclean_1_1CellPos.html#acc402e7739e41ab7a5c06b4840c71995">col</a> = 0;    </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structredclean_1_1CellPos.html#aabdd2ea57285782cdb5fb4b85cf49cac">   25</a></span>    <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code hl_friend" href="structredclean_1_1CellPos.html#aabdd2ea57285782cdb5fb4b85cf49cac">operator==</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1CellPos.html">CellPos</a>&amp; a, <span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1CellPos.html">CellPos</a>&amp; b) { <span class="keywordflow">return</span> a.<a class="code hl_variable" href="structredclean_1_1CellPos.html#ad905efb45508b28995b5de1bbd07ccf3">row</a> == b.<a class="code hl_variable" href="structredclean_1_1CellPos.html#ad905efb45508b28995b5de1bbd07ccf3">row</a> &amp;&amp; a.<a class="code hl_variable" href="structredclean_1_1CellPos.html#acc402e7739e41ab7a5c06b4840c71995">col</a> == b.<a class="code hl_variable" href="structredclean_1_1CellPos.html#acc402e7739e41ab7a5c06b4840c71995">col</a>; }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>};</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>std::uint32_t <a class="code hl_function" href="namespaceredclean.html#a44347080a132855c0abe0316c8fcd506">columnFromLetters</a>(std::string_view letters);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>std::string <a class="code hl_function" href="namespaceredclean.html#ac156955b1f7520c3c29aa75b25a46cd4">columnToLetters</a>(std::uint32_t column);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>std::optional&lt;CellPos&gt; <a class="code hl_function" href="namespaceredclean.html#a1bb917982aa08471aeda9dca1db823c9">parseCellRef</a>(std::string_view ref);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>std::string <a class="code hl_function" href="namespaceredclean.html#a8b148f5f6c288ec187fc7d2c1d6ffa4d">shiftFormula</a>(std::string_view formula, std::int64_t dRow, std::int64_t dCol);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}    <span class="comment">// namespace redclean</span></div>
+<div class="ttc" id="anamespaceredclean_html"><div class="ttname"><a href="namespaceredclean.html">redclean</a></div><div class="ttdoc">Корневое пространство имён проекта.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00017">cleaner.cpp:17</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a1bb917982aa08471aeda9dca1db823c9"><div class="ttname"><a href="namespaceredclean.html#a1bb917982aa08471aeda9dca1db823c9">redclean::parseCellRef</a></div><div class="ttdeci">std::optional&lt; CellPos &gt; parseCellRef(std::string_view ref)</div><div class="ttdoc">Разбирает адрес ячейки.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00202">formula.cpp:202</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a1e66703b037f583681ec393d99c7e2a0"><div class="ttname"><a href="namespaceredclean.html#a1e66703b037f583681ec393d99c7e2a0">redclean::kMaxRows</a></div><div class="ttdeci">constexpr std::uint32_t kMaxRows</div><div class="ttdoc">Число строк листа Excel.</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00015">formula.hpp:15</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a44347080a132855c0abe0316c8fcd506"><div class="ttname"><a href="namespaceredclean.html#a44347080a132855c0abe0316c8fcd506">redclean::columnFromLetters</a></div><div class="ttdeci">std::uint32_t columnFromLetters(std::string_view letters)</div><div class="ttdoc">Номер столбца по буквам.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00180">formula.cpp:180</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a54785a5f9c99df626171113363a6cb13"><div class="ttname"><a href="namespaceredclean.html#a54785a5f9c99df626171113363a6cb13">redclean::kMaxColumns</a></div><div class="ttdeci">constexpr std::uint32_t kMaxColumns</div><div class="ttdoc">Число столбцов листа Excel (XFD).</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00016">formula.hpp:16</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a8b148f5f6c288ec187fc7d2c1d6ffa4d"><div class="ttname"><a href="namespaceredclean.html#a8b148f5f6c288ec187fc7d2c1d6ffa4d">redclean::shiftFormula</a></div><div class="ttdeci">std::string shiftFormula(std::string_view f, std::int64_t dRow, std::int64_t dCol)</div><div class="ttdoc">Сдвигает относительные ссылки формулы так, как Excel делает при копировании.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00209">formula.cpp:209</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_ac156955b1f7520c3c29aa75b25a46cd4"><div class="ttname"><a href="namespaceredclean.html#ac156955b1f7520c3c29aa75b25a46cd4">redclean::columnToLetters</a></div><div class="ttdeci">std::string columnToLetters(std::uint32_t column)</div><div class="ttdoc">Буквы столбца по номеру.</div><div class="ttdef"><b>Definition</b> <a href="formula_8cpp_source.html#l00191">formula.cpp:191</a></div></div>
+<div class="ttc" id="astructredclean_1_1CellPos_html"><div class="ttname"><a href="structredclean_1_1CellPos.html">redclean::CellPos</a></div><div class="ttdoc">Позиция ячейки, нумерация с 1.</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00019">formula.hpp:20</a></div></div>
+<div class="ttc" id="astructredclean_1_1CellPos_html_aabdd2ea57285782cdb5fb4b85cf49cac"><div class="ttname"><a href="structredclean_1_1CellPos.html#aabdd2ea57285782cdb5fb4b85cf49cac">redclean::CellPos::operator==</a></div><div class="ttdeci">friend bool operator==(const CellPos &amp;a, const CellPos &amp;b)</div><div class="ttdoc">Покомпонентное сравнение.</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00025">formula.hpp:25</a></div></div>
+<div class="ttc" id="astructredclean_1_1CellPos_html_acc402e7739e41ab7a5c06b4840c71995"><div class="ttname"><a href="structredclean_1_1CellPos.html#acc402e7739e41ab7a5c06b4840c71995">redclean::CellPos::col</a></div><div class="ttdeci">std::uint32_t col</div><div class="ttdoc">Номер столбца.</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00022">formula.hpp:22</a></div></div>
+<div class="ttc" id="astructredclean_1_1CellPos_html_ad905efb45508b28995b5de1bbd07ccf3"><div class="ttname"><a href="structredclean_1_1CellPos.html#ad905efb45508b28995b5de1bbd07ccf3">redclean::CellPos::row</a></div><div class="ttdeci">std::uint32_t row</div><div class="ttdoc">Номер строки.</div><div class="ttdef"><b>Definition</b> <a href="formula_8hpp_source.html#l00021">formula.hpp:21</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="formula_8hpp.html">formula.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Класс redclean::XlsxPackage</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classredclean_1_1XlsxPackage.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classredclean_1_1XlsxPackage-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс redclean::XlsxPackage</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Книга .xlsx как набор частей.  
+ <a href="classredclean_1_1XlsxPackage.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="xlsx__package_8hpp_source.html">xlsx_package.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a17ac8848f96b8f23917c94706d634539" id="r_a17ac8848f96b8f23917c94706d634539"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1XlsxPackage.html#a17ac8848f96b8f23917c94706d634539">XlsxPackage</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:a17ac8848f96b8f23917c94706d634539"><td class="mdescLeft">&#160;</td><td class="mdescRight">Открывает книгу.  <br /></td></tr>
+<tr class="separator:a17ac8848f96b8f23917c94706d634539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a012937dffcee12eea7696e8d68727811" id="r_a012937dffcee12eea7696e8d68727811"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="structredclean_1_1SheetInfo.html">SheetInfo</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1XlsxPackage.html#a012937dffcee12eea7696e8d68727811">worksheets</a> () const</td></tr>
+<tr class="memdesc:a012937dffcee12eea7696e8d68727811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Рабочие листы в порядке книги.  <br /></td></tr>
+<tr class="separator:a012937dffcee12eea7696e8d68727811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fce440017c2d76a738733dcd8b1bd86" id="r_a2fce440017c2d76a738733dcd8b1bd86"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structredclean_1_1SheetInfo.html">SheetInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1XlsxPackage.html#a2fce440017c2d76a738733dcd8b1bd86">findWorksheet</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:a2fce440017c2d76a738733dcd8b1bd86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ищет рабочий лист по имени.  <br /></td></tr>
+<tr class="separator:a2fce440017c2d76a738733dcd8b1bd86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add9878421ee88977d025de31dd943f9f" id="r_add9878421ee88977d025de31dd943f9f"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1XlsxPackage.html#add9878421ee88977d025de31dd943f9f">stylesPath</a> () const</td></tr>
+<tr class="memdesc:add9878421ee88977d025de31dd943f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Путь части стилей; пусто, если её нет.  <br /></td></tr>
+<tr class="separator:add9878421ee88977d025de31dd943f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d9b6b7db63f45013413360aa7b71d1" id="r_ae7d9b6b7db63f45013413360aa7b71d1"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1XlsxPackage.html#ae7d9b6b7db63f45013413360aa7b71d1">themePath</a> () const</td></tr>
+<tr class="memdesc:ae7d9b6b7db63f45013413360aa7b71d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Путь части темы; пусто, если её нет.  <br /></td></tr>
+<tr class="separator:ae7d9b6b7db63f45013413360aa7b71d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7f48f57d388b0c5f21af784a83ddfa8" id="r_ad7f48f57d388b0c5f21af784a83ddfa8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">read</a> (const std::string &amp;partPath) const</td></tr>
+<tr class="memdesc:ad7f48f57d388b0c5f21af784a83ddfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Содержимое части с учётом изменений.  <br /></td></tr>
+<tr class="separator:ad7f48f57d388b0c5f21af784a83ddfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2f0eab4d15a78f40c1f00adb120f0fc" id="r_aa2f0eab4d15a78f40c1f00adb120f0fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1XlsxPackage.html#aa2f0eab4d15a78f40c1f00adb120f0fc">write</a> (const std::string &amp;partPath, std::string data)</td></tr>
+<tr class="memdesc:aa2f0eab4d15a78f40c1f00adb120f0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Заменяет или добавляет часть.  <br /></td></tr>
+<tr class="separator:aa2f0eab4d15a78f40c1f00adb120f0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49444583680116e02629bfcb3a021468" id="r_a49444583680116e02629bfcb3a021468"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1XlsxPackage.html#a49444583680116e02629bfcb3a021468">removeCalcChain</a> ()</td></tr>
+<tr class="memdesc:a49444583680116e02629bfcb3a021468"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаляет <code>xl/calcChain.xml</code> вместе со ссылками на него.  <br /></td></tr>
+<tr class="separator:a49444583680116e02629bfcb3a021468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafa959600474ee5ba529899dadd70cb7" id="r_aafa959600474ee5ba529899dadd70cb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1XlsxPackage.html#aafa959600474ee5ba529899dadd70cb7">saveAs</a> (const std::string &amp;path, <a class="el" href="classredclean_1_1ThreadPool.html">ThreadPool</a> &amp;pool, int compressionLevel) const</td></tr>
+<tr class="memdesc:aafa959600474ee5ba529899dadd70cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохраняет книгу.  <br /></td></tr>
+<tr class="separator:aafa959600474ee5ba529899dadd70cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Книга .xlsx как набор частей. </p>
+<p>Разбирает <code>_rels/</code>.rels, <code>workbook.xml</code> и его связи, чтобы найти листы, стили, тему и цепочку вычислений. Изменённые части хранятся в памяти до <a class="el" href="classredclean_1_1XlsxPackage.html#aafa959600474ee5ba529899dadd70cb7">saveAs</a>; все остальные при сохранении копируются байт в байт.</p>
+<p>Потокобезопасность: <a class="el" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">read</a> можно вызывать одновременно из разных потоков, если в это время никто не вызывает изменяющие методы; остальные методы — из одного потока. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8hpp_source.html">xlsx_package.hpp</a> строка <a class="el" href="xlsx__package_8hpp_source.html#l00035">35</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a17ac8848f96b8f23917c94706d634539" name="a17ac8848f96b8f23917c94706d634539"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ac8848f96b8f23917c94706d634539">&#9670;&#160;</a></span>XlsxPackage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">redclean::XlsxPackage::XlsxPackage </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Открывает книгу. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь к файлу в UTF-8. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Если файла нет, он не zip-архив или не книга Excel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8cpp_source.html">xlsx_package.cpp</a> строка <a class="el" href="xlsx__package_8cpp_source.html#l00132">132</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="a2fce440017c2d76a738733dcd8b1bd86" name="a2fce440017c2d76a738733dcd8b1bd86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fce440017c2d76a738733dcd8b1bd86">&#9670;&#160;</a></span>findWorksheet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structredclean_1_1SheetInfo.html">SheetInfo</a> &gt; redclean::XlsxPackage::findWorksheet </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ищет рабочий лист по имени. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Имя листа. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Лист или <code>std::nullopt</code>, если такого нет. </dd></dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Если лист с таким именем есть, но это не лист с ячейками (например, лист диаграммы). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8cpp_source.html">xlsx_package.cpp</a> строка <a class="el" href="xlsx__package_8cpp_source.html#l00162">162</a></p>
+
+</div>
+</div>
+<a id="ad7f48f57d388b0c5f21af784a83ddfa8" name="ad7f48f57d388b0c5f21af784a83ddfa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7f48f57d388b0c5f21af784a83ddfa8">&#9670;&#160;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string redclean::XlsxPackage::read </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>partPath</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Содержимое части с учётом изменений. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">partPath</td><td>Путь части в архиве. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Содержимое или пустая строка, если части нет. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8cpp_source.html">xlsx_package.cpp</a> строка <a class="el" href="xlsx__package_8cpp_source.html#l00171">171</a></p>
+
+</div>
+</div>
+<a id="a49444583680116e02629bfcb3a021468" name="a49444583680116e02629bfcb3a021468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49444583680116e02629bfcb3a021468">&#9670;&#160;</a></span>removeCalcChain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool redclean::XlsxPackage::removeCalcChain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удаляет <code>xl/calcChain.xml</code> вместе со ссылками на него. </p>
+<p>Нужно, когда удалялись формулы: устаревшая цепочка вычислений заставила бы Excel сообщить о повреждении. Excel пересоздаст её при открытии. </p><dl class="section return"><dt>Возвращает</dt><dd><code>true</code>, если цепочка была и удалена. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8cpp_source.html">xlsx_package.cpp</a> строка <a class="el" href="xlsx__package_8cpp_source.html#l00185">185</a></p>
+
+</div>
+</div>
+<a id="aafa959600474ee5ba529899dadd70cb7" name="aafa959600474ee5ba529899dadd70cb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafa959600474ee5ba529899dadd70cb7">&#9670;&#160;</a></span>saveAs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::XlsxPackage::saveAs </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classredclean_1_1ThreadPool.html">ThreadPool</a> &amp;&#160;</td>
+          <td class="paramname"><em>pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>compressionLevel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сохраняет книгу. </p>
+<p>Изменённые части режутся на куски по 4 МиБ, которые сжимаются параллельно в <code>pool</code>; неизменённые копируются из исходного архива без пересжатия. Порядок записей исходного архива сохраняется. </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь в UTF-8; может совпадать с исходным. </td></tr>
+    <tr><td class="paramname">pool</td><td>Пул потоков для сжатия. </td></tr>
+    <tr><td class="paramname">compressionLevel</td><td>Уровень deflate 1..9. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>При ошибке записи. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8cpp_source.html">xlsx_package.cpp</a> строка <a class="el" href="xlsx__package_8cpp_source.html#l00217">217</a></p>
+
+</div>
+</div>
+<a id="add9878421ee88977d025de31dd943f9f" name="add9878421ee88977d025de31dd943f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add9878421ee88977d025de31dd943f9f">&#9670;&#160;</a></span>stylesPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; redclean::XlsxPackage::stylesPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Путь части стилей; пусто, если её нет. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8hpp_source.html">xlsx_package.hpp</a> строка <a class="el" href="xlsx__package_8hpp_source.html#l00058">58</a></p>
+
+</div>
+</div>
+<a id="ae7d9b6b7db63f45013413360aa7b71d1" name="ae7d9b6b7db63f45013413360aa7b71d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d9b6b7db63f45013413360aa7b71d1">&#9670;&#160;</a></span>themePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string &amp; redclean::XlsxPackage::themePath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Путь части темы; пусто, если её нет. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8hpp_source.html">xlsx_package.hpp</a> строка <a class="el" href="xlsx__package_8hpp_source.html#l00060">60</a></p>
+
+</div>
+</div>
+<a id="a012937dffcee12eea7696e8d68727811" name="a012937dffcee12eea7696e8d68727811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a012937dffcee12eea7696e8d68727811">&#9670;&#160;</a></span>worksheets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="structredclean_1_1SheetInfo.html">SheetInfo</a> &gt; &amp; redclean::XlsxPackage::worksheets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Рабочие листы в порядке книги. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8hpp_source.html">xlsx_package.hpp</a> строка <a class="el" href="xlsx__package_8hpp_source.html#l00046">46</a></p>
+
+</div>
+</div>
+<a id="aa2f0eab4d15a78f40c1f00adb120f0fc" name="aa2f0eab4d15a78f40c1f00adb120f0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f0eab4d15a78f40c1f00adb120f0fc">&#9670;&#160;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::XlsxPackage::write </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>partPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Заменяет или добавляет часть. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">partPath</td><td>Путь части в архиве. </td></tr>
+    <tr><td class="paramname">data</td><td>Новое содержимое. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="xlsx__package_8cpp_source.html">xlsx_package.cpp</a> строка <a class="el" href="xlsx__package_8cpp_source.html#l00179">179</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/<a class="el" href="xlsx__package_8hpp_source.html">xlsx_package.hpp</a></li>
+<li>src/<a class="el" href="xlsx__package_8cpp_source.html">xlsx_package.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceredclean.html">redclean</a></li><li class="navelem"><a class="el" href="classredclean_1_1XlsxPackage.html">XlsxPackage</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

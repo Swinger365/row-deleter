@@ -1,0 +1,23 @@
+<map id="src/styles.hpp" name="src/styles.hpp">
+<area shape="rect" id="Node000001" title="Анализ xl/styles.xml: какие стили ячеек считаются красными." alt="" coords="251,5,363,31"/>
+<area shape="rect" id="Node000002" href="$color_8hpp.html" title="Цвета: разбор, преобразования RGB/HSV/HLS, палитра Excel и критерий «красного»." alt="" coords="227,79,309,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="303,32,283,68,278,65,298,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,61,177"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="282,33,181,81,65,147,62,143,179,76,279,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="85,152,152,177"/>
+<area shape="poly" id="edge10_Node000001_Node000004" title=" " alt="" coords="289,33,216,81,142,144,139,140,213,77,286,29"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="397,152,456,177"/>
+<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="319,29,410,140,406,143,314,33"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="481,152,543,177"/>
+<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="324,29,426,102,484,142,481,146,422,106,321,33"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="435,79,506,104"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="334,28,433,71,430,76,332,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="231,107,75,154,73,148,230,101"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="245,106,157,148,154,144,243,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="176,152,251,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="261,106,233,143,228,140,257,103"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="295,102,389,144,387,149,292,106"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="275,152,373,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="279,103,309,140,304,143,275,106"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="308,101,468,148,467,153,306,107"/>
+</map>

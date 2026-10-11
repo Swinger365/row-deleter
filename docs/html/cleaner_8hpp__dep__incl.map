@@ -1,0 +1,12 @@
+<map id="src/cleaner.hpp" name="src/cleaner.hpp">
+<area shape="rect" id="Node000001" title="Верхнеуровневая операция: очистка красных строк в книге." alt="" coords="133,5,253,31"/>
+<area shape="rect" id="Node000002" href="$cleaner_8cpp.html" title="Реализация cleanWorkbook: параллельные этапы обработки книги." alt="" coords="5,79,124,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,40,87,81,84,76,159,35"/>
+<area shape="rect" id="Node000003" href="$cli_8hpp.html" title="Командная строка программы." alt="" coords="149,79,237,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,44,195,79,190,79,190,44"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title="Точка входа консольной утилиты xlsx_red_cleaner." alt="" coords="221,152,327,177"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="219,38,236,56,251,77,267,117,275,151,270,152,262,119,246,80,232,60,215,42"/>
+<area shape="rect" id="Node000004" href="$cli_8cpp.html" title="Разбор аргументов командной строки и текст справки." alt="" coords="111,152,197,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="182,118,163,153,158,151,177,115"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="218,111,262,150,259,154,214,115"/>
+</map>

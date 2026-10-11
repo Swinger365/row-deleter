@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Исходный файл tests/test_helpers.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('test__helpers_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">test_helpers.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="test__helpers_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;pugixml.hpp&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespacetestutil.html">   16</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetestutil.html">testutil</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>fs = std::filesystem;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classtestutil_1_1TempDir.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="classtestutil_1_1TempDir.html">TempDir</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classtestutil_1_1TempDir.html#abc2d2076842656e62030ffc410e7ee71">   25</a></span>    <a class="code hl_function" href="classtestutil_1_1TempDir.html#abc2d2076842656e62030ffc410e7ee71">TempDir</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="classtestutil_1_1TempDir.html">~TempDir</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="classtestutil_1_1TempDir.html#abc2d2076842656e62030ffc410e7ee71">TempDir</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtestutil_1_1TempDir.html">TempDir</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classtestutil_1_1TempDir.html">TempDir</a>&amp; operator=(<span class="keyword">const</span> <a class="code hl_class" href="classtestutil_1_1TempDir.html">TempDir</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classtestutil_1_1TempDir.html#a85c22b9f4278ab3f57101781da2a565b">   31</a></span>    fs::path <a class="code hl_function" href="classtestutil_1_1TempDir.html#a85c22b9f4278ab3f57101781da2a565b">file</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_path / name; }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    fs::path m_path;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="};">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021">   38</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021">Style</a> : <span class="keywordtype">unsigned</span> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a56e598c88c94c790652a5617f42b15a6">   39</a></span>    <a class="code hl_enumvalue" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a56e598c88c94c790652a5617f42b15a6">kDefault</a> = 0,         </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a74df7ab9fe4830f1b87cea36b7aa412a">   40</a></span>    <a class="code hl_enumvalue" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a74df7ab9fe4830f1b87cea36b7aa412a">kRedFill</a> = 1,         </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ad700c4a9ed6ab3f2dde6e0cf5b8483b3">   41</a></span>    <a class="code hl_enumvalue" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ad700c4a9ed6ab3f2dde6e0cf5b8483b3">kGreenFill</a> = 2,       </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a6052886b5f4cac014ab455307be282e5">   42</a></span>    <a class="code hl_enumvalue" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a6052886b5f4cac014ab455307be282e5">kRedFont</a> = 3,         </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021adbf60ddc839cb6055b0f96bfbbc6cb4a">   43</a></span>    <a class="code hl_enumvalue" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021adbf60ddc839cb6055b0f96bfbbc6cb4a">kThemeOrange</a> = 4,     </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a9970f7fa19658011a286c4045bc8cb88">   44</a></span>    <a class="code hl_enumvalue" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a9970f7fa19658011a286c4045bc8cb88">kIndexedRed</a> = 5,      </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ae913aa9ec1fd62a8f3dc612b200f6bf0">   45</a></span>    <a class="code hl_enumvalue" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ae913aa9ec1fd62a8f3dc612b200f6bf0">kDarkRedFill</a> = 6,     </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ae17fce1aea049ed2d0d1994b60659a59">   46</a></span>    <a class="code hl_enumvalue" href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ae17fce1aea049ed2d0d1994b60659a59">kStyleCount</a> = 7,      </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespacetestutil.html#a289aeea5f6f01afe3def0150e59b80ee">   50</a></span>std::string <a class="code hl_function" href="namespacetestutil.html#a289aeea5f6f01afe3def0150e59b80ee">testStylesXml</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="namespacetestutil.html#aa6311e10dd690266ebfcd583c2486f91">   61</a></span>std::string <a class="code hl_function" href="namespacetestutil.html#aa6311e10dd690266ebfcd583c2486f91">cell</a>(<span class="keyword">const</span> std::string&amp; ref, <span class="keywordtype">unsigned</span> style, <span class="keyword">const</span> std::string&amp; value = <span class="stringliteral">&quot;&quot;</span>, <span class="keyword">const</span> std::string&amp; type = <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                 <span class="keyword">const</span> std::string&amp; formula = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="namespacetestutil.html#aa059a22048495c43f0c64a9e05a68ffa">   70</a></span>std::string <a class="code hl_function" href="namespacetestutil.html#aa059a22048495c43f0c64a9e05a68ffa">row</a>(<span class="keywordtype">unsigned</span> number, <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; cells);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="namespacetestutil.html#a3fae05efa184b37a1bca3420ae7ee8f2">   77</a></span>std::string <a class="code hl_function" href="namespacetestutil.html#a3fae05efa184b37a1bca3420ae7ee8f2">worksheetXml</a>(<span class="keyword">const</span> std::string&amp; sheetDataInner);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00080" data-start="{" data-end="};">
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="structtestutil_1_1FixtureSheet.html">   80</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtestutil_1_1FixtureSheet.html">FixtureSheet</a></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structtestutil_1_1FixtureSheet.html#a5ea575d19374d12b912bf8899e8765e3">   82</a></span>    std::string <a class="code hl_variable" href="structtestutil_1_1FixtureSheet.html#a5ea575d19374d12b912bf8899e8765e3">name</a>;              </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structtestutil_1_1FixtureSheet.html#ab78f95e0bc79be03a64a71a6ea0fe6dd">   83</a></span>    std::string <a class="code hl_variable" href="structtestutil_1_1FixtureSheet.html#ab78f95e0bc79be03a64a71a6ea0fe6dd">sheetDataInner</a>;    </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
+</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00087" data-start="{" data-end="};">
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structtestutil_1_1FixtureOptions.html">   87</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtestutil_1_1FixtureOptions.html">FixtureOptions</a></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>{</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structtestutil_1_1FixtureOptions.html#ad80b5f7a7e53a24191b0de98a568fa04">   89</a></span>    std::string <a class="code hl_variable" href="structtestutil_1_1FixtureOptions.html#ad80b5f7a7e53a24191b0de98a568fa04">stylesXml</a> = <a class="code hl_function" href="namespacetestutil.html#a289aeea5f6f01afe3def0150e59b80ee">testStylesXml</a>();    </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structtestutil_1_1FixtureOptions.html#a90551598f18809162b84fa4ac9045057">   90</a></span>    std::string <a class="code hl_variable" href="structtestutil_1_1FixtureOptions.html#a90551598f18809162b84fa4ac9045057">themeXml</a>;                       </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structtestutil_1_1FixtureOptions.html#a76c12b7782ec70cb940b26150d2b1957">   91</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structtestutil_1_1FixtureOptions.html#a76c12b7782ec70cb940b26150d2b1957">withCalcChain</a> = <span class="keyword">false</span>;                 </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
+</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="namespacetestutil.html#ad6912d1890ca0b44046d0d58c6587746">  100</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespacetestutil.html#ad6912d1890ca0b44046d0d58c6587746">writeWorkbook</a>(<span class="keyword">const</span> fs::path&amp; path, <span class="keyword">const</span> std::vector&lt;FixtureSheet&gt;&amp; sheets, <span class="keyword">const</span> <a class="code hl_struct" href="structtestutil_1_1FixtureOptions.html">FixtureOptions</a>&amp; options = {});</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="namespacetestutil.html#a9b43e28c62139d77ea6cf08db3f5b7b3">  109</a></span>std::string <a class="code hl_function" href="namespacetestutil.html#a9b43e28c62139d77ea6cf08db3f5b7b3">readPart</a>(<span class="keyword">const</span> fs::path&amp; xlsx, <span class="keyword">const</span> std::string&amp; partPath);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="namespacetestutil.html#a9b4d29dbaee66569073d9cd3f52ac238">  112</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetestutil.html#a9b4d29dbaee66569073d9cd3f52ac238">hasPart</a>(<span class="keyword">const</span> fs::path&amp; xlsx, <span class="keyword">const</span> std::string&amp; partPath);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="foldopen" id="foldopen00115" data-start="{" data-end="};">
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="structtestutil_1_1CellView.html">  115</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtestutil_1_1CellView.html">CellView</a></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="structtestutil_1_1CellView.html#adcab5018ca70cef80b2f78134b1c3d13">  117</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structtestutil_1_1CellView.html#adcab5018ca70cef80b2f78134b1c3d13">exists</a> = <span class="keyword">false</span>;                    </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="structtestutil_1_1CellView.html#a481866a31962043a324fe2960dcedbd1">  118</a></span>    std::optional&lt;unsigned&gt; <a class="code hl_variable" href="structtestutil_1_1CellView.html#a481866a31962043a324fe2960dcedbd1">style</a>;          </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="structtestutil_1_1CellView.html#a1606ba6cccc314bffbe9d17e8a1fba52">  119</a></span>    std::string <a class="code hl_variable" href="structtestutil_1_1CellView.html#a1606ba6cccc314bffbe9d17e8a1fba52">type</a>;                       </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="structtestutil_1_1CellView.html#a4e045ed9d4411fed4de0df2c1f82b1ca">  120</a></span>    std::optional&lt;std::string&gt; <a class="code hl_variable" href="structtestutil_1_1CellView.html#a4e045ed9d4411fed4de0df2c1f82b1ca">value</a>;       </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="structtestutil_1_1CellView.html#ada5d33ad2d7789c57bca42c2a841535f">  121</a></span>    std::optional&lt;std::string&gt; <a class="code hl_variable" href="structtestutil_1_1CellView.html#ada5d33ad2d7789c57bca42c2a841535f">formula</a>;     </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="structtestutil_1_1CellView.html#a35c27b049a571b16278805d417a46bf6">  122</a></span>    std::string <a class="code hl_variable" href="structtestutil_1_1CellView.html#a35c27b049a571b16278805d417a46bf6">formulaType</a>;                </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="structtestutil_1_1CellView.html#a8061ff44845b724fe2aa960bd323541b">  123</a></span>    std::string <a class="code hl_variable" href="structtestutil_1_1CellView.html#a8061ff44845b724fe2aa960bd323541b">sharedIndex</a>;                </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>};</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="namespacetestutil.html#ab180f4ce267963b1f91a21a083ec071b">  132</a></span><a class="code hl_struct" href="structtestutil_1_1CellView.html">CellView</a> <a class="code hl_function" href="namespacetestutil.html#ab180f4ce267963b1f91a21a083ec071b">findCell</a>(<span class="keyword">const</span> std::string&amp; sheetXml, <span class="keyword">const</span> std::string&amp; ref);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}    <span class="comment">// namespace testutil</span></div>
+</div>
+<div class="ttc" id="aclasstestutil_1_1TempDir_html"><div class="ttname"><a href="classtestutil_1_1TempDir.html">testutil::TempDir</a></div><div class="ttdoc">Временная папка, удаляемая вместе с содержимым в деструкторе.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00021">test_helpers.hpp:22</a></div></div>
+<div class="ttc" id="aclasstestutil_1_1TempDir_html_a85c22b9f4278ab3f57101781da2a565b"><div class="ttname"><a href="classtestutil_1_1TempDir.html#a85c22b9f4278ab3f57101781da2a565b">testutil::TempDir::file</a></div><div class="ttdeci">fs::path file(const std::string &amp;name) const</div><div class="ttdoc">Путь к файлу name внутри папки.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00031">test_helpers.hpp:31</a></div></div>
+<div class="ttc" id="aclasstestutil_1_1TempDir_html_abc2d2076842656e62030ffc410e7ee71"><div class="ttname"><a href="classtestutil_1_1TempDir.html#abc2d2076842656e62030ffc410e7ee71">testutil::TempDir::TempDir</a></div><div class="ttdeci">TempDir()</div><div class="ttdoc">Создаёт папку с уникальным именем во временном каталоге системы.</div></div>
+<div class="ttc" id="anamespacetestutil_html"><div class="ttname"><a href="namespacetestutil.html">testutil</a></div><div class="ttdoc">Вспомогательные средства тестов.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00016">test_helpers.hpp:16</a></div></div>
+<div class="ttc" id="anamespacetestutil_html_a289aeea5f6f01afe3def0150e59b80ee"><div class="ttname"><a href="namespacetestutil.html#a289aeea5f6f01afe3def0150e59b80ee">testutil::testStylesXml</a></div><div class="ttdeci">std::string testStylesXml()</div><div class="ttdoc">styles.xml со стилями из перечисления Style.</div></div>
+<div class="ttc" id="anamespacetestutil_html_a3fae05efa184b37a1bca3420ae7ee8f2"><div class="ttname"><a href="namespacetestutil.html#a3fae05efa184b37a1bca3420ae7ee8f2">testutil::worksheetXml</a></div><div class="ttdeci">std::string worksheetXml(const std::string &amp;sheetDataInner)</div><div class="ttdoc">XML листа целиком.</div></div>
+<div class="ttc" id="anamespacetestutil_html_a9b43e28c62139d77ea6cf08db3f5b7b3"><div class="ttname"><a href="namespacetestutil.html#a9b43e28c62139d77ea6cf08db3f5b7b3">testutil::readPart</a></div><div class="ttdeci">std::string readPart(const fs::path &amp;xlsx, const std::string &amp;partPath)</div><div class="ttdoc">Читает часть из .xlsx.</div></div>
+<div class="ttc" id="anamespacetestutil_html_a9b4d29dbaee66569073d9cd3f52ac238"><div class="ttname"><a href="namespacetestutil.html#a9b4d29dbaee66569073d9cd3f52ac238">testutil::hasPart</a></div><div class="ttdeci">bool hasPart(const fs::path &amp;xlsx, const std::string &amp;partPath)</div><div class="ttdoc">Есть ли часть partPath в книге xlsx.</div></div>
+<div class="ttc" id="anamespacetestutil_html_aa059a22048495c43f0c64a9e05a68ffa"><div class="ttname"><a href="namespacetestutil.html#aa059a22048495c43f0c64a9e05a68ffa">testutil::row</a></div><div class="ttdeci">std::string row(unsigned number, const std::vector&lt; std::string &gt; &amp;cells)</div><div class="ttdoc">XML строки &lt;row&gt;.</div></div>
+<div class="ttc" id="anamespacetestutil_html_aa6311e10dd690266ebfcd583c2486f91"><div class="ttname"><a href="namespacetestutil.html#aa6311e10dd690266ebfcd583c2486f91">testutil::cell</a></div><div class="ttdeci">std::string cell(const std::string &amp;ref, unsigned style, const std::string &amp;value=&quot;&quot;, const std::string &amp;type=&quot;&quot;, const std::string &amp;formula=&quot;&quot;)</div><div class="ttdoc">XML ячейки &lt;c&gt;.</div></div>
+<div class="ttc" id="anamespacetestutil_html_ab180f4ce267963b1f91a21a083ec071b"><div class="ttname"><a href="namespacetestutil.html#ab180f4ce267963b1f91a21a083ec071b">testutil::findCell</a></div><div class="ttdeci">CellView findCell(const std::string &amp;sheetXml, const std::string &amp;ref)</div><div class="ttdoc">Находит ячейку в XML листа.</div></div>
+<div class="ttc" id="anamespacetestutil_html_ad6912d1890ca0b44046d0d58c6587746"><div class="ttname"><a href="namespacetestutil.html#ad6912d1890ca0b44046d0d58c6587746">testutil::writeWorkbook</a></div><div class="ttdeci">void writeWorkbook(const fs::path &amp;path, const std::vector&lt; FixtureSheet &gt; &amp;sheets, const FixtureOptions &amp;options={})</div><div class="ttdoc">Создаёт настоящий .xlsx.</div></div>
+<div class="ttc" id="anamespacetestutil_html_af39864bc329e30de4afcc5ae5a14e021"><div class="ttname"><a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021">testutil::Style</a></div><div class="ttdeci">Style</div><div class="ttdoc">Индексы стилей (cellXfs) в testStylesXml().</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00038">test_helpers.hpp:38</a></div></div>
+<div class="ttc" id="anamespacetestutil_html_af39864bc329e30de4afcc5ae5a14e021a56e598c88c94c790652a5617f42b15a6"><div class="ttname"><a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a56e598c88c94c790652a5617f42b15a6">testutil::kDefault</a></div><div class="ttdeci">@ kDefault</div><div class="ttdoc">Без заливки.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00039">test_helpers.hpp:39</a></div></div>
+<div class="ttc" id="anamespacetestutil_html_af39864bc329e30de4afcc5ae5a14e021a6052886b5f4cac014ab455307be282e5"><div class="ttname"><a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a6052886b5f4cac014ab455307be282e5">testutil::kRedFont</a></div><div class="ttdeci">@ kRedFont</div><div class="ttdoc">Красный шрифт без заливки.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00042">test_helpers.hpp:42</a></div></div>
+<div class="ttc" id="anamespacetestutil_html_af39864bc329e30de4afcc5ae5a14e021a74df7ab9fe4830f1b87cea36b7aa412a"><div class="ttname"><a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a74df7ab9fe4830f1b87cea36b7aa412a">testutil::kRedFill</a></div><div class="ttdeci">@ kRedFill</div><div class="ttdoc">Заливка FFFF0000.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00040">test_helpers.hpp:40</a></div></div>
+<div class="ttc" id="anamespacetestutil_html_af39864bc329e30de4afcc5ae5a14e021a9970f7fa19658011a286c4045bc8cb88"><div class="ttname"><a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021a9970f7fa19658011a286c4045bc8cb88">testutil::kIndexedRed</a></div><div class="ttdeci">@ kIndexedRed</div><div class="ttdoc">Заливка indexed=10.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00044">test_helpers.hpp:44</a></div></div>
+<div class="ttc" id="anamespacetestutil_html_af39864bc329e30de4afcc5ae5a14e021ad700c4a9ed6ab3f2dde6e0cf5b8483b3"><div class="ttname"><a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ad700c4a9ed6ab3f2dde6e0cf5b8483b3">testutil::kGreenFill</a></div><div class="ttdeci">@ kGreenFill</div><div class="ttdoc">Заливка FF00FF00.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00041">test_helpers.hpp:41</a></div></div>
+<div class="ttc" id="anamespacetestutil_html_af39864bc329e30de4afcc5ae5a14e021adbf60ddc839cb6055b0f96bfbbc6cb4a"><div class="ttname"><a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021adbf60ddc839cb6055b0f96bfbbc6cb4a">testutil::kThemeOrange</a></div><div class="ttdeci">@ kThemeOrange</div><div class="ttdoc">Заливка theme=5 (accent2, в теме по умолчанию оранжевый).</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00043">test_helpers.hpp:43</a></div></div>
+<div class="ttc" id="anamespacetestutil_html_af39864bc329e30de4afcc5ae5a14e021ae17fce1aea049ed2d0d1994b60659a59"><div class="ttname"><a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ae17fce1aea049ed2d0d1994b60659a59">testutil::kStyleCount</a></div><div class="ttdeci">@ kStyleCount</div><div class="ttdoc">Число стилей.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00046">test_helpers.hpp:46</a></div></div>
+<div class="ttc" id="anamespacetestutil_html_af39864bc329e30de4afcc5ae5a14e021ae913aa9ec1fd62a8f3dc612b200f6bf0"><div class="ttname"><a href="namespacetestutil.html#af39864bc329e30de4afcc5ae5a14e021ae913aa9ec1fd62a8f3dc612b200f6bf0">testutil::kDarkRedFill</a></div><div class="ttdeci">@ kDarkRedFill</div><div class="ttdoc">Заливка FFC00000.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00045">test_helpers.hpp:45</a></div></div>
+<div class="ttc" id="astructtestutil_1_1CellView_html"><div class="ttname"><a href="structtestutil_1_1CellView.html">testutil::CellView</a></div><div class="ttdoc">Разобранная ячейка листа.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00115">test_helpers.hpp:116</a></div></div>
+<div class="ttc" id="astructtestutil_1_1CellView_html_a1606ba6cccc314bffbe9d17e8a1fba52"><div class="ttname"><a href="structtestutil_1_1CellView.html#a1606ba6cccc314bffbe9d17e8a1fba52">testutil::CellView::type</a></div><div class="ttdeci">std::string type</div><div class="ttdoc">Атрибут t.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00119">test_helpers.hpp:119</a></div></div>
+<div class="ttc" id="astructtestutil_1_1CellView_html_a35c27b049a571b16278805d417a46bf6"><div class="ttname"><a href="structtestutil_1_1CellView.html#a35c27b049a571b16278805d417a46bf6">testutil::CellView::formulaType</a></div><div class="ttdeci">std::string formulaType</div><div class="ttdoc">Атрибут t у &lt;f&gt;.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00122">test_helpers.hpp:122</a></div></div>
+<div class="ttc" id="astructtestutil_1_1CellView_html_a481866a31962043a324fe2960dcedbd1"><div class="ttname"><a href="structtestutil_1_1CellView.html#a481866a31962043a324fe2960dcedbd1">testutil::CellView::style</a></div><div class="ttdeci">std::optional&lt; unsigned &gt; style</div><div class="ttdoc">Атрибут s.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00118">test_helpers.hpp:118</a></div></div>
+<div class="ttc" id="astructtestutil_1_1CellView_html_a4e045ed9d4411fed4de0df2c1f82b1ca"><div class="ttname"><a href="structtestutil_1_1CellView.html#a4e045ed9d4411fed4de0df2c1f82b1ca">testutil::CellView::value</a></div><div class="ttdeci">std::optional&lt; std::string &gt; value</div><div class="ttdoc">Содержимое &lt;v&gt;.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00120">test_helpers.hpp:120</a></div></div>
+<div class="ttc" id="astructtestutil_1_1CellView_html_a8061ff44845b724fe2aa960bd323541b"><div class="ttname"><a href="structtestutil_1_1CellView.html#a8061ff44845b724fe2aa960bd323541b">testutil::CellView::sharedIndex</a></div><div class="ttdeci">std::string sharedIndex</div><div class="ttdoc">Атрибут si у &lt;f&gt;.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00123">test_helpers.hpp:123</a></div></div>
+<div class="ttc" id="astructtestutil_1_1CellView_html_ada5d33ad2d7789c57bca42c2a841535f"><div class="ttname"><a href="structtestutil_1_1CellView.html#ada5d33ad2d7789c57bca42c2a841535f">testutil::CellView::formula</a></div><div class="ttdeci">std::optional&lt; std::string &gt; formula</div><div class="ttdoc">Содержимое &lt;f&gt;.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00121">test_helpers.hpp:121</a></div></div>
+<div class="ttc" id="astructtestutil_1_1CellView_html_adcab5018ca70cef80b2f78134b1c3d13"><div class="ttname"><a href="structtestutil_1_1CellView.html#adcab5018ca70cef80b2f78134b1c3d13">testutil::CellView::exists</a></div><div class="ttdeci">bool exists</div><div class="ttdoc">Ячейка найдена.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00117">test_helpers.hpp:117</a></div></div>
+<div class="ttc" id="astructtestutil_1_1FixtureOptions_html"><div class="ttname"><a href="structtestutil_1_1FixtureOptions.html">testutil::FixtureOptions</a></div><div class="ttdoc">Параметры тестовой книги.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00087">test_helpers.hpp:88</a></div></div>
+<div class="ttc" id="astructtestutil_1_1FixtureOptions_html_a76c12b7782ec70cb940b26150d2b1957"><div class="ttname"><a href="structtestutil_1_1FixtureOptions.html#a76c12b7782ec70cb940b26150d2b1957">testutil::FixtureOptions::withCalcChain</a></div><div class="ttdeci">bool withCalcChain</div><div class="ttdoc">Добавить xl/calcChain.xml.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00091">test_helpers.hpp:91</a></div></div>
+<div class="ttc" id="astructtestutil_1_1FixtureOptions_html_a90551598f18809162b84fa4ac9045057"><div class="ttname"><a href="structtestutil_1_1FixtureOptions.html#a90551598f18809162b84fa4ac9045057">testutil::FixtureOptions::themeXml</a></div><div class="ttdeci">std::string themeXml</div><div class="ttdoc">Часть темы; пусто — без темы.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00090">test_helpers.hpp:90</a></div></div>
+<div class="ttc" id="astructtestutil_1_1FixtureOptions_html_ad80b5f7a7e53a24191b0de98a568fa04"><div class="ttname"><a href="structtestutil_1_1FixtureOptions.html#ad80b5f7a7e53a24191b0de98a568fa04">testutil::FixtureOptions::stylesXml</a></div><div class="ttdeci">std::string stylesXml</div><div class="ttdoc">Часть стилей.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00089">test_helpers.hpp:89</a></div></div>
+<div class="ttc" id="astructtestutil_1_1FixtureSheet_html"><div class="ttname"><a href="structtestutil_1_1FixtureSheet.html">testutil::FixtureSheet</a></div><div class="ttdoc">Лист тестовой книги.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00080">test_helpers.hpp:81</a></div></div>
+<div class="ttc" id="astructtestutil_1_1FixtureSheet_html_a5ea575d19374d12b912bf8899e8765e3"><div class="ttname"><a href="structtestutil_1_1FixtureSheet.html#a5ea575d19374d12b912bf8899e8765e3">testutil::FixtureSheet::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Имя листа.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00082">test_helpers.hpp:82</a></div></div>
+<div class="ttc" id="astructtestutil_1_1FixtureSheet_html_ab78f95e0bc79be03a64a71a6ea0fe6dd"><div class="ttname"><a href="structtestutil_1_1FixtureSheet.html#ab78f95e0bc79be03a64a71a6ea0fe6dd">testutil::FixtureSheet::sheetDataInner</a></div><div class="ttdeci">std::string sheetDataInner</div><div class="ttdoc">Содержимое &lt;sheetData&gt;.</div><div class="ttdef"><b>Definition</b> <a href="test__helpers_8hpp_source.html#l00083">test_helpers.hpp:83</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_59425e443f801f1f2fd8bbe4959a3ccf.html">tests</a></li><li class="navelem"><a class="el" href="test__helpers_8hpp.html">test_helpers.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

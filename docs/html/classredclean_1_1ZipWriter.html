@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Класс redclean::ZipWriter</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classredclean_1_1ZipWriter.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="classredclean_1_1ZipWriter-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс redclean::ZipWriter</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Собирает новый архив в памяти и сохраняет его в файл.  
+ <a href="classredclean_1_1ZipWriter.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="zip__archive_8hpp_source.html">zip_archive.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1ZipWriter_1_1Impl.html">Impl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Состояние писателя miniz.  <a href="structredclean_1_1ZipWriter_1_1Impl.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ad7dc06e82f48a3fa0300e2ad157361ad" id="r_ad7dc06e82f48a3fa0300e2ad157361ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1ZipWriter.html#ad7dc06e82f48a3fa0300e2ad157361ad">ZipWriter</a> ()</td></tr>
+<tr class="memdesc:ad7dc06e82f48a3fa0300e2ad157361ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт пустой архив.  <br /></td></tr>
+<tr class="separator:ad7dc06e82f48a3fa0300e2ad157361ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8e6d6faa77d2f1414ae13b2d2bb827a" id="r_ad8e6d6faa77d2f1414ae13b2d2bb827a"><td class="memItemLeft" align="right" valign="top"><a id="ad8e6d6faa77d2f1414ae13b2d2bb827a" name="ad8e6d6faa77d2f1414ae13b2d2bb827a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ZipWriter</b> (const <a class="el" href="classredclean_1_1ZipWriter.html">ZipWriter</a> &amp;)=delete</td></tr>
+<tr class="separator:ad8e6d6faa77d2f1414ae13b2d2bb827a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3bcf66d2e8a7d87e7a63ad14fe2f28" id="r_abf3bcf66d2e8a7d87e7a63ad14fe2f28"><td class="memItemLeft" align="right" valign="top"><a id="abf3bcf66d2e8a7d87e7a63ad14fe2f28" name="abf3bcf66d2e8a7d87e7a63ad14fe2f28"></a>
+<a class="el" href="classredclean_1_1ZipWriter.html">ZipWriter</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classredclean_1_1ZipWriter.html">ZipWriter</a> &amp;)=delete</td></tr>
+<tr class="separator:abf3bcf66d2e8a7d87e7a63ad14fe2f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af36412a97e4872f79d7d648e067bd97e" id="r_af36412a97e4872f79d7d648e067bd97e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1ZipWriter.html#af36412a97e4872f79d7d648e067bd97e">add</a> (const std::string &amp;name, const std::string &amp;data, int level=6)</td></tr>
+<tr class="memdesc:af36412a97e4872f79d7d648e067bd97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сжимает и добавляет запись.  <br /></td></tr>
+<tr class="separator:af36412a97e4872f79d7d648e067bd97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9985e5c3495d4de4ea890a16064839b" id="r_ae9985e5c3495d4de4ea890a16064839b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1ZipWriter.html#ae9985e5c3495d4de4ea890a16064839b">addCompressed</a> (const std::string &amp;name, const <a class="el" href="structredclean_1_1CompressedEntry.html">CompressedEntry</a> &amp;entry)</td></tr>
+<tr class="memdesc:ae9985e5c3495d4de4ea890a16064839b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Добавляет заранее сжатую запись без повторного сжатия.  <br /></td></tr>
+<tr class="separator:ae9985e5c3495d4de4ea890a16064839b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1b11c6218c900004918b9aa5c18cdd0" id="r_af1b11c6218c900004918b9aa5c18cdd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1ZipWriter.html#af1b11c6218c900004918b9aa5c18cdd0">copyFrom</a> (const <a class="el" href="classredclean_1_1ZipReader.html">ZipReader</a> &amp;source, const std::string &amp;name)</td></tr>
+<tr class="memdesc:af1b11c6218c900004918b9aa5c18cdd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Копирует запись из другого архива как есть, без распаковки и повторного сжатия.  <br /></td></tr>
+<tr class="separator:af1b11c6218c900004918b9aa5c18cdd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5291a5ac86be5ab84a15fc07208ef1ea" id="r_a5291a5ac86be5ab84a15fc07208ef1ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classredclean_1_1ZipWriter.html#a5291a5ac86be5ab84a15fc07208ef1ea">finish</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:a5291a5ac86be5ab84a15fc07208ef1ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Завершает архив и сохраняет его.  <br /></td></tr>
+<tr class="separator:a5291a5ac86be5ab84a15fc07208ef1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Собирает новый архив в памяти и сохраняет его в файл. </p>
+<p>Не потокобезопасен; сжатие стоит выполнять заранее через <a class="el" href="namespaceredclean.html#a6a55b8f6f2a549113011a12123789d99">compressEntry</a> или <a class="el" href="namespaceredclean.html#a3ec30b7f56e486f03a9a1295c8a6243b">deflateChunk</a> в рабочих потоках и добавлять результат через <a class="el" href="classredclean_1_1ZipWriter.html#ae9985e5c3495d4de4ea890a16064839b">addCompressed</a>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8hpp_source.html">zip_archive.hpp</a> строка <a class="el" href="zip__archive_8hpp_source.html#l00105">105</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ad7dc06e82f48a3fa0300e2ad157361ad" name="ad7dc06e82f48a3fa0300e2ad157361ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7dc06e82f48a3fa0300e2ad157361ad">&#9670;&#160;</a></span>ZipWriter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">redclean::ZipWriter::ZipWriter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Создаёт пустой архив. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00159">159</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="af36412a97e4872f79d7d648e067bd97e" name="af36412a97e4872f79d7d648e067bd97e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36412a97e4872f79d7d648e067bd97e">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::ZipWriter::add </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em> = <code>6</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сжимает и добавляет запись. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Имя записи. </td></tr>
+    <tr><td class="paramname">data</td><td>Содержимое. </td></tr>
+    <tr><td class="paramname">level</td><td>Уровень deflate 1..9. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00168">168</a></p>
+
+</div>
+</div>
+<a id="ae9985e5c3495d4de4ea890a16064839b" name="ae9985e5c3495d4de4ea890a16064839b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9985e5c3495d4de4ea890a16064839b">&#9670;&#160;</a></span>addCompressed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::ZipWriter::addCompressed </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structredclean_1_1CompressedEntry.html">CompressedEntry</a> &amp;&#160;</td>
+          <td class="paramname"><em>entry</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Добавляет заранее сжатую запись без повторного сжатия. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Имя записи. </td></tr>
+    <tr><td class="paramname">entry</td><td>Сжатые данные. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00177">177</a></p>
+
+</div>
+</div>
+<a id="af1b11c6218c900004918b9aa5c18cdd0" name="af1b11c6218c900004918b9aa5c18cdd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1b11c6218c900004918b9aa5c18cdd0">&#9670;&#160;</a></span>copyFrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::ZipWriter::copyFrom </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classredclean_1_1ZipReader.html">ZipReader</a> &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Копирует запись из другого архива как есть, без распаковки и повторного сжатия. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>Исходный архив. </td></tr>
+    <tr><td class="paramname">name</td><td>Имя записи. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>Если записи нет. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00188">188</a></p>
+
+</div>
+</div>
+<a id="a5291a5ac86be5ab84a15fc07208ef1ea" name="a5291a5ac86be5ab84a15fc07208ef1ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5291a5ac86be5ab84a15fc07208ef1ea">&#9670;&#160;</a></span>finish()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::ZipWriter::finish </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Завершает архив и сохраняет его. </p>
+<p>Сначала пишется временный файл рядом с <code>path</code>, затем он переименовывается, поэтому при ошибке исходный файл не повреждается (в том числе при записи поверх входного). </p><dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Путь в UTF-8. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>При ошибке записи. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00196">196</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>src/<a class="el" href="zip__archive_8hpp_source.html">zip_archive.hpp</a></li>
+<li>src/<a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceredclean.html">redclean</a></li><li class="navelem"><a class="el" href="classredclean_1_1ZipWriter.html">ZipWriter</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

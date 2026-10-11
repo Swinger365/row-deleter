@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['target_0',['target',['../structredclean_1_1StyleOptions.html#abe0f29e436d1154aad02e7cef51363a9',1,'redclean::StyleOptions::target'],['../structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#ac696e3310a9e72e59decc22194d4b348',1,'redclean::anonymous_namespace{xlsx_package.cpp}::Relationship::target']]],
+  ['tempdir_1',['tempdir',['../classtestutil_1_1TempDir.html',1,'testutil::TempDir'],['../classtestutil_1_1TempDir.html#abc2d2076842656e62030ffc410e7ee71',1,'testutil::TempDir::TempDir()']]],
+  ['test_5fhelpers_2ehpp_2',['test_helpers.hpp',['../test__helpers_8hpp.html',1,'']]],
+  ['teststylesxml_3',['testStylesXml',['../namespacetestutil.html#a289aeea5f6f01afe3def0150e59b80ee',1,'testutil']]],
+  ['testutil_4',['testutil',['../namespacetestutil.html',1,'']]],
+  ['theme_5',['theme',['../structredclean_1_1anonymous__namespace_02styles_8cpp_03_1_1ColorContext.html#ac88eeabeeaa452417df6520ff7939cd2',1,'redclean::anonymous_namespace{styles.cpp}::ColorContext']]],
+  ['themepalette_6',['ThemePalette',['../namespaceredclean.html#a0e0cd7a1ea5b7133a0c5394b917ed2a0',1,'redclean']]],
+  ['themepath_7',['themePath',['../classredclean_1_1XlsxPackage.html#ae7d9b6b7db63f45013413360aa7b71d1',1,'redclean::XlsxPackage']]],
+  ['themexml_8',['themeXml',['../structtestutil_1_1FixtureOptions.html#a90551598f18809162b84fa4ac9045057',1,'testutil::FixtureOptions']]],
+  ['thread_5fpool_2ehpp_9',['thread_pool.hpp',['../thread__pool_8hpp.html',1,'']]],
+  ['threadpool_10',['threadpool',['../classredclean_1_1ThreadPool.html',1,'redclean::ThreadPool'],['../classredclean_1_1ThreadPool.html#a48434e920c2717a8aa40876c053b96df',1,'redclean::ThreadPool::ThreadPool()']]],
+  ['threads_11',['threads',['../structredclean_1_1CleanOptions.html#a89633aa4f5e439bf9c7c2456384f3d7d',1,'redclean::CleanOptions']]],
+  ['threadsused_12',['threadsUsed',['../structredclean_1_1CleanReport.html#a0d41b93c280954e2ffc77d665db79ddb',1,'redclean::CleanReport']]],
+  ['tobyte_13',['toByte',['../namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6fa70c688493b81525d2b6aefb4dbc23',1,'redclean::anonymous_namespace{color.cpp}']]],
+  ['tohex_14',['toHex',['../namespaceredclean.html#af51b7663f53cc124cc4f31407ce95f51',1,'redclean']]],
+  ['tohls_15',['toHls',['../namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a7688332dcbc2acf369872aa62a2a8c25',1,'redclean::anonymous_namespace{color.cpp}']]],
+  ['tohsv_16',['toHsv',['../namespaceredclean.html#af564a4b9f099e810dda2b9183da60bf2',1,'redclean']]],
+  ['type_17',['type',['../structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#ad9577165837640714cbb48ab385803f3',1,'redclean::anonymous_namespace{xlsx_package.cpp}::Relationship::type'],['../structtestutil_1_1CellView.html#a1606ba6cccc314bffbe9d17e8a1fba52',1,'testutil::CellView::type']]]
+];

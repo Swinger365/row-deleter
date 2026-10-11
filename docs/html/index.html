@@ -1,0 +1,338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: xlsx_red_cleaner</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">xlsx_red_cleaner </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a> Консольная программа на C++17, которая на указанных листах книги Excel (<code>.xlsx</code>), начиная с заданной строки, очищает содержимое всех строк, где есть хотя бы одна ячейка красного цвета.</p>
+<p>Очистка работает как команда Excel «Очистить содержимое»: из ячеек удаляются значения и формулы, а форматирование (стиль, а значит и сама красная заливка), размеры строк, объединения и всё остальное в книге остаются как были.</p>
+<p>Готовый исполняемый файл для Windows (x86-64, Windows 10 и новее, без дополнительных DLL) лежит в <a href="executable/xlsx_red_cleaner.exe"><code>executable/xlsx_red_cleaner.exe</code></a>.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Возможности</h1>
+<ul>
+<li>Обработка выбранных листов, у каждого может быть своя начальная строка (<code>-s "Лист:5"</code>), или сразу всех рабочих листов (<code>--all-sheets</code>).</li>
+<li>Красной считается заливка ячейки (по умолчанию), цвет шрифта или любое из двух.</li>
+<li>Цвета понимаются во всех формах, которые пишет Excel: <code>rgb</code>, цвета темы с осветлением или затемнением (<code>theme</code> + <code>tint</code>), индексированная палитра (стандартная и <code>&lt;indexedColors&gt;</code> из книги), узорные и градиентные заливки.</li>
+<li>Многопоточность на всех тяжёлых этапах, в том числе при сжатии одной большой части архива.</li>
+<li>Результат не зависит от числа потоков: выходной файл побайтно одинаков при любых <code>-j</code>.</li>
+<li>Корректная работа с формулами:<ul>
+<li>если очищается главная ячейка общей формулы (<code>t="shared"</code>), зависимые ячейки получают свои формулы со сдвинутыми ссылками;</li>
+<li>если удалялись формулы, удаляется <code>calcChain.xml</code>, и Excel пересоздаёт его сам. Без этого Excel сообщил бы о повреждении файла.</li>
+</ul>
+</li>
+<li>Неизменённые части книги копируются из исходного архива без распаковки и пересжатия.</li>
+<li>Запись идёт через временный файл, поэтому при ошибке исходная книга не портится. Можно перезаписывать входной файл (<code>--in-place</code>).</li>
+<li>Пробный запуск (<code>--dry-run</code>) показывает, какие строки будут очищены, ничего не меняя.</li>
+<li>Пути и имена листов в Юникоде, в том числе в Windows.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Что считается красным</h1>
+<p>По умолчанию цвет переводится в HSV, и красным считается цвет, у которого:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Параметр   </th><th class="markdownTableHeadNone">Условие   </th><th class="markdownTableHeadNone">Опция    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Оттенок   </td><td class="markdownTableBodyNone">не дальше 20° от чистого красного (0°)   </td><td class="markdownTableBodyNone"><code>--hue-tolerance</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Насыщенность   </td><td class="markdownTableBodyNone">не меньше 0.5   </td><td class="markdownTableBodyNone"><code>--min-saturation</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Яркость   </td><td class="markdownTableBodyNone">не меньше 0.5   </td><td class="markdownTableBodyNone"><code>--min-value</code>   </td></tr>
+</table>
+<p>Так красными считаются <code>FF0000</code>, тёмно-красный Excel <code>C00000</code> и похожие оттенки, а бледно-розовый (<code>FFC7CE</code>, стиль «Плохой»), оранжевый, бордовый почти чёрный — нет.</p>
+<p>Если нужны точные цвета, их можно перечислить: <code>--colors FF0000,C00000</code>. Тогда эвристика не используется и красными считаются только эти цвета.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Сборка</h1>
+<p>Нужны CMake 3.20+, компилятор C++17 и доступ в интернет при первой конфигурации: CMake сам скачает зависимости через <code>FetchContent</code>.</p>
+<h2><a class="anchor" id="autotoc_md4"></a>
+Linux</h2>
+<div class="fragment"><div class="line">cmake -S . -B build -DCMAKE_BUILD_TYPE=Release</div>
+<div class="line">cmake --build build -j</div>
+<div class="line">ctest --test-dir build -j4</div>
+</div><!-- fragment --><p>Исполняемый файл: <code>build/xlsx_red_cleaner</code>. Тесты можно отключить опцией <code>-DRED_CLEANER_BUILD_TESTS=OFF</code>.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Windows: нативная сборка</h2>
+<p>Visual Studio 2019+ или MinGW-w64:</p>
+<div class="fragment"><div class="line">cmake -S . -B build</div>
+<div class="line">cmake --build build --config Release</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+Windows: кросс-сборка из Linux</h2>
+<p>Используется <a href="https://github.com/mstorsjo/llvm-mingw">llvm-mingw</a> (или пакет <code>mingw-w64</code>) и файл toolchain из проекта. Файл в <code>executable/</code> собран так:</p>
+<div class="fragment"><div class="line">cmake -S . -B build-windows \</div>
+<div class="line">      -DCMAKE_TOOLCHAIN_FILE=cmake/toolchains/mingw-w64-x86_64.cmake \</div>
+<div class="line">      -DMINGW_ROOT=/путь/к/llvm-mingw \</div>
+<div class="line">      -DCMAKE_BUILD_TYPE=Release -DRED_CLEANER_BUILD_TESTS=OFF</div>
+<div class="line">cmake --build build-windows -j</div>
+</div><!-- fragment --><p><code>MINGW_ROOT</code> можно не указывать, если компиляторы <code>x86_64-w64-mingw32-*</code> есть в <code>PATH</code>. Программа линкуется статически и зависит только от системных библиотек Windows.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Документация</h2>
+<p>Документация генерируется Doxygen (нужен также Graphviz для диаграмм):</p>
+<div class="fragment"><div class="line">doxygen Doxyfile                    # или: cmake --build build --target docs</div>
+</div><!-- fragment --><p>Результат: <code>docs/html/index.html</code>.</p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Использование</h1>
+<div class="fragment"><div class="line">xlsx_red_cleaner -i ВХОД.xlsx (-o ВЫХОД.xlsx | --in-place | --dry-run) -s ЛИСТ[:СТРОКА]... [опции]</div>
+</div><!-- fragment --><p>Примеры:</p>
+<div class="fragment"><div class="line"># Листы «Отчёт» (со строки 2) и «Данные» (со строки 5), результат в новый файл</div>
+<div class="line">xlsx_red_cleaner -i книга.xlsx -o результат.xlsx -s &quot;Отчёт:2&quot; -s &quot;Данные:5&quot;</div>
+<div class="line"> </div>
+<div class="line"># Все листы со строки 3, перезаписать исходный файл</div>
+<div class="line">xlsx_red_cleaner книга.xlsx --in-place --all-sheets -r 3</div>
+<div class="line"> </div>
+<div class="line"># Посмотреть, какие строки будут очищены, если красным считать и шрифт, и заливку</div>
+<div class="line">xlsx_red_cleaner -i книга.xlsx -s Лист1 --target any --dry-run -v</div>
+<div class="line"> </div>
+<div class="line"># Только точные цвета, 8 потоков, быстрое сжатие</div>
+<div class="line">xlsx_red_cleaner -i in.xlsx -o out.xlsx -s Лист1 --colors FF0000,C00000 -j 8 --compression-level 1</div>
+</div><!-- fragment --><p>Пример вывода:</p>
+<div class="fragment"><div class="line">Стилей ячеек: 4, из них красных: 2; потоков: 4</div>
+<div class="line">Лист &quot;Отчёт&quot; (со строки 2): просмотрено строк 20, строк с красными ячейками 5, очищено ячеек 13</div>
+<div class="line">  строки: 5, 7, 9, 15, 22</div>
+<div class="line">Сохранено в &quot;результат.xlsx&quot;</div>
+<div class="line">Время: 0.0277 с</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+Опции</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Опция   </th><th class="markdownTableHeadNone">Описание    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-i</code>, <code>--input FILE</code>   </td><td class="markdownTableBodyNone">Входной файл <code>.xlsx</code>; можно указать без опции.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-o</code>, <code>--output FILE</code>   </td><td class="markdownTableBodyNone">Куда сохранить результат.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--in-place</code>   </td><td class="markdownTableBodyNone">Перезаписать входной файл.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-s</code>, <code>--sheet NAME[:ROW]</code>   </td><td class="markdownTableBodyNone">Лист для обработки, можно повторять; <code>ROW</code> — своя начальная строка.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--all-sheets</code>   </td><td class="markdownTableBodyNone">Обработать все рабочие листы (не совмещается с <code>--sheet</code>).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-r</code>, <code>--start-row N</code>   </td><td class="markdownTableBodyNone">Начальная строка по умолчанию (1).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-t</code>, <code>--target WHAT</code>   </td><td class="markdownTableBodyNone"><code>fill</code> — заливка (по умолчанию), <code>font</code> — цвет шрифта, <code>any</code> — любое.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>--colors LIST</code>   </td><td class="markdownTableBodyNone">Точный список цветов <code>RRGGBB</code> через запятую.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--hue-tolerance D</code>   </td><td class="markdownTableBodyNone">Допуск оттенка в градусах (20).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>--min-saturation X</code>   </td><td class="markdownTableBodyNone">Минимальная насыщенность 0..1 (0.5).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--min-value X</code>   </td><td class="markdownTableBodyNone">Минимальная яркость 0..1 (0.5).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-j</code>, <code>--threads N</code>   </td><td class="markdownTableBodyNone">Число потоков (по умолчанию — число ядер).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--rows-per-task N</code>   </td><td class="markdownTableBodyNone">Строк в одной задаче поиска (4096).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>--compression-level N</code>   </td><td class="markdownTableBodyNone">Уровень сжатия 1..9 (6); 1 заметно быстрее, файл немного больше.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>--dry-run</code>   </td><td class="markdownTableBodyNone">Только показать, что будет очищено.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-v</code>, <code>--verbose</code>   </td><td class="markdownTableBodyNone">Вывести номера найденных строк и время этапов.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-h</code>, <code>--help</code>   </td><td class="markdownTableBodyNone">Справка.   </td></tr>
+</table>
+<p>Опции со значением можно писать и как <code>--opt=значение</code>.</p>
+<p>Коды возврата: <code>0</code> — успех, <code>1</code> — ошибка при обработке файла (не найден, повреждён, нет листа и т.п.), <code>2</code> — ошибка в аргументах командной строки.</p>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Как это устроено</h1>
+<p>Файл <code>.xlsx</code> — это zip-архив с XML-частями. Программа:</p>
+<ol type="1">
+<li>Читает связи пакета (<code>_rels/.rels</code>, <code>xl/_rels/workbook.xml.rels</code>), находит листы, стили и тему.</li>
+<li>Строит из <code>styles.xml</code> таблицу «индекс стиля → красный или нет». После этого цвет каждой ячейки проверяется одним обращением к массиву по атрибуту <code>s</code>.</li>
+<li>Обрабатывает листы в несколько параллельных этапов на общем пуле потоков:</li>
+</ol>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Этап   </th><th class="markdownTableHeadNone">Параллелизм    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Распаковка и разбор XML листов   </td><td class="markdownTableBodyNone">по задаче на лист    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Поиск красных строк   </td><td class="markdownTableBodyNone">куски по <code>--rows-per-task</code> строк всех листов вперемешку; документы только читаются    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Очистка и сериализация XML   </td><td class="markdownTableBodyNone">по задаче на лист (pugixml не допускает параллельной записи в один документ)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Сжатие изменённых частей   </td><td class="markdownTableBodyNone">каждая часть режется на куски по 4 МиБ, куски сжимаются независимо и склеиваются в один корректный deflate-поток    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Запись архива   </td><td class="markdownTableBodyNone">последовательно; неизменённые части копируются без пересжатия   </td></tr>
+</table>
+<p>Исходный код находится в <code>src/</code>:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Файл   </th><th class="markdownTableHeadNone">Назначение    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code><a class="el" href="main_8cpp.html" title="Точка входа консольной утилиты xlsx_red_cleaner.">main.cpp</a></code>   </td><td class="markdownTableBodyNone">точка входа, вывод отчёта, Юникод-аргументы в Windows    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>cli.*</code>   </td><td class="markdownTableBodyNone">разбор командной строки    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>cleaner.*</code>   </td><td class="markdownTableBodyNone">вся операция целиком: этапы и пул потоков    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>xlsx_package.*</code>   </td><td class="markdownTableBodyNone">пакет OOXML: связи, листы, чтение и сохранение частей    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>zip_archive.*</code>   </td><td class="markdownTableBodyNone">zip поверх miniz, параллельное сжатие кусками    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>styles.*</code>   </td><td class="markdownTableBodyNone">разбор <code>styles.xml</code> и темы, таблица красных стилей    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>color.*</code>   </td><td class="markdownTableBodyNone">цвета: hex, HSV, tint, индексированная палитра, критерий красного    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>sheet_processor.*</code>   </td><td class="markdownTableBodyNone">поиск и очистка строк одного листа    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>formula.*</code>   </td><td class="markdownTableBodyNone">адреса ячеек и сдвиг ссылок в формулах    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code><a class="el" href="thread__pool_8hpp.html" title="Пул потоков и параллельные алгоритмы поверх него.">thread_pool.hpp</a></code>   </td><td class="markdownTableBodyNone">пул потоков, <code>parallelFor</code>, <code>waitAll</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>xml_utils.*</code>   </td><td class="markdownTableBodyNone">помощники для pugixml с учётом префиксов пространств имён   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Почему pugixml и miniz, а не готовая библиотека для Excel</h2>
+<p>Сначала рассматривался <a href="https://github.com/troldal/OpenXLSX">OpenXLSX</a>, самая развитая C++-библиотека для <code>.xlsx</code>. Для этой задачи она не подошла:</p>
+<ul>
+<li>при обходе строк она дописывает в документ недостающие строки и ячейки, поэтому читать её из нескольких потоков нельзя;</li>
+<li>при чтении цвета она изменяет <code>styles.xml</code> и понимает только <code>rgb</code>, а цвета темы и индексированной палитры не понимает;</li>
+<li>её zip-слой однопоточный. На большой книге около 75% времени уходило на сжатие, и многопоточность почти ничего не давала.</li>
+</ul>
+<p>Другие варианты хуже: xlnt при сохранении теряет диаграммы и картинки, а libxlsxwriter умеет только писать. OpenXLSX сам построен на pugixml и miniz. Здесь эти библиотеки используются напрямую: <a href="https://pugixml.org/">pugixml</a> для XML и <a href="https://github.com/richgel999/miniz">miniz</a> для zip и deflate. Это даёт полный контроль над многопоточностью и над тем, какие части книги меняются.</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Тесты</h1>
+<p>GoogleTest, 65 тестов:</p>
+<ul>
+<li>цвета, критерий красного, tint, палитры;</li>
+<li>разбор стилей и темы;</li>
+<li>сдвиг формул;</li>
+<li>обработка листа (включая общие формулы и префиксы пространств имён);</li>
+<li>zip, включая параллельное чтение и склейку кусков deflate;</li>
+<li>пул потоков;</li>
+<li>командная строка;</li>
+<li>сквозные тесты на настоящих <code>.xlsx</code>, включая большой случайный лист, результат которого сравнивается при разном числе потоков.</li>
+</ul>
+<p>Дополнительно проверено:</p>
+<ul>
+<li>ThreadSanitizer не находит гонок;</li>
+<li>результаты открываются без ошибок в openpyxl и LibreOffice;</li>
+<li>Windows-сборка под wine даёт побайтно тот же файл, что и Linux-сборка.</li>
+</ul>
+<div class="fragment"><div class="line">ctest --test-dir build -j4</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md13"></a>
+Производительность</h1>
+<p>Тестовая книга: 4 листа по 250 000 строк × 8 столбцов. В архиве 45 МБ, в распакованном виде 317 МБ XML. Около 3% строк содержат красную ячейку. Машина с 4 ядрами, Linux, сборка Release, команда <code>--all-sheets -r 2</code>:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Потоки   </th><th class="markdownTableHeadNone">Разбор XML   </th><th class="markdownTableHeadNone">Поиск   </th><th class="markdownTableHeadNone">Очистка и сериализация   </th><th class="markdownTableHeadNone">Сжатие и запись   </th><th class="markdownTableHeadNone">Всего    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-j 1</code>   </td><td class="markdownTableBodyNone">7.2 с   </td><td class="markdownTableBodyNone">1.2 с   </td><td class="markdownTableBodyNone">6.5 с   </td><td class="markdownTableBodyNone">24.4 с   </td><td class="markdownTableBodyNone">39.7 с    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-j 2</code>   </td><td class="markdownTableBodyNone">4.7 с   </td><td class="markdownTableBodyNone">0.6 с   </td><td class="markdownTableBodyNone">1.6 с   </td><td class="markdownTableBodyNone">13.2 с   </td><td class="markdownTableBodyNone">21.0 с    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>-j 4</code>   </td><td class="markdownTableBodyNone">3.3 с   </td><td class="markdownTableBodyNone">0.6 с   </td><td class="markdownTableBodyNone">1.5 с   </td><td class="markdownTableBodyNone">11.4 с   </td><td class="markdownTableBodyNone">18.3 с    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>-j 4 --compression-level 1</code>   </td><td class="markdownTableBodyNone">4.6 с   </td><td class="markdownTableBodyNone">0.8 с   </td><td class="markdownTableBodyNone">2.0 с   </td><td class="markdownTableBodyNone">4.3 с   </td><td class="markdownTableBodyNone">12.2 с   </td></tr>
+</table>
+<p>Больше всего времени уходит на сжатие XML обратно в архив. Если размер файла не критичен, заметно помогает <code>--compression-level 1</code>: файл получился на 16% больше (52 МБ вместо 44 МБ).</p>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Ограничения</h1>
+<ul>
+<li>Поддерживается только формат <code>.xlsx</code> (Office Open XML). Старый <code>.xls</code> и двоичный <code>.xlsb</code> не поддерживаются.</li>
+<li>Учитывается только собственный стиль ячейки. Не учитываются:<ul>
+<li>цвет из условного форматирования;</li>
+<li>стили, заданные целой строке или столбцу для ячеек, которых нет в файле.</li>
+</ul>
+</li>
+<li>Строки очищаются, но не удаляются: строки ниже не сдвигаются, ссылки на очищенные ячейки в формулах других ячеек остаются. </li>
+</ul>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

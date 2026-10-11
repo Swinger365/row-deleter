@@ -1,0 +1,21 @@
+<map id="src/styles.hpp" name="src/styles.hpp">
+<area shape="rect" id="Node000001" title="Анализ xl/styles.xml: какие стили ячеек считаются красными." alt="" coords="263,5,375,31"/>
+<area shape="rect" id="Node000002" href="$cleaner_8hpp.html" title="Верхнеуровневая операция: очистка красных строк в книге." alt="" coords="133,152,253,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="276,39,246,56,220,80,210,98,202,118,196,152,191,151,197,116,205,96,216,77,243,52,273,34"/>
+<area shape="rect" id="Node000007" href="$sheet__processor_8hpp.html" title="Поиск и очистка строк с красными ячейками на одном листе." alt="" coords="230,79,409,104"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="322,44,322,79,317,79,317,44"/>
+<area shape="rect" id="Node000009" href="$styles_8cpp.html" title="Реализация анализа стилей." alt="" coords="433,79,544,104"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="360,34,462,76,460,81,358,38"/>
+<area shape="rect" id="Node000003" href="$cleaner_8cpp.html" title="Реализация cleanWorkbook: параллельные этапы обработки книги." alt="" coords="5,225,124,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="161,186,87,227,84,223,159,182"/>
+<area shape="rect" id="Node000004" href="$cli_8hpp.html" title="Командная строка программы." alt="" coords="149,225,237,251"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="195,191,195,225,190,225,190,191"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title="Точка входа консольной утилиты xlsx_red_cleaner." alt="" coords="221,299,327,324"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="219,185,236,203,251,224,267,264,275,298,270,299,262,265,246,227,232,206,215,189"/>
+<area shape="rect" id="Node000005" href="$cli_8cpp.html" title="Разбор аргументов командной строки и текст справки." alt="" coords="111,299,197,324"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="182,264,163,300,158,297,177,262"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="218,258,262,296,259,300,214,262"/>
+<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="288,113,215,154,212,149,286,108"/>
+<area shape="rect" id="Node000008" href="$sheet__processor_8cpp.html" title="Реализация обработки листа." alt="" coords="277,152,455,177"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="337,114,361,150,356,153,332,117"/>
+</map>

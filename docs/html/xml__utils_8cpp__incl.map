@@ -1,0 +1,15 @@
+<map id="src/xml_utils.cpp" name="src/xml_utils.cpp">
+<area shape="rect" id="Node000001" title="Реализация вспомогательных функций для XML." alt="" coords="213,5,345,31"/>
+<area shape="rect" id="Node000002" href="$xml__utils_8hpp.html" title="Вспомогательные функции поверх pugixml, не зависящие от префиксов пространств имён." alt="" coords="107,79,217,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,33,194,74,192,69,259,28"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="242,79,317,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="282,31,282,65,277,65,277,31"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="341,79,428,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="298,28,358,69,355,73,295,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,108,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,106,86,147,84,142,144,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="133,152,191,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="165,104,165,138,159,138,159,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="216,152,313,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="180,102,238,142,235,146,177,106"/>
+</map>

@@ -1,0 +1,60 @@
+<map id="src/main.cpp" name="src/main.cpp">
+<area shape="rect" id="Node000001" title="Точка входа консольной утилиты xlsx_red_cleaner." alt="" coords="899,5,1005,31"/>
+<area shape="rect" id="Node000002" href="$cleaner_8hpp.html" title="Верхнеуровневая операция: очистка красных строк в книге." alt="" coords="547,152,645,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="900,29,810,47,760,62,712,81,661,112,620,145,617,140,658,107,709,76,758,57,808,42,899,24"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="103,445,161,471"/>
+<area shape="poly" id="edge37_Node000001_Node000009" title=" " alt="" coords="899,24,676,38,378,65,236,84,118,107,72,120,37,134,15,149,8,164,8,313,10,333,17,352,40,386,70,415,101,436,98,440,67,419,36,390,12,354,5,334,3,313,3,163,11,145,34,129,70,115,116,102,235,78,377,59,675,33,899,19"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="705,445,767,471"/>
+<area shape="poly" id="edge38_Node000001_Node000011" title=" " alt="" coords="950,32,931,88,923,125,920,163,920,313,916,338,906,361,890,381,870,399,825,427,781,446,779,441,823,422,867,395,886,378,901,358,911,337,915,312,915,163,918,124,926,86,945,30"/>
+<area shape="rect" id="Node000015" href="$cli_8hpp.html" title="Командная строка программы." alt="" coords="722,79,787,104"/>
+<area shape="poly" id="edge28_Node000001_Node000015" title=" " alt="" coords="921,33,801,76,799,71,919,28"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="955,79,1021,104"/>
+<area shape="poly" id="edge33_Node000001_Node000017" title=" " alt="" coords="960,30,978,65,974,68,956,32"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="1046,79,1133,104"/>
+<area shape="poly" id="edge34_Node000001_Node000018" title=" " alt="" coords="975,28,1056,70,1054,75,973,33"/>
+<area shape="rect" id="Node000019" title=" " alt="" coords="1157,79,1248,104"/>
+<area shape="poly" id="edge35_Node000001_Node000019" title=" " alt="" coords="993,28,1150,72,1148,77,992,33"/>
+<area shape="rect" id="Node000020" title=" " alt="" coords="1272,79,1352,104"/>
+<area shape="poly" id="edge36_Node000001_Node000020" title=" " alt="" coords="1005,27,1259,76,1258,81,1004,32"/>
+<area shape="rect" id="Node000003" href="$sheet__processor_8hpp.html" title="Поиск и очистка строк с красными ячейками на одном листе." alt="" coords="447,225,601,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="586,180,547,218,544,214,582,176"/>
+<area shape="rect" id="Node000004" href="$styles_8hpp.html" title="Анализ xl/styles.xml: какие стили ячеек считаются красными." alt="" coords="257,299,346,324"/>
+<area shape="poly" id="edge21_Node000002_Node000004" title=" " alt="" coords="548,172,506,178,459,188,411,204,367,227,337,256,316,288,311,285,333,253,364,223,409,199,458,183,505,172,547,167"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="508,445,575,471"/>
+<area shape="poly" id="edge23_Node000002_Node000007" title=" " alt="" coords="603,177,615,216,626,272,628,336,622,368,612,399,596,422,575,440,572,435,592,418,607,396,617,367,622,335,621,272,610,217,598,179"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="603,445,677,471"/>
+<area shape="poly" id="edge24_Node000002_Node000008" title=" " alt="" coords="646,171,695,189,717,204,736,224,759,269,766,310,757,352,736,399,714,424,687,442,684,437,711,420,731,396,752,350,760,310,754,271,731,227,714,208,692,193,644,176"/>
+<area shape="poly" id="edge25_Node000002_Node000009" title=" " alt="" coords="547,171,466,176,371,187,283,204,248,215,224,227,202,249,184,273,157,330,143,386,136,432,131,431,138,385,152,328,179,271,198,245,221,223,246,210,281,198,370,182,465,171,547,165"/>
+<area shape="poly" id="edge27_Node000002_Node000011" title=" " alt="" coords="646,169,705,187,735,202,761,224,777,248,786,275,788,304,785,334,770,390,751,434,746,432,765,388,780,333,782,304,780,276,772,250,757,227,732,207,703,192,644,174"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="505,372,575,397"/>
+<area shape="poly" id="edge22_Node000002_Node000012" title=" " alt="" coords="548,172,518,178,487,188,459,204,437,227,431,246,433,272,442,299,454,322,476,346,503,363,500,368,473,350,450,326,437,301,428,273,426,246,432,224,456,200,485,184,517,173,547,167"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="235,225,295,251"/>
+<area shape="poly" id="edge26_Node000002_Node000014" title=" " alt="" coords="548,179,315,228,309,229,308,224,314,223,547,173"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="489,253,351,297,349,292,487,248"/>
+<area shape="poly" id="edge18_Node000003_Node000007" title=" " alt="" coords="545,249,570,269,590,297,600,325,603,348,599,371,590,398,580,419,566,437,562,434,575,416,586,396,594,369,597,347,595,326,586,300,566,273,541,253"/>
+<area shape="poly" id="edge19_Node000003_Node000009" title=" " alt="" coords="447,243,398,249,346,259,294,276,245,301,211,331,182,367,160,403,144,434,139,432,155,401,178,364,207,327,243,296,292,271,345,254,398,243,446,238"/>
+<area shape="poly" id="edge20_Node000003_Node000011" title=" " alt="" coords="546,249,578,269,612,297,646,331,677,368,723,432,719,435,673,372,642,335,609,301,575,274,543,253"/>
+<area shape="poly" id="edge17_Node000003_Node000012" title=" " alt="" coords="506,253,488,267,471,284,461,303,461,313,464,323,481,346,504,363,501,367,477,349,459,325,456,314,456,302,467,281,484,263,503,249"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="473,299,575,324"/>
+<area shape="poly" id="edge16_Node000003_Node000013" title=" " alt="" coords="527,251,527,285,521,285,521,251"/>
+<area shape="rect" id="Node000005" href="$color_8hpp.html" title="Цвета: разбор, преобразования RGB/HSV/HLS, палитра Excel и критерий «красного»." alt="" coords="297,372,378,397"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="310,323,328,358,323,361,305,326"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="231,445,287,471"/>
+<area shape="poly" id="edge11_Node000004_Node000006" title=" " alt="" coords="300,325,269,433,263,431,295,324"/>
+<area shape="poly" id="edge13_Node000004_Node000007" title=" " alt="" coords="322,322,512,436,509,440,319,326"/>
+<area shape="poly" id="edge14_Node000004_Node000009" title=" " alt="" coords="289,326,158,438,154,434,286,322"/>
+<area shape="poly" id="edge15_Node000004_Node000011" title=" " alt="" coords="330,322,442,370,468,383,494,395,692,443,691,448,492,400,466,388,440,374,328,327"/>
+<area shape="poly" id="edge12_Node000004_Node000012" title=" " alt="" coords="340,321,492,366,491,371,339,327"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="326,399,283,438,280,434,323,395"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="371,395,496,438,495,443,369,400"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="379,393,590,442,588,447,378,398"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="305,400,175,445,174,440,303,395"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="311,445,409,471"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="344,397,355,431,350,433,339,398"/>
+<area shape="poly" id="edge10_Node000005_Node000011" title=" " alt="" coords="379,389,517,411,690,443,692,443,691,448,689,448,516,416,378,395"/>
+<area shape="poly" id="edge29_Node000015_Node000002" title=" " alt="" coords="730,106,635,149,633,144,728,102"/>
+<area shape="poly" id="edge31_Node000015_Node000009" title=" " alt="" coords="722,95,560,98,451,104,338,115,231,133,142,158,107,174,81,193,64,214,59,237,59,312,64,348,78,381,96,410,114,433,110,437,91,413,73,383,59,349,53,313,53,236,60,211,77,189,104,170,140,153,230,128,337,110,450,99,559,93,722,90"/>
+<area shape="poly" id="edge32_Node000015_Node000011" title=" " alt="" coords="761,103,783,184,796,240,805,298,805,324,801,362,789,398,776,419,760,437,756,434,772,416,784,396,796,361,800,324,800,299,791,241,778,185,756,105"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="793,152,879,177"/>
+<area shape="poly" id="edge30_Node000015_Node000016" title=" " alt="" coords="769,102,814,141,811,145,766,106"/>
+</map>

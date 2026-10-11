@@ -1,0 +1,51 @@
+<map id="src/sheet_processor.cpp" name="src/sheet_processor.cpp">
+<area shape="rect" id="Node000001" title="Реализация обработки листа." alt="" coords="655,5,832,31"/>
+<area shape="rect" id="Node000002" href="$sheet__processor_8hpp.html" title="Поиск и очистка строк с красными ячейками на одном листе." alt="" coords="221,79,375,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="672,33,384,79,383,74,671,28"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="588,299,685,324"/>
+<area shape="poly" id="edge30_Node000001_Node000009" title=" " alt="" coords="744,31,726,125,708,189,683,252,658,290,654,287,678,249,703,187,721,124,739,30"/>
+<area shape="rect" id="Node000013" href="$formula_8hpp.html" title="Адреса ячеек и сдвиг относительных ссылок в формулах." alt="" coords="429,225,530,251"/>
+<area shape="poly" id="edge20_Node000001_Node000013" title=" " alt="" coords="685,33,634,49,580,73,530,107,509,129,492,153,483,182,480,211,475,211,478,181,488,151,505,125,527,103,577,68,632,44,683,28"/>
+<area shape="rect" id="Node000014" href="$xml__utils_8hpp.html" title="Вспомогательные функции поверх pugixml, не зависящие от префиксов пространств имён." alt="" coords="591,79,701,104"/>
+<area shape="poly" id="edge25_Node000001_Node000014" title=" " alt="" coords="729,33,675,72,672,68,726,29"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="781,79,868,104"/>
+<area shape="poly" id="edge29_Node000001_Node000015" title=" " alt="" coords="758,29,803,68,799,72,755,33"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="892,79,1016,104"/>
+<area shape="poly" id="edge31_Node000001_Node000016" title=" " alt="" coords="778,28,908,72,906,77,776,33"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="1040,79,1100,104"/>
+<area shape="poly" id="edge32_Node000001_Node000017" title=" " alt="" coords="804,28,1027,76,1026,81,803,33"/>
+<area shape="rect" id="Node000003" href="$styles_8hpp.html" title="Анализ xl/styles.xml: какие стили ячеек считаются красными." alt="" coords="172,152,261,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="287,106,242,145,238,141,283,102"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="178,299,245,324"/>
+<area shape="poly" id="edge17_Node000002_Node000006" title=" " alt="" coords="237,107,196,124,178,137,163,154,150,178,146,200,150,222,159,250,171,270,187,288,183,291,167,273,154,252,144,224,141,199,145,176,158,150,174,133,193,120,235,102"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="450,299,509,324"/>
+<area shape="poly" id="edge18_Node000002_Node000008" title=" " alt="" coords="328,102,449,156,508,190,530,207,544,224,549,243,542,262,528,279,512,293,508,289,524,275,537,259,543,243,540,227,526,211,505,195,446,161,326,106"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="5,299,68,324"/>
+<area shape="poly" id="edge19_Node000002_Node000010" title=" " alt="" coords="246,107,194,125,168,138,144,154,112,185,85,221,49,287,45,285,81,218,108,182,140,150,165,133,192,120,244,102"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="333,225,404,251"/>
+<area shape="poly" id="edge16_Node000002_Node000011" title=" " alt="" coords="306,103,359,212,355,214,301,106"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="501,152,604,177"/>
+<area shape="poly" id="edge15_Node000002_Node000012" title=" " alt="" coords="340,101,499,146,498,151,338,107"/>
+<area shape="rect" id="Node000004" href="$color_8hpp.html" title="Цвета: разбор, преобразования RGB/HSV/HLS, палитра Excel и критерий «красного»." alt="" coords="176,225,257,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,178,219,212,214,212,214,178"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="95,299,151,324"/>
+<area shape="poly" id="edge10_Node000003_Node000005" title=" " alt="" coords="204,179,181,200,159,227,143,257,133,286,128,284,138,255,154,224,177,196,200,175"/>
+<area shape="poly" id="edge12_Node000003_Node000006" title=" " alt="" coords="204,179,183,200,167,226,165,242,170,258,190,287,185,290,165,260,160,243,162,224,179,196,200,175"/>
+<area shape="poly" id="edge13_Node000003_Node000008" title=" " alt="" coords="230,176,270,211,323,248,382,276,437,295,436,300,380,281,321,253,267,215,227,180"/>
+<area shape="poly" id="edge14_Node000003_Node000010" title=" " alt="" coords="202,180,140,227,62,292,59,287,136,223,199,175"/>
+<area shape="poly" id="edge11_Node000003_Node000011" title=" " alt="" coords="242,175,333,217,331,222,240,180"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="203,253,151,292,148,288,200,249"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="218,251,216,285,211,285,213,251"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="310,299,385,324"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="239,248,315,290,313,294,236,253"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="258,248,438,296,436,301,257,253"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="258,244,575,297,574,302,257,249"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="189,253,80,296,78,291,187,248"/>
+<area shape="poly" id="edge21_Node000013_Node000006" title=" " alt="" coords="437,253,259,300,258,295,436,248"/>
+<area shape="poly" id="edge22_Node000013_Node000007" title=" " alt="" coords="459,253,382,294,380,290,457,248"/>
+<area shape="poly" id="edge23_Node000013_Node000008" title=" " alt="" coords="482,251,482,285,477,285,477,251"/>
+<area shape="poly" id="edge24_Node000013_Node000009" title=" " alt="" coords="506,248,600,291,598,295,504,253"/>
+<area shape="poly" id="edge27_Node000014_Node000008" title=" " alt="" coords="647,105,631,172,614,214,588,252,557,278,523,297,521,292,554,274,584,249,609,212,626,170,642,103"/>
+<area shape="poly" id="edge28_Node000014_Node000009" title=" " alt="" coords="652,104,663,152,668,202,663,251,651,287,646,286,658,250,663,202,658,152,647,105"/>
+<area shape="poly" id="edge26_Node000014_Node000012" title=" " alt="" coords="633,106,580,146,577,141,629,102"/>
+</map>

@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Пространство имен redclean::anonymous_namespace{formula.cpp}</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Классы</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle"><div class="title">Пространство имен redclean::anonymous_namespace{formula.cpp}</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Классы</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html">CellRefParts</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разобранная ссылка на ячейку.  <a href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Часть ссылки: номер строки или столбца и признак абсолютности.  <a href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html#details">Подробнее...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a3c4439d1aa2e709ab3896b18414f2422" id="r_a3c4439d1aa2e709ab3896b18414f2422"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a3c4439d1aa2e709ab3896b18414f2422">isWordChar</a> (char c)</td></tr>
+<tr class="memdesc:a3c4439d1aa2e709ab3896b18414f2422"><td class="mdescLeft">&#160;</td><td class="mdescRight">Символ, который может входить в «слово» формулы: ссылку, имя, число.  <br /></td></tr>
+<tr class="separator:a3c4439d1aa2e709ab3896b18414f2422"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d8219ba49fd584e31eda68d0ec44960" id="r_a1d8219ba49fd584e31eda68d0ec44960"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a1d8219ba49fd584e31eda68d0ec44960">isLetter</a> (char c)</td></tr>
+<tr class="memdesc:a1d8219ba49fd584e31eda68d0ec44960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Латинская буква.  <br /></td></tr>
+<tr class="separator:a1d8219ba49fd584e31eda68d0ec44960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e04ff1bf8638f89ff528517929378ba" id="r_a0e04ff1bf8638f89ff528517929378ba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a0e04ff1bf8638f89ff528517929378ba">isDigit</a> (char c)</td></tr>
+<tr class="memdesc:a0e04ff1bf8638f89ff528517929378ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Десятичная цифра.  <br /></td></tr>
+<tr class="separator:a0e04ff1bf8638f89ff528517929378ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ddcc14c09c2398f1b98de89fd22659" id="r_ad4ddcc14c09c2398f1b98de89fd22659"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#ad4ddcc14c09c2398f1b98de89fd22659">parseColumnPart</a> (std::string_view s)</td></tr>
+<tr class="memdesc:ad4ddcc14c09c2398f1b98de89fd22659"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбирает часть-столбец <code>"$?LETTERS"</code> целиком.  <br /></td></tr>
+<tr class="separator:ad4ddcc14c09c2398f1b98de89fd22659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78bee20d27a42d57d35dc1c4da8151e6" id="r_a78bee20d27a42d57d35dc1c4da8151e6"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a78bee20d27a42d57d35dc1c4da8151e6">parseRowPart</a> (std::string_view s)</td></tr>
+<tr class="memdesc:a78bee20d27a42d57d35dc1c4da8151e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбирает часть-строку <code>"$?DIGITS"</code> целиком.  <br /></td></tr>
+<tr class="separator:a78bee20d27a42d57d35dc1c4da8151e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7631134104cac6762faeb2e9bf66aadf" id="r_a7631134104cac6762faeb2e9bf66aadf"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html">CellRefParts</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a7631134104cac6762faeb2e9bf66aadf">parseCellParts</a> (std::string_view s)</td></tr>
+<tr class="memdesc:a7631134104cac6762faeb2e9bf66aadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбирает ссылку на ячейку вида <code>"$A$1"</code> целиком.  <br /></td></tr>
+<tr class="separator:a7631134104cac6762faeb2e9bf66aadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea70f8b91385326fa03e6535a1265376" id="r_aea70f8b91385326fa03e6535a1265376"><td class="memItemLeft" align="right" valign="top">std::optional&lt; std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#aea70f8b91385326fa03e6535a1265376">shifted</a> (const <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &amp;part, std::int64_t delta, std::uint32_t limit)</td></tr>
+<tr class="memdesc:aea70f8b91385326fa03e6535a1265376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сдвигает часть ссылки, если она относительная.  <br /></td></tr>
+<tr class="separator:aea70f8b91385326fa03e6535a1265376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6862789ac00d3619b70e56327bc8675b" id="r_a6862789ac00d3619b70e56327bc8675b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a6862789ac00d3619b70e56327bc8675b">formatColumn</a> (const <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &amp;part, std::uint32_t value)</td></tr>
+<tr class="memdesc:a6862789ac00d3619b70e56327bc8675b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматирует столбец с сохранением знака <code>$</code>.  <br /></td></tr>
+<tr class="separator:a6862789ac00d3619b70e56327bc8675b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70e2240ecf6c7381eb8c6a12f7071d61" id="r_a70e2240ecf6c7381eb8c6a12f7071d61"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a70e2240ecf6c7381eb8c6a12f7071d61">formatRow</a> (const <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &amp;part, std::uint32_t value)</td></tr>
+<tr class="memdesc:a70e2240ecf6c7381eb8c6a12f7071d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Форматирует строку с сохранением знака <code>$</code>.  <br /></td></tr>
+<tr class="separator:a70e2240ecf6c7381eb8c6a12f7071d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abda2b46cae7ec8de580655e5bc041794" id="r_abda2b46cae7ec8de580655e5bc041794"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#abda2b46cae7ec8de580655e5bc041794">skipQuoted</a> (std::string_view s, std::size_t i, char quote)</td></tr>
+<tr class="memdesc:abda2b46cae7ec8de580655e5bc041794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Пропускает литерал в кавычках с учётом удвоенных кавычек внутри.  <br /></td></tr>
+<tr class="separator:abda2b46cae7ec8de580655e5bc041794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db594f98c7876d89581bbea60c352a6" id="r_a8db594f98c7876d89581bbea60c352a6"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a8db594f98c7876d89581bbea60c352a6">skipBrackets</a> (std::string_view s, std::size_t i)</td></tr>
+<tr class="memdesc:a8db594f98c7876d89581bbea60c352a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Пропускает выражение в квадратных скобках с учётом вложенности.  <br /></td></tr>
+<tr class="separator:a8db594f98c7876d89581bbea60c352a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2335210dab42d10d45c543ac7e2236bc" id="r_a2335210dab42d10d45c543ac7e2236bc"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html#a2335210dab42d10d45c543ac7e2236bc">wordEnd</a> (std::string_view s, std::size_t i)</td></tr>
+<tr class="memdesc:a2335210dab42d10d45c543ac7e2236bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Позиция конца слова, начинающегося в <code>i</code>.  <br /></td></tr>
+<tr class="separator:a2335210dab42d10d45c543ac7e2236bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Функции</h2>
+<a id="a6862789ac00d3619b70e56327bc8675b" name="a6862789ac00d3619b70e56327bc8675b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6862789ac00d3619b70e56327bc8675b">&#9670;&#160;</a></span>formatColumn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string redclean::anonymous_namespace{formula.cpp}::formatColumn </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &amp;&#160;</td>
+          <td class="paramname"><em>part</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Форматирует столбец с сохранением знака <code>$</code>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00120">120</a></p>
+
+</div>
+</div>
+<a id="a70e2240ecf6c7381eb8c6a12f7071d61" name="a70e2240ecf6c7381eb8c6a12f7071d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70e2240ecf6c7381eb8c6a12f7071d61">&#9670;&#160;</a></span>formatRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string redclean::anonymous_namespace{formula.cpp}::formatRow </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &amp;&#160;</td>
+          <td class="paramname"><em>part</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Форматирует строку с сохранением знака <code>$</code>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00126">126</a></p>
+
+</div>
+</div>
+<a id="a0e04ff1bf8638f89ff528517929378ba" name="a0e04ff1bf8638f89ff528517929378ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e04ff1bf8638f89ff528517929378ba">&#9670;&#160;</a></span>isDigit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool redclean::anonymous_namespace{formula.cpp}::isDigit </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Десятичная цифра. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00028">28</a></p>
+
+</div>
+</div>
+<a id="a1d8219ba49fd584e31eda68d0ec44960" name="a1d8219ba49fd584e31eda68d0ec44960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d8219ba49fd584e31eda68d0ec44960">&#9670;&#160;</a></span>isLetter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool redclean::anonymous_namespace{formula.cpp}::isLetter </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Латинская буква. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a id="a3c4439d1aa2e709ab3896b18414f2422" name="a3c4439d1aa2e709ab3896b18414f2422"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c4439d1aa2e709ab3896b18414f2422">&#9670;&#160;</a></span>isWordChar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool redclean::anonymous_namespace{formula.cpp}::isWordChar </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Символ, который может входить в «слово» формулы: ссылку, имя, число. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Символ; байты UTF-8 ≥ 0x80 тоже считаются частью слова. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd><code>true</code> для символов слова. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00019">19</a></p>
+
+</div>
+</div>
+<a id="a7631134104cac6762faeb2e9bf66aadf" name="a7631134104cac6762faeb2e9bf66aadf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7631134104cac6762faeb2e9bf66aadf">&#9670;&#160;</a></span>parseCellParts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1CellRefParts.html">CellRefParts</a> &gt; redclean::anonymous_namespace{formula.cpp}::parseCellParts </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Разбирает ссылку на ячейку вида <code>"$A$1"</code> целиком. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Текст. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Части ссылки или <code>std::nullopt</code>. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00092">92</a></p>
+
+</div>
+</div>
+<a id="ad4ddcc14c09c2398f1b98de89fd22659" name="ad4ddcc14c09c2398f1b98de89fd22659"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ddcc14c09c2398f1b98de89fd22659">&#9670;&#160;</a></span>parseColumnPart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &gt; redclean::anonymous_namespace{formula.cpp}::parseColumnPart </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Разбирает часть-столбец <code>"$?LETTERS"</code> целиком. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Текст. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Часть ссылки или <code>std::nullopt</code>. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00042">42</a></p>
+
+</div>
+</div>
+<a id="a78bee20d27a42d57d35dc1c4da8151e6" name="a78bee20d27a42d57d35dc1c4da8151e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78bee20d27a42d57d35dc1c4da8151e6">&#9670;&#160;</a></span>parseRowPart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &gt; redclean::anonymous_namespace{formula.cpp}::parseRowPart </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Разбирает часть-строку <code>"$?DIGITS"</code> целиком. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Текст. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Часть ссылки или <code>std::nullopt</code>. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00062">62</a></p>
+
+</div>
+</div>
+<a id="aea70f8b91385326fa03e6535a1265376" name="aea70f8b91385326fa03e6535a1265376"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea70f8b91385326fa03e6535a1265376">&#9670;&#160;</a></span>shifted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; std::uint32_t &gt; redclean::anonymous_namespace{formula.cpp}::shifted </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structredclean_1_1anonymous__namespace_02formula_8cpp_03_1_1RefPart.html">RefPart</a> &amp;&#160;</td>
+          <td class="paramname"><em>part</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::int64_t&#160;</td>
+          <td class="paramname"><em>delta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint32_t&#160;</td>
+          <td class="paramname"><em>limit</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сдвигает часть ссылки, если она относительная. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">part</td><td>Часть ссылки. </td></tr>
+    <tr><td class="paramname">delta</td><td>Сдвиг. </td></tr>
+    <tr><td class="paramname">limit</td><td>Максимально допустимое значение. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Новое значение или <code>std::nullopt</code>, если ссылка ушла за пределы листа. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00111">111</a></p>
+
+</div>
+</div>
+<a id="a8db594f98c7876d89581bbea60c352a6" name="a8db594f98c7876d89581bbea60c352a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db594f98c7876d89581bbea60c352a6">&#9670;&#160;</a></span>skipBrackets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t redclean::anonymous_namespace{formula.cpp}::skipBrackets </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Пропускает выражение в квадратных скобках с учётом вложенности. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Формула. </td></tr>
+    <tr><td class="paramname">i</td><td>Позиция открывающей скобки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Позиция после парной закрывающей скобки. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00160">160</a></p>
+
+</div>
+</div>
+<a id="abda2b46cae7ec8de580655e5bc041794" name="abda2b46cae7ec8de580655e5bc041794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abda2b46cae7ec8de580655e5bc041794">&#9670;&#160;</a></span>skipQuoted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t redclean::anonymous_namespace{formula.cpp}::skipQuoted </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>quote</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Пропускает литерал в кавычках с учётом удвоенных кавычек внутри. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Формула. </td></tr>
+    <tr><td class="paramname">i</td><td>Позиция открывающей кавычки. </td></tr>
+    <tr><td class="paramname">quote</td><td>Символ кавычки (<code>'"'</code> или <code>'\''</code>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Позиция после закрывающей кавычки. </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00138">138</a></p>
+
+</div>
+</div>
+<a id="a2335210dab42d10d45c543ac7e2236bc" name="a2335210dab42d10d45c543ac7e2236bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2335210dab42d10d45c543ac7e2236bc">&#9670;&#160;</a></span>wordEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t redclean::anonymous_namespace{formula.cpp}::wordEnd </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Позиция конца слова, начинающегося в <code>i</code>. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="formula_8cpp_source.html">formula.cpp</a> строка <a class="el" href="formula_8cpp_source.html#l00172">172</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceredclean.html">redclean</a></li><li class="navelem"><a class="el" href="namespaceredclean_1_1anonymous__namespace_02formula_8cpp_03.html">anonymous_namespace{formula.cpp}</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

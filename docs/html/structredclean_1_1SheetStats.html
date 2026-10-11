@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Структура redclean::SheetStats</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structredclean_1_1SheetStats.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="structredclean_1_1SheetStats-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Структура redclean::SheetStats</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Статистика обработки листа.  
+ <a href="structredclean_1_1SheetStats.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф связей класса redclean::SheetStats:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structredclean_1_1SheetStats__coll__graph.svg" width="214" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:acceff7d077a4a2b8c5ed58d29f9d8a79" id="r_acceff7d077a4a2b8c5ed58d29f9d8a79"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1SheetStats.html#acceff7d077a4a2b8c5ed58d29f9d8a79">rowsScanned</a> = 0</td></tr>
+<tr class="memdesc:acceff7d077a4a2b8c5ed58d29f9d8a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Строк с номером не меньше начального, присутствующих в XML.  <br /></td></tr>
+<tr class="separator:acceff7d077a4a2b8c5ed58d29f9d8a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa045b0efd67673f8a67f0e54672e9847" id="r_aa045b0efd67673f8a67f0e54672e9847"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1SheetStats.html#aa045b0efd67673f8a67f0e54672e9847">cellsCleared</a> = 0</td></tr>
+<tr class="memdesc:aa045b0efd67673f8a67f0e54672e9847"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очищенных ячеек, в которых было содержимое.  <br /></td></tr>
+<tr class="separator:aa045b0efd67673f8a67f0e54672e9847"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd2ac6b1e4f584b8ef0184fb51f3cf18" id="r_abd2ac6b1e4f584b8ef0184fb51f3cf18"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1SheetStats.html#abd2ac6b1e4f584b8ef0184fb51f3cf18">formulasRemoved</a> = 0</td></tr>
+<tr class="memdesc:abd2ac6b1e4f584b8ef0184fb51f3cf18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удалённых формул.  <br /></td></tr>
+<tr class="separator:abd2ac6b1e4f584b8ef0184fb51f3cf18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b9ec34f7125ae2ae8eaf4e4502bc7e6" id="r_a1b9ec34f7125ae2ae8eaf4e4502bc7e6"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1SheetStats.html#a1b9ec34f7125ae2ae8eaf4e4502bc7e6">sharedFormulasExpanded</a> = 0</td></tr>
+<tr class="memdesc:a1b9ec34f7125ae2ae8eaf4e4502bc7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ячеек общей формулы, получивших собственную формулу.  <br /></td></tr>
+<tr class="separator:a1b9ec34f7125ae2ae8eaf4e4502bc7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af24f945a69fc815cdc22ba9f1cd3c45d" id="r_af24f945a69fc815cdc22ba9f1cd3c45d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1SheetStats.html#af24f945a69fc815cdc22ba9f1cd3c45d">redRows</a></td></tr>
+<tr class="memdesc:af24f945a69fc815cdc22ba9f1cd3c45d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Номера строк с красными ячейками, по возрастанию.  <br /></td></tr>
+<tr class="separator:af24f945a69fc815cdc22ba9f1cd3c45d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Статистика обработки листа. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00020">20</a></p>
+</div><h2 class="groupheader">Данные класса</h2>
+<a id="aa045b0efd67673f8a67f0e54672e9847" name="aa045b0efd67673f8a67f0e54672e9847"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa045b0efd67673f8a67f0e54672e9847">&#9670;&#160;</a></span>cellsCleared</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t redclean::SheetStats::cellsCleared = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Очищенных ячеек, в которых было содержимое. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00023">23</a></p>
+
+</div>
+</div>
+<a id="abd2ac6b1e4f584b8ef0184fb51f3cf18" name="abd2ac6b1e4f584b8ef0184fb51f3cf18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd2ac6b1e4f584b8ef0184fb51f3cf18">&#9670;&#160;</a></span>formulasRemoved</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t redclean::SheetStats::formulasRemoved = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Удалённых формул. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00024">24</a></p>
+
+</div>
+</div>
+<a id="af24f945a69fc815cdc22ba9f1cd3c45d" name="af24f945a69fc815cdc22ba9f1cd3c45d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af24f945a69fc815cdc22ba9f1cd3c45d">&#9670;&#160;</a></span>redRows</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::uint32_t&gt; redclean::SheetStats::redRows</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Номера строк с красными ячейками, по возрастанию. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00026">26</a></p>
+
+</div>
+</div>
+<a id="acceff7d077a4a2b8c5ed58d29f9d8a79" name="acceff7d077a4a2b8c5ed58d29f9d8a79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acceff7d077a4a2b8c5ed58d29f9d8a79">&#9670;&#160;</a></span>rowsScanned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t redclean::SheetStats::rowsScanned = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Строк с номером не меньше начального, присутствующих в XML. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00022">22</a></p>
+
+</div>
+</div>
+<a id="a1b9ec34f7125ae2ae8eaf4e4502bc7e6" name="a1b9ec34f7125ae2ae8eaf4e4502bc7e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b9ec34f7125ae2ae8eaf4e4502bc7e6">&#9670;&#160;</a></span>sharedFormulasExpanded</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t redclean::SheetStats::sharedFormulasExpanded = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ячеек общей формулы, получивших собственную формулу. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a> строка <a class="el" href="sheet__processor_8hpp_source.html#l00025">25</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>src/<a class="el" href="sheet__processor_8hpp_source.html">sheet_processor.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceredclean.html">redclean</a></li><li class="navelem"><a class="el" href="structredclean_1_1SheetStats.html">SheetStats</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

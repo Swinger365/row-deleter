@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Исходный файл src/cleaner.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('cleaner_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">cleaner.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="cleaner_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="cleaner_8hpp.html">cleaner.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="thread__pool_8hpp.html">thread_pool.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="xlsx__package_8hpp.html">xlsx_package.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespaceredclean.html">   17</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceredclean.html">redclean</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02cleaner_8cpp_03.html">   19</a></span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html">SheetTask</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html#aef9c4f922d7907c03fa9fb6d6f5475a3">   24</a></span>    <a class="code hl_struct" href="structredclean_1_1SheetInfo.html">SheetInfo</a> <a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html#aef9c4f922d7907c03fa9fb6d6f5475a3">info</a>;                               </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html#a06460a2817501f8deebf1746ae71a706">   25</a></span>    std::unique_ptr&lt;SheetProcessor&gt; <a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html#a06460a2817501f8deebf1746ae71a706">processor</a>;    </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html#af0ea56c632dbac5c81f3b689e6b87eb5">   26</a></span>    std::string <a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html#af0ea56c632dbac5c81f3b689e6b87eb5">resultXml</a>;                        </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html">StageTimer</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html#a7631419c9baad6ce4847d1b274ad6187">   34</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html#a7631419c9baad6ce4847d1b274ad6187">StageTimer</a>(<a class="code hl_struct" href="structredclean_1_1CleanReport.html">CleanReport</a>&amp; report) : m_report(report) {}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html#a2fcace0bcfec7388c8e477bc72e4c3d3">   37</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html#a2fcace0bcfec7388c8e477bc72e4c3d3">mark</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* stage)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">const</span> <span class="keyword">auto</span> now = std::chrono::steady_clock::now();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        m_report.stageSeconds.emplace_back(stage, std::chrono::duration&lt;double&gt;(now - m_last).count());</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        m_last = now;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_struct" href="structredclean_1_1CleanReport.html">CleanReport</a>&amp; m_report;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::chrono::steady_clock::time_point m_last = std::chrono::steady_clock::now();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02cleaner_8cpp_03.html#a36fb907eb44bbac7d24513dae06c1d1c">   56</a></span>std::vector&lt;SheetTask&gt; <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02cleaner_8cpp_03.html#a36fb907eb44bbac7d24513dae06c1d1c">resolveSheets</a>(<span class="keyword">const</span> <a class="code hl_class" href="classredclean_1_1XlsxPackage.html">XlsxPackage</a>&amp; package, <span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1CleanOptions.html">CleanOptions</a>&amp; options)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    std::vector&lt;SheetTask&gt; tasks;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::set&lt;std::string&gt; seen;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">auto</span> add = [&amp;](<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1SheetInfo.html">SheetInfo</a>&amp; info, std::uint32_t startRow) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">if</span> (!seen.insert(info.<a class="code hl_variable" href="structredclean_1_1SheetInfo.html#a445d22194162f592c68701800369990e">name</a>).second) <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Лист \&quot;&quot;</span> + info.<a class="code hl_variable" href="structredclean_1_1SheetInfo.html#a445d22194162f592c68701800369990e">name</a> + <span class="stringliteral">&quot;\&quot; указан дважды&quot;</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        tasks.push_back({info, std::make_unique&lt;SheetProcessor&gt;(info.<a class="code hl_variable" href="structredclean_1_1SheetInfo.html#a445d22194162f592c68701800369990e">name</a>, startRow), {}});</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    };</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">if</span> (options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a84d4cd3d5e43757a68394cce31ca0c3e">allSheets</a>) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; info : package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#a012937dffcee12eea7696e8d68727811">worksheets</a>()) add(info, options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a56352970421fc1dee816dd5de8381882">defaultStartRow</a>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">return</span> tasks;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">if</span> (options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#acb30f94b86d440ba1db183c37c7af104">sheets</a>.empty()) <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Не указан ни один лист&quot;</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; spec : options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#acb30f94b86d440ba1db183c37c7af104">sheets</a>) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">const</span> <span class="keyword">auto</span> info = package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#a2fce440017c2d76a738733dcd8b1bd86">findWorksheet</a>(spec.name);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">if</span> (!info) {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            std::string available;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; ws : package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#a012937dffcee12eea7696e8d68727811">worksheets</a>()) available += (available.empty() ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot;, &quot;</span>) + (<span class="stringliteral">&quot;\&quot;&quot;</span> + ws.name + <span class="stringliteral">&quot;\&quot;&quot;</span>);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Лист \&quot;&quot;</span> + spec.name + <span class="stringliteral">&quot;\&quot; не найден. Доступные листы: &quot;</span> + available);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        add(*info, spec.startRow.value_or(options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a56352970421fc1dee816dd5de8381882">defaultStartRow</a>));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> tasks;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>}    <span class="comment">// namespace</span></div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="namespaceredclean.html#a305d3e9857fdf881b78aa9041e8e61ec">   85</a></span><a class="code hl_struct" href="structredclean_1_1CleanReport.html">CleanReport</a> <a class="code hl_function" href="namespaceredclean.html#a305d3e9857fdf881b78aa9041e8e61ec">cleanWorkbook</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1CleanOptions.html">CleanOptions</a>&amp; options)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>{</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a0b7a3e10dfa85d362bb8be7f4a428c75">inputPath</a>.empty()) <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Не указан входной файл&quot;</span>);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (!options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a3027c28968bbc95b98f8ab8ce3b2c272">dryRun</a> &amp;&amp; options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a1d958652b197c1cbd7dda115fa54938e">outputPath</a>.empty()) <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Не указан выходной файл&quot;</span>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span> (options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a56352970421fc1dee816dd5de8381882">defaultStartRow</a> == 0) <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Номер начальной строки должен быть &gt;= 1&quot;</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_struct" href="structredclean_1_1CleanReport.html">CleanReport</a> report;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    StageTimer timer(report);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_class" href="classredclean_1_1XlsxPackage.html">XlsxPackage</a> package(options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a0b7a3e10dfa85d362bb8be7f4a428c75">inputPath</a>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    std::vector&lt;SheetTask&gt; tasks = resolveSheets(package, options);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    timer.mark(<span class="stringliteral">&quot;открытие архива&quot;</span>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">const</span> <a class="code hl_class" href="classredclean_1_1RedStyleTable.html">RedStyleTable</a> styles =</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <a class="code hl_function" href="classredclean_1_1RedStyleTable.html#a8488eba5c6a15b1115a5ea090e300f74">RedStyleTable::build</a>(package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">read</a>(package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#add9878421ee88977d025de31dd943f9f">stylesPath</a>()), package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">read</a>(package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#ae7d9b6b7db63f45013413360aa7b71d1">themePath</a>()), options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#ae0abaca597c14a246652ef96aaa10185">style</a>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    report.<a class="code hl_variable" href="structredclean_1_1CleanReport.html#a9d4f14471c746876c3629de603b5da8c">styleCount</a> = styles.<a class="code hl_function" href="classredclean_1_1RedStyleTable.html#a68393aaf3003e79991fbdfa2695bf629">styleCount</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    report.<a class="code hl_variable" href="structredclean_1_1CleanReport.html#a833614418fcd5bd0f48e9a76e0d4c70c">redStyleCount</a> = styles.<a class="code hl_function" href="classredclean_1_1RedStyleTable.html#a66dd7ac3ec28d727032cf94146f059f7">redCount</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_class" href="classredclean_1_1ThreadPool.html">ThreadPool</a> pool(options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a89633aa4f5e439bf9c7c2456384f3d7d">threads</a>);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    report.<a class="code hl_variable" href="structredclean_1_1CleanReport.html#a0d41b93c280954e2ffc77d665db79ddb">threadsUsed</a> = pool.<a class="code hl_function" href="classredclean_1_1ThreadPool.html#ac5b0b24b03b11c1f9474cdaa90827f95">size</a>();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        std::vector&lt;std::future&lt;void&gt;&gt; futures;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; task : tasks)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            futures.push_back(pool.<a class="code hl_function" href="classredclean_1_1ThreadPool.html#a0d7cad402e155651494e9d0a00ccf544">submit</a>([&amp;task, &amp;package] { task.processor-&gt;load(package.read(task.info.path)); }));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <a class="code hl_function" href="namespaceredclean.html#a117d46416f495830ac076908f1ee6d9e">waitAll</a>(futures);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    timer.mark(<span class="stringliteral">&quot;распаковка и разбор XML&quot;</span>);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">if</span> (report.<a class="code hl_variable" href="structredclean_1_1CleanReport.html#a833614418fcd5bd0f48e9a76e0d4c70c">redStyleCount</a> &gt; 0) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        std::vector&lt;std::future&lt;void&gt;&gt; futures;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keyword">const</span> std::size_t grain = std::max&lt;std::size_t&gt;(1, options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a4f044c348f6047d4f154989bd754b4b8">rowsPerTask</a>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; task : tasks) {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            <a class="code hl_class" href="classredclean_1_1SheetProcessor.html">SheetProcessor</a>* processor = task.processor.get();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            <span class="keywordflow">for</span> (std::size_t begin = 0; begin &lt; processor-&gt;<a class="code hl_function" href="classredclean_1_1SheetProcessor.html#a0750a49a9ff5f8051165bc2792433067">candidateRowCount</a>(); begin += grain)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                futures.push_back(</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                    pool.<a class="code hl_function" href="classredclean_1_1ThreadPool.html#a0d7cad402e155651494e9d0a00ccf544">submit</a>([processor, begin, grain, &amp;styles] { processor-&gt;detect(begin, begin + grain, styles); }));</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_function" href="namespaceredclean.html#a117d46416f495830ac076908f1ee6d9e">waitAll</a>(futures);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    timer.mark(<span class="stringliteral">&quot;поиск красных строк&quot;</span>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        std::vector&lt;std::future&lt;void&gt;&gt; futures;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> dryRun = options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a3027c28968bbc95b98f8ab8ce3b2c272">dryRun</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; task : tasks)</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            futures.push_back(pool.<a class="code hl_function" href="classredclean_1_1ThreadPool.html#a0d7cad402e155651494e9d0a00ccf544">submit</a>([&amp;task, dryRun] {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                task.processor-&gt;apply();</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>                if (!dryRun &amp;&amp; task.processor-&gt;modified()) task.resultXml = task.processor-&gt;serialize();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            }));</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <a class="code hl_function" href="namespaceredclean.html#a117d46416f495830ac076908f1ee6d9e">waitAll</a>(futures);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    timer.mark(<span class="stringliteral">&quot;очистка и сериализация&quot;</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">bool</span> formulasRemoved = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordtype">bool</span> anyModified = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; task : tasks) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        report.<a class="code hl_variable" href="structredclean_1_1CleanReport.html#a03d1c935ced817df73751bfd907a37d2">sheets</a>.push_back({task.processor-&gt;name(), task.processor-&gt;startRow(), task.processor-&gt;stats()});</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        formulasRemoved = formulasRemoved || task.processor-&gt;stats().formulasRemoved &gt; 0;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">if</span> (task.processor-&gt;modified()) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            anyModified = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            <span class="keywordflow">if</span> (!options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a3027c28968bbc95b98f8ab8ce3b2c272">dryRun</a>) package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#aa2f0eab4d15a78f40c1f00adb120f0fc">write</a>(task.info.path, std::move(task.resultXml));</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">if</span> (options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a3027c28968bbc95b98f8ab8ce3b2c272">dryRun</a>) <span class="keywordflow">return</span> report;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">if</span> (formulasRemoved) report.<a class="code hl_variable" href="structredclean_1_1CleanReport.html#aef2581a22ba31e3c574e0fb5a557f6eb">calcChainRemoved</a> = package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#a49444583680116e02629bfcb3a021468">removeCalcChain</a>();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">if</span> (anyModified || options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a1d958652b197c1cbd7dda115fa54938e">outputPath</a> != options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a0b7a3e10dfa85d362bb8be7f4a428c75">inputPath</a>) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        package.<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#aafa959600474ee5ba529899dadd70cb7">saveAs</a>(options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#a1d958652b197c1cbd7dda115fa54938e">outputPath</a>, pool, options.<a class="code hl_variable" href="structredclean_1_1CleanOptions.html#aa1526fc042052ffeb0dc95f4d1d254fa">compressionLevel</a>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        report.<a class="code hl_variable" href="structredclean_1_1CleanReport.html#a1ad6f8328f851ecc258e2a2a77ad7d7a">written</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    timer.mark(<span class="stringliteral">&quot;сжатие и запись&quot;</span>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">return</span> report;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
+</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}    <span class="comment">// namespace redclean</span></div>
+</div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html">redclean::RedStyleTable</a></div><div class="ttdoc">Таблица «индекс стиля ячейки (атрибут s) → красный или нет».</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00058">styles.hpp:59</a></div></div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html_a66dd7ac3ec28d727032cf94146f059f7"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html#a66dd7ac3ec28d727032cf94146f059f7">redclean::RedStyleTable::redCount</a></div><div class="ttdeci">std::size_t redCount() const</div><div class="ttdoc">Число красных стилей.</div><div class="ttdef"><b>Definition</b> <a href="styles_8cpp_source.html#l00205">styles.cpp:205</a></div></div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html_a68393aaf3003e79991fbdfa2695bf629"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html#a68393aaf3003e79991fbdfa2695bf629">redclean::RedStyleTable::styleCount</a></div><div class="ttdeci">std::size_t styleCount() const</div><div class="ttdoc">Число стилей ячеек в книге.</div><div class="ttdef"><b>Definition</b> <a href="styles_8hpp_source.html#l00091">styles.hpp:91</a></div></div>
+<div class="ttc" id="aclassredclean_1_1RedStyleTable_html_a8488eba5c6a15b1115a5ea090e300f74"><div class="ttname"><a href="classredclean_1_1RedStyleTable.html#a8488eba5c6a15b1115a5ea090e300f74">redclean::RedStyleTable::build</a></div><div class="ttdeci">static RedStyleTable build(const std::string &amp;stylesXml, const std::string &amp;themeXml, const StyleOptions &amp;options)</div><div class="ttdoc">Строит таблицу по частям книги.</div><div class="ttdef"><b>Definition</b> <a href="styles_8cpp_source.html#l00171">styles.cpp:171</a></div></div>
+<div class="ttc" id="aclassredclean_1_1SheetProcessor_html"><div class="ttname"><a href="classredclean_1_1SheetProcessor.html">redclean::SheetProcessor</a></div><div class="ttdoc">Обработка одного листа (xl/worksheets/sheetN.xml) в три этапа.</div><div class="ttdef"><b>Definition</b> <a href="sheet__processor_8hpp_source.html#l00041">sheet_processor.hpp:42</a></div></div>
+<div class="ttc" id="aclassredclean_1_1SheetProcessor_html_a0750a49a9ff5f8051165bc2792433067"><div class="ttname"><a href="classredclean_1_1SheetProcessor.html#a0750a49a9ff5f8051165bc2792433067">redclean::SheetProcessor::candidateRowCount</a></div><div class="ttdeci">std::size_t candidateRowCount() const</div><div class="ttdoc">Число строк-кандидатов (номер не меньше начального).</div><div class="ttdef"><b>Definition</b> <a href="sheet__processor_8hpp_source.html#l00061">sheet_processor.hpp:61</a></div></div>
+<div class="ttc" id="aclassredclean_1_1ThreadPool_html"><div class="ttname"><a href="classredclean_1_1ThreadPool.html">redclean::ThreadPool</a></div><div class="ttdoc">Пул потоков фиксированного размера с общей очередью задач.</div><div class="ttdef"><b>Definition</b> <a href="thread__pool_8hpp_source.html#l00029">thread_pool.hpp:30</a></div></div>
+<div class="ttc" id="aclassredclean_1_1ThreadPool_html_a0d7cad402e155651494e9d0a00ccf544"><div class="ttname"><a href="classredclean_1_1ThreadPool.html#a0d7cad402e155651494e9d0a00ccf544">redclean::ThreadPool::submit</a></div><div class="ttdeci">auto submit(Fn &amp;&amp;fn) -&gt; std::future&lt; std::invoke_result_t&lt; std::decay_t&lt; Fn &gt; &gt; &gt;</div><div class="ttdoc">Ставит задачу в очередь.</div><div class="ttdef"><b>Definition</b> <a href="thread__pool_8hpp_source.html#l00071">thread_pool.hpp:71</a></div></div>
+<div class="ttc" id="aclassredclean_1_1ThreadPool_html_ac5b0b24b03b11c1f9474cdaa90827f95"><div class="ttname"><a href="classredclean_1_1ThreadPool.html#ac5b0b24b03b11c1f9474cdaa90827f95">redclean::ThreadPool::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdoc">Число рабочих потоков.</div><div class="ttdef"><b>Definition</b> <a href="thread__pool_8hpp_source.html#l00061">thread_pool.hpp:61</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html">redclean::XlsxPackage</a></div><div class="ttdoc">Книга .xlsx как набор частей.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8hpp_source.html#l00035">xlsx_package.hpp:36</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_a012937dffcee12eea7696e8d68727811"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#a012937dffcee12eea7696e8d68727811">redclean::XlsxPackage::worksheets</a></div><div class="ttdeci">const std::vector&lt; SheetInfo &gt; &amp; worksheets() const</div><div class="ttdoc">Рабочие листы в порядке книги.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8hpp_source.html#l00046">xlsx_package.hpp:46</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_a2fce440017c2d76a738733dcd8b1bd86"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#a2fce440017c2d76a738733dcd8b1bd86">redclean::XlsxPackage::findWorksheet</a></div><div class="ttdeci">std::optional&lt; SheetInfo &gt; findWorksheet(const std::string &amp;name) const</div><div class="ttdoc">Ищет рабочий лист по имени.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00162">xlsx_package.cpp:162</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_a49444583680116e02629bfcb3a021468"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#a49444583680116e02629bfcb3a021468">redclean::XlsxPackage::removeCalcChain</a></div><div class="ttdeci">bool removeCalcChain()</div><div class="ttdoc">Удаляет xl/calcChain.xml вместе со ссылками на него.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00185">xlsx_package.cpp:185</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_aa2f0eab4d15a78f40c1f00adb120f0fc"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#aa2f0eab4d15a78f40c1f00adb120f0fc">redclean::XlsxPackage::write</a></div><div class="ttdeci">void write(const std::string &amp;partPath, std::string data)</div><div class="ttdoc">Заменяет или добавляет часть.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00179">xlsx_package.cpp:179</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_aafa959600474ee5ba529899dadd70cb7"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#aafa959600474ee5ba529899dadd70cb7">redclean::XlsxPackage::saveAs</a></div><div class="ttdeci">void saveAs(const std::string &amp;path, ThreadPool &amp;pool, int compressionLevel) const</div><div class="ttdoc">Сохраняет книгу.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00217">xlsx_package.cpp:217</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_ad7f48f57d388b0c5f21af784a83ddfa8"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">redclean::XlsxPackage::read</a></div><div class="ttdeci">std::string read(const std::string &amp;partPath) const</div><div class="ttdoc">Содержимое части с учётом изменений.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00171">xlsx_package.cpp:171</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_add9878421ee88977d025de31dd943f9f"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#add9878421ee88977d025de31dd943f9f">redclean::XlsxPackage::stylesPath</a></div><div class="ttdeci">const std::string &amp; stylesPath() const</div><div class="ttdoc">Путь части стилей; пусто, если её нет.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8hpp_source.html#l00058">xlsx_package.hpp:58</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_ae7d9b6b7db63f45013413360aa7b71d1"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#ae7d9b6b7db63f45013413360aa7b71d1">redclean::XlsxPackage::themePath</a></div><div class="ttdeci">const std::string &amp; themePath() const</div><div class="ttdoc">Путь части темы; пусто, если её нет.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8hpp_source.html#l00060">xlsx_package.hpp:60</a></div></div>
+<div class="ttc" id="aclassredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer_html"><div class="ttname"><a href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html">redclean::anonymous_namespace{cleaner.cpp}::StageTimer</a></div><div class="ttdoc">Замеряет длительность этапов и складывает её в CleanReport::stageSeconds.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00030">cleaner.cpp:31</a></div></div>
+<div class="ttc" id="aclassredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer_html_a2fcace0bcfec7388c8e477bc72e4c3d3"><div class="ttname"><a href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html#a2fcace0bcfec7388c8e477bc72e4c3d3">redclean::anonymous_namespace{cleaner.cpp}::StageTimer::mark</a></div><div class="ttdeci">void mark(const char *stage)</div><div class="ttdoc">Завершает текущий этап под именем stage и начинает следующий.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00037">cleaner.cpp:37</a></div></div>
+<div class="ttc" id="aclassredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer_html_a7631419c9baad6ce4847d1b274ad6187"><div class="ttname"><a href="classredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1StageTimer.html#a7631419c9baad6ce4847d1b274ad6187">redclean::anonymous_namespace{cleaner.cpp}::StageTimer::StageTimer</a></div><div class="ttdeci">StageTimer(CleanReport &amp;report)</div><div class="ttdoc">Начинает отсчёт первого этапа.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00034">cleaner.cpp:34</a></div></div>
+<div class="ttc" id="acleaner_8hpp_html"><div class="ttname"><a href="cleaner_8hpp.html">cleaner.hpp</a></div><div class="ttdoc">Верхнеуровневая операция: очистка красных строк в книге.</div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02cleaner_8cpp_03_html_a36fb907eb44bbac7d24513dae06c1d1c"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02cleaner_8cpp_03.html#a36fb907eb44bbac7d24513dae06c1d1c">redclean::anonymous_namespace{cleaner.cpp}::resolveSheets</a></div><div class="ttdeci">std::vector&lt; SheetTask &gt; resolveSheets(const XlsxPackage &amp;package, const CleanOptions &amp;options)</div><div class="ttdoc">Определяет листы для обработки.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00056">cleaner.cpp:56</a></div></div>
+<div class="ttc" id="anamespaceredclean_html"><div class="ttname"><a href="namespaceredclean.html">redclean</a></div><div class="ttdoc">Корневое пространство имён проекта.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00017">cleaner.cpp:17</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a117d46416f495830ac076908f1ee6d9e"><div class="ttname"><a href="namespaceredclean.html#a117d46416f495830ac076908f1ee6d9e">redclean::waitAll</a></div><div class="ttdeci">void waitAll(std::vector&lt; std::future&lt; T &gt; &gt; &amp;futures)</div><div class="ttdoc">Дожидается всех futures, затем пробрасывает первое исключение, если оно было.</div><div class="ttdef"><b>Definition</b> <a href="thread__pool_8hpp_source.html#l00117">thread_pool.hpp:117</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a305d3e9857fdf881b78aa9041e8e61ec"><div class="ttname"><a href="namespaceredclean.html#a305d3e9857fdf881b78aa9041e8e61ec">redclean::cleanWorkbook</a></div><div class="ttdeci">CleanReport cleanWorkbook(const CleanOptions &amp;options)</div><div class="ttdoc">Очищает содержимое строк с красными ячейками на выбранных листах.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00085">cleaner.cpp:85</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html"><div class="ttname"><a href="structredclean_1_1CleanOptions.html">redclean::CleanOptions</a></div><div class="ttdoc">Параметры очистки книги.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00028">cleaner.hpp:29</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_a0b7a3e10dfa85d362bb8be7f4a428c75"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#a0b7a3e10dfa85d362bb8be7f4a428c75">redclean::CleanOptions::inputPath</a></div><div class="ttdeci">std::string inputPath</div><div class="ttdoc">Исходная книга (UTF-8).</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00030">cleaner.hpp:30</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_a1d958652b197c1cbd7dda115fa54938e"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#a1d958652b197c1cbd7dda115fa54938e">redclean::CleanOptions::outputPath</a></div><div class="ttdeci">std::string outputPath</div><div class="ttdoc">Куда сохранить; может совпадать с inputPath.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00031">cleaner.hpp:31</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_a3027c28968bbc95b98f8ab8ce3b2c272"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#a3027c28968bbc95b98f8ab8ce3b2c272">redclean::CleanOptions::dryRun</a></div><div class="ttdeci">bool dryRun</div><div class="ttdoc">Только найти строки, файл не записывать.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00039">cleaner.hpp:39</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_a4f044c348f6047d4f154989bd754b4b8"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#a4f044c348f6047d4f154989bd754b4b8">redclean::CleanOptions::rowsPerTask</a></div><div class="ttdeci">std::size_t rowsPerTask</div><div class="ttdoc">Размер куска строк для параллельного поиска.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00036">cleaner.hpp:36</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_a56352970421fc1dee816dd5de8381882"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#a56352970421fc1dee816dd5de8381882">redclean::CleanOptions::defaultStartRow</a></div><div class="ttdeci">std::uint32_t defaultStartRow</div><div class="ttdoc">Первая строка для листов без своей.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00034">cleaner.hpp:34</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_a84d4cd3d5e43757a68394cce31ca0c3e"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#a84d4cd3d5e43757a68394cce31ca0c3e">redclean::CleanOptions::allSheets</a></div><div class="ttdeci">bool allSheets</div><div class="ttdoc">Обработать все рабочие листы с defaultStartRow; sheets не используется.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00033">cleaner.hpp:33</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_a89633aa4f5e439bf9c7c2456384f3d7d"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#a89633aa4f5e439bf9c7c2456384f3d7d">redclean::CleanOptions::threads</a></div><div class="ttdeci">std::size_t threads</div><div class="ttdoc">Число потоков; 0 — по числу ядер.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00035">cleaner.hpp:35</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_aa1526fc042052ffeb0dc95f4d1d254fa"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#aa1526fc042052ffeb0dc95f4d1d254fa">redclean::CleanOptions::compressionLevel</a></div><div class="ttdeci">int compressionLevel</div><div class="ttdoc">Уровень deflate: 1 — быстрее, 9 — меньше файл.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00037">cleaner.hpp:37</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_acb30f94b86d440ba1db183c37c7af104"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#acb30f94b86d440ba1db183c37c7af104">redclean::CleanOptions::sheets</a></div><div class="ttdeci">std::vector&lt; SheetSpec &gt; sheets</div><div class="ttdoc">Листы для обработки.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00032">cleaner.hpp:32</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanOptions_html_ae0abaca597c14a246652ef96aaa10185"><div class="ttname"><a href="structredclean_1_1CleanOptions.html#ae0abaca597c14a246652ef96aaa10185">redclean::CleanOptions::style</a></div><div class="ttdeci">StyleOptions style</div><div class="ttdoc">Что считать красным.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00038">cleaner.hpp:38</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanReport_html"><div class="ttname"><a href="structredclean_1_1CleanReport.html">redclean::CleanReport</a></div><div class="ttdoc">Итог обработки книги.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00051">cleaner.hpp:52</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanReport_html_a03d1c935ced817df73751bfd907a37d2"><div class="ttname"><a href="structredclean_1_1CleanReport.html#a03d1c935ced817df73751bfd907a37d2">redclean::CleanReport::sheets</a></div><div class="ttdeci">std::vector&lt; SheetReport &gt; sheets</div><div class="ttdoc">Результаты по листам в порядке обработки.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00053">cleaner.hpp:53</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanReport_html_a0d41b93c280954e2ffc77d665db79ddb"><div class="ttname"><a href="structredclean_1_1CleanReport.html#a0d41b93c280954e2ffc77d665db79ddb">redclean::CleanReport::threadsUsed</a></div><div class="ttdeci">std::size_t threadsUsed</div><div class="ttdoc">Размер пула потоков.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00056">cleaner.hpp:56</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanReport_html_a1ad6f8328f851ecc258e2a2a77ad7d7a"><div class="ttname"><a href="structredclean_1_1CleanReport.html#a1ad6f8328f851ecc258e2a2a77ad7d7a">redclean::CleanReport::written</a></div><div class="ttdeci">bool written</div><div class="ttdoc">Был ли записан выходной файл.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00058">cleaner.hpp:58</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanReport_html_a833614418fcd5bd0f48e9a76e0d4c70c"><div class="ttname"><a href="structredclean_1_1CleanReport.html#a833614418fcd5bd0f48e9a76e0d4c70c">redclean::CleanReport::redStyleCount</a></div><div class="ttdeci">std::size_t redStyleCount</div><div class="ttdoc">Сколько из них красные.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00055">cleaner.hpp:55</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanReport_html_a9d4f14471c746876c3629de603b5da8c"><div class="ttname"><a href="structredclean_1_1CleanReport.html#a9d4f14471c746876c3629de603b5da8c">redclean::CleanReport::styleCount</a></div><div class="ttdeci">std::size_t styleCount</div><div class="ttdoc">Число стилей ячеек (cellXfs).</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00054">cleaner.hpp:54</a></div></div>
+<div class="ttc" id="astructredclean_1_1CleanReport_html_aef2581a22ba31e3c574e0fb5a557f6eb"><div class="ttname"><a href="structredclean_1_1CleanReport.html#aef2581a22ba31e3c574e0fb5a557f6eb">redclean::CleanReport::calcChainRemoved</a></div><div class="ttdeci">bool calcChainRemoved</div><div class="ttdoc">Удалена ли цепочка вычислений.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8hpp_source.html#l00057">cleaner.hpp:57</a></div></div>
+<div class="ttc" id="astructredclean_1_1SheetInfo_html"><div class="ttname"><a href="structredclean_1_1SheetInfo.html">redclean::SheetInfo</a></div><div class="ttdoc">Рабочий лист книги.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8hpp_source.html#l00020">xlsx_package.hpp:21</a></div></div>
+<div class="ttc" id="astructredclean_1_1SheetInfo_html_a445d22194162f592c68701800369990e"><div class="ttname"><a href="structredclean_1_1SheetInfo.html#a445d22194162f592c68701800369990e">redclean::SheetInfo::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Имя листа, как в Excel.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8hpp_source.html#l00022">xlsx_package.hpp:22</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask_html"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html">redclean::anonymous_namespace{cleaner.cpp}::SheetTask</a></div><div class="ttdoc">Состояние обработки одного листа.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00022">cleaner.cpp:23</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask_html_a06460a2817501f8deebf1746ae71a706"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html#a06460a2817501f8deebf1746ae71a706">redclean::anonymous_namespace{cleaner.cpp}::SheetTask::processor</a></div><div class="ttdeci">std::unique_ptr&lt; SheetProcessor &gt; processor</div><div class="ttdoc">Разобранный лист.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00025">cleaner.cpp:25</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask_html_aef9c4f922d7907c03fa9fb6d6f5475a3"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html#aef9c4f922d7907c03fa9fb6d6f5475a3">redclean::anonymous_namespace{cleaner.cpp}::SheetTask::info</a></div><div class="ttdeci">SheetInfo info</div><div class="ttdoc">Лист в книге.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00024">cleaner.cpp:24</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask_html_af0ea56c632dbac5c81f3b689e6b87eb5"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02cleaner_8cpp_03_1_1SheetTask.html#af0ea56c632dbac5c81f3b689e6b87eb5">redclean::anonymous_namespace{cleaner.cpp}::SheetTask::resultXml</a></div><div class="ttdeci">std::string resultXml</div><div class="ttdoc">Новый XML листа, если он изменён.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00026">cleaner.cpp:26</a></div></div>
+<div class="ttc" id="athread__pool_8hpp_html"><div class="ttname"><a href="thread__pool_8hpp.html">thread_pool.hpp</a></div><div class="ttdoc">Пул потоков и параллельные алгоритмы поверх него.</div></div>
+<div class="ttc" id="axlsx__package_8hpp_html"><div class="ttname"><a href="xlsx__package_8hpp.html">xlsx_package.hpp</a></div><div class="ttdoc">Пакет .xlsx (Office Open XML): связи книги, листы и части.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="cleaner_8cpp.html">cleaner.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

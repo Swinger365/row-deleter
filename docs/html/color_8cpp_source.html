@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Исходный файл src/color.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('color_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">color.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="color_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="color_8hpp.html">color.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceredclean.html">redclean</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html">   13</a></span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a8d41ae511781b1c6bcc644f7cca3c7d5">   20</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a8d41ae511781b1c6bcc644f7cca3c7d5">hexDigit</a>(<span class="keywordtype">char</span> c)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>) <span class="keywordflow">return</span> c - <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;f&#39;</span>) <span class="keywordflow">return</span> c - <span class="charliteral">&#39;a&#39;</span> + 10;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (c &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;F&#39;</span>) <span class="keywordflow">return</span> c - <span class="charliteral">&#39;A&#39;</span> + 10;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}</div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6fa70c688493b81525d2b6aefb4dbc23">   33</a></span>std::uint8_t <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6fa70c688493b81525d2b6aefb4dbc23">toByte</a>(<span class="keywordtype">double</span> value)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(std::clamp(std::lround(value * 255.0), 0L, 255L));</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="foldopen" id="foldopen00039" data-start="{" data-end="};">
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html">   39</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html">Hls</a></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a1dcaa20b919b7702928929293561acb8">   41</a></span>    <span class="keywordtype">double</span> h = 0.0;    </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a3947affbad8f27c51768576722239519">   42</a></span>    <span class="keywordtype">double</span> l = 0.0;    </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a4300a624210bfe4a541db4e256eaa826">   43</a></span>    <span class="keywordtype">double</span> s = 0.0;    </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a7688332dcbc2acf369872aa62a2a8c25">   51</a></span><a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html">Hls</a> <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a7688332dcbc2acf369872aa62a2a8c25">toHls</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1Rgb.html">Rgb</a>&amp; c)</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> r = c.<a class="code hl_variable" href="structredclean_1_1Rgb.html#a350062246ef9decb477ab6eb78af66af">r</a> / 255.0, g = c.<a class="code hl_variable" href="structredclean_1_1Rgb.html#adb25d456be394f5c45baf56cad13e7d6">g</a> / 255.0, b = c.<a class="code hl_variable" href="structredclean_1_1Rgb.html#a732bd0bf4c880a8a8bf888c9ae6c619a">b</a> / 255.0;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> maxC = std::max({r, g, b});</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> minC = std::min({r, g, b});</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html">Hls</a> out;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    out.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a3947affbad8f27c51768576722239519">l</a> = (maxC + minC) / 2.0;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> delta = maxC - minC;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (delta == 0.0) <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    out.s = out.l &lt;= 0.5 ? delta / (maxC + minC) : delta / (2.0 - maxC - minC);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">double</span> h = 0.0;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (maxC == r)</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        h = (g - b) / delta;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (maxC == g)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        h = 2.0 + (b - r) / delta;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        h = 4.0 + (r - g) / delta;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    h /= 6.0;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (h &lt; 0.0) h += 1.0;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    out.h = h;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a3542a72d7149db3c0af35b1719252de5">   82</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a3542a72d7149db3c0af35b1719252de5">hueToChannel</a>(<span class="keywordtype">double</span> m1, <span class="keywordtype">double</span> m2, <span class="keywordtype">double</span> h)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span> (h &lt; 0.0) h += 1.0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">if</span> (h &gt; 1.0) h -= 1.0;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (h &lt; 1.0 / 6.0) <span class="keywordflow">return</span> m1 + (m2 - m1) * h * 6.0;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordflow">if</span> (h &lt; 0.5) <span class="keywordflow">return</span> m2;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (h &lt; 2.0 / 3.0) <span class="keywordflow">return</span> m1 + (m2 - m1) * (2.0 / 3.0 - h) * 6.0;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">return</span> m1;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
+</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#ad7f14a43ac4360e93cb7ef5aa8a2e378">   97</a></span><a class="code hl_struct" href="structredclean_1_1Rgb.html">Rgb</a> <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#ad7f14a43ac4360e93cb7ef5aa8a2e378">fromHls</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html">Hls</a>&amp; c)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">if</span> (c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a4300a624210bfe4a541db4e256eaa826">s</a> == 0.0) {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keyword">const</span> <span class="keyword">auto</span> v = <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6fa70c688493b81525d2b6aefb4dbc23">toByte</a>(c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a3947affbad8f27c51768576722239519">l</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> {v, v, v};</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> m2 = c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a3947affbad8f27c51768576722239519">l</a> &lt;= 0.5 ? c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a3947affbad8f27c51768576722239519">l</a> * (1.0 + c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a4300a624210bfe4a541db4e256eaa826">s</a>) : c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a3947affbad8f27c51768576722239519">l</a> + c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a4300a624210bfe4a541db4e256eaa826">s</a> - c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a3947affbad8f27c51768576722239519">l</a> * c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a4300a624210bfe4a541db4e256eaa826">s</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> m1 = 2.0 * c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a3947affbad8f27c51768576722239519">l</a> - m2;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> {<a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6fa70c688493b81525d2b6aefb4dbc23">toByte</a>(<a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a3542a72d7149db3c0af35b1719252de5">hueToChannel</a>(m1, m2, c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a1dcaa20b919b7702928929293561acb8">h</a> + 1.0 / 3.0)), <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6fa70c688493b81525d2b6aefb4dbc23">toByte</a>(<a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a3542a72d7149db3c0af35b1719252de5">hueToChannel</a>(m1, m2, c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a1dcaa20b919b7702928929293561acb8">h</a>)),</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>            <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6fa70c688493b81525d2b6aefb4dbc23">toByte</a>(<a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a3542a72d7149db3c0af35b1719252de5">hueToChannel</a>(m1, m2, c.<a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a1dcaa20b919b7702928929293561acb8">h</a> - 1.0 / 3.0))};</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="foldopen" id="foldopen00110" data-start="{" data-end="};">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6133c383a15782c6bd4b36450ebbe5c1">  110</a></span><span class="keyword">constexpr</span> std::array&lt;std::uint32_t, 64&gt; <a class="code hl_variable" href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6133c383a15782c6bd4b36450ebbe5c1">kLegacyPalette</a> = {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    0x000000, 0xFFFFFF, 0xFF0000, 0x00FF00, 0x0000FF, 0xFFFF00, 0xFF00FF, 0x00FFFF,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    0x000000, 0xFFFFFF, 0xFF0000, 0x00FF00, 0x0000FF, 0xFFFF00, 0xFF00FF, 0x00FFFF,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    0x800000, 0x008000, 0x000080, 0x808000, 0x800080, 0x008080, 0xC0C0C0, 0x808080,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    0x9999FF, 0x993366, 0xFFFFCC, 0xCCFFFF, 0x660066, 0xFF8080, 0x0066CC, 0xCCCCFF,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    0x000080, 0xFF00FF, 0xFFFF00, 0x00FFFF, 0x800080, 0x800000, 0x008080, 0x0000FF,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    0x00CCFF, 0xCCFFFF, 0xCCFFCC, 0xFFFF99, 0x99CCFF, 0xFF99CC, 0xCC99FF, 0xFFCC99,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    0x3366FF, 0x33CCCC, 0x99CC00, 0xFFCC00, 0xFF9900, 0xFF6600, 0x666699, 0x969696,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    0x003366, 0x339966, 0x003300, 0x333300, 0x993300, 0x993366, 0x333399, 0x333333,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>};</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}    <span class="comment">// namespace</span></div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="namespaceredclean.html#ae60cbdb9ada31c0e6de2e962b10586a4">  123</a></span>std::optional&lt;Rgb&gt; <a class="code hl_function" href="namespaceredclean.html#ae60cbdb9ada31c0e6de2e962b10586a4">parseHexColor</a>(std::string_view text)</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>{</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">if</span> (!text.empty() &amp;&amp; text.front() == <span class="charliteral">&#39;#&#39;</span>) text.remove_prefix(1);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">if</span> (text.size() == 8)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        text.remove_prefix(2);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (text.size() != 6)</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    std::array&lt;std::uint8_t, 3&gt; bytes{};</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; 3; ++i) {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> hi = hexDigit(text[2 * i]);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keyword">const</span> <span class="keywordtype">int</span> lo = hexDigit(text[2 * i + 1]);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">if</span> (hi &lt; 0 || lo &lt; 0) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        bytes[i] = <span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(hi * 16 + lo);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structredclean_1_1Rgb.html">Rgb</a>{bytes[0], bytes[1], bytes[2]};</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>}</div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="foldopen" id="foldopen00141" data-start="{" data-end="}">
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="namespaceredclean.html#af51b7663f53cc124cc4f31407ce95f51">  141</a></span>std::string <a class="code hl_function" href="namespaceredclean.html#af51b7663f53cc124cc4f31407ce95f51">toHex</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1Rgb.html">Rgb</a>&amp; color)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>{</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">char</span> digits[] = <span class="stringliteral">&quot;0123456789ABCDEF&quot;</span>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    std::string out(6, <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keyword">const</span> std::uint8_t channels[] = {color.<a class="code hl_variable" href="structredclean_1_1Rgb.html#a350062246ef9decb477ab6eb78af66af">r</a>, color.<a class="code hl_variable" href="structredclean_1_1Rgb.html#adb25d456be394f5c45baf56cad13e7d6">g</a>, color.<a class="code hl_variable" href="structredclean_1_1Rgb.html#a732bd0bf4c880a8a8bf888c9ae6c619a">b</a>};</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; 3; ++i) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        out[2 * i] = digits[channels[i] &gt;&gt; 4];</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        out[2 * i + 1] = digits[channels[i] &amp; 0x0F];</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="namespaceredclean.html#af564a4b9f099e810dda2b9183da60bf2">  153</a></span><a class="code hl_struct" href="structredclean_1_1Hsv.html">Hsv</a> <a class="code hl_function" href="namespaceredclean.html#af564a4b9f099e810dda2b9183da60bf2">toHsv</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1Rgb.html">Rgb</a>&amp; c)</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>{</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> r = c.<a class="code hl_variable" href="structredclean_1_1Rgb.html#a350062246ef9decb477ab6eb78af66af">r</a> / 255.0, g = c.<a class="code hl_variable" href="structredclean_1_1Rgb.html#adb25d456be394f5c45baf56cad13e7d6">g</a> / 255.0, b = c.<a class="code hl_variable" href="structredclean_1_1Rgb.html#a732bd0bf4c880a8a8bf888c9ae6c619a">b</a> / 255.0;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> maxC = std::max({r, g, b});</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> minC = std::min({r, g, b});</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> delta = maxC - minC;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <a class="code hl_struct" href="structredclean_1_1Hsv.html">Hsv</a> out;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    out.<a class="code hl_variable" href="structredclean_1_1Hsv.html#ad197646aec26ed3fc2f0c3a483652a4a">v</a> = maxC;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    out.<a class="code hl_variable" href="structredclean_1_1Hsv.html#ad6f429810200f9c7585c1f7207157d1a">s</a> = maxC == 0.0 ? 0.0 : delta / maxC;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">if</span> (delta == 0.0) <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">double</span> h = 0.0;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">if</span> (maxC == r)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        h = std::fmod((g - b) / delta, 6.0);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (maxC == g)</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        h = (b - r) / delta + 2.0;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        h = (r - g) / delta + 4.0;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    h *= 60.0;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">if</span> (h &lt; 0.0) h += 360.0;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    out.<a class="code hl_variable" href="structredclean_1_1Hsv.html#ac0faa64f63ae62ffa4868fd2d99d4a4e">h</a> = h;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
+</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="namespaceredclean.html#adb71bc98281f4a9ac1bdfbfb036d1676">  178</a></span><a class="code hl_struct" href="structredclean_1_1Rgb.html">Rgb</a> <a class="code hl_function" href="namespaceredclean.html#adb71bc98281f4a9ac1bdfbfb036d1676">applyTint</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1Rgb.html">Rgb</a>&amp; color, <span class="keywordtype">double</span> tint)</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>{</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordflow">if</span> (tint == 0.0) <span class="keywordflow">return</span> color;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    Hls hls = toHls(color);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="keywordflow">if</span> (tint &lt; 0.0)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        hls.l = hls.l * (1.0 + tint);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        hls.l = hls.l * (1.0 - tint) + tint;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    hls.l = std::clamp(hls.l, 0.0, 1.0);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordflow">return</span> fromHls(hls);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>}</div>
+</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="namespaceredclean.html#acf58742ccc861b414b7434f09882c2b3">  190</a></span>std::optional&lt;Rgb&gt; <a class="code hl_function" href="namespaceredclean.html#acf58742ccc861b414b7434f09882c2b3">legacyIndexedColor</a>(<span class="keywordtype">unsigned</span> index)</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>{</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">if</span> (index &gt;= kLegacyPalette.size()) <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keyword">const</span> std::uint32_t v = kLegacyPalette[index];</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">return</span> <a class="code hl_struct" href="structredclean_1_1Rgb.html">Rgb</a>{<span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(v &gt;&gt; 16), <span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>((v &gt;&gt; 8) &amp; 0xFF),</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>               <span class="keyword">static_cast&lt;</span>std::uint8_t<span class="keyword">&gt;</span>(v &amp; 0xFF)};</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}</div>
+</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="foldopen" id="foldopen00198" data-start="{" data-end="}">
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="structredclean_1_1RedCriteria.html#a642698deff03b66eb6d50a757ac700a2">  198</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="structredclean_1_1RedCriteria.html#a642698deff03b66eb6d50a757ac700a2">RedCriteria::matches</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1Rgb.html">Rgb</a>&amp; color)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="structredclean_1_1RedCriteria.html#afbeebfbcb794236d6314287095b51761">exactColors</a>.empty()) <span class="keywordflow">return</span> std::find(<a class="code hl_variable" href="structredclean_1_1RedCriteria.html#afbeebfbcb794236d6314287095b51761">exactColors</a>.begin(), <a class="code hl_variable" href="structredclean_1_1RedCriteria.html#afbeebfbcb794236d6314287095b51761">exactColors</a>.end(), color) != <a class="code hl_variable" href="structredclean_1_1RedCriteria.html#afbeebfbcb794236d6314287095b51761">exactColors</a>.end();</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structredclean_1_1Hsv.html">Hsv</a> hsv = <a class="code hl_function" href="namespaceredclean.html#af564a4b9f099e810dda2b9183da60bf2">toHsv</a>(color);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> hueDistance = std::min(hsv.<a class="code hl_variable" href="structredclean_1_1Hsv.html#ac0faa64f63ae62ffa4868fd2d99d4a4e">h</a>, 360.0 - hsv.<a class="code hl_variable" href="structredclean_1_1Hsv.html#ac0faa64f63ae62ffa4868fd2d99d4a4e">h</a>);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">return</span> hueDistance &lt;= <a class="code hl_variable" href="structredclean_1_1RedCriteria.html#a42c899a6aa7d7aa25f1ef09064d5af70">maxHueDeviation</a> &amp;&amp; hsv.<a class="code hl_variable" href="structredclean_1_1Hsv.html#ad6f429810200f9c7585c1f7207157d1a">s</a> &gt;= <a class="code hl_variable" href="structredclean_1_1RedCriteria.html#a42e85877e28da3d39d43d0459fa8da1e">minSaturation</a> &amp;&amp; hsv.<a class="code hl_variable" href="structredclean_1_1Hsv.html#ad197646aec26ed3fc2f0c3a483652a4a">v</a> &gt;= <a class="code hl_variable" href="structredclean_1_1RedCriteria.html#a1dcf7ae74c7be95a8a533ceb6b764768">minValue</a>;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>}</div>
+</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}    <span class="comment">// namespace redclean</span></div>
+<div class="ttc" id="acolor_8hpp_html"><div class="ttname"><a href="color_8hpp.html">color.hpp</a></div><div class="ttdoc">Цвета: разбор, преобразования RGB/HSV/HLS, палитра Excel и критерий «красного».</div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02color_8cpp_03_html_a3542a72d7149db3c0af35b1719252de5"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a3542a72d7149db3c0af35b1719252de5">redclean::anonymous_namespace{color.cpp}::hueToChannel</a></div><div class="ttdeci">double hueToChannel(double m1, double m2, double h)</div><div class="ttdoc">Вспомогательная функция обратного преобразования HLS → RGB.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00082">color.cpp:82</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02color_8cpp_03_html_a6133c383a15782c6bd4b36450ebbe5c1"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6133c383a15782c6bd4b36450ebbe5c1">redclean::anonymous_namespace{color.cpp}::kLegacyPalette</a></div><div class="ttdeci">constexpr std::array&lt; std::uint32_t, 64 &gt; kLegacyPalette</div><div class="ttdoc">Стандартная 64-цветная палитра Excel (индексы 0..63), значения 0xRRGGBB.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00110">color.cpp:110</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02color_8cpp_03_html_a6fa70c688493b81525d2b6aefb4dbc23"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a6fa70c688493b81525d2b6aefb4dbc23">redclean::anonymous_namespace{color.cpp}::toByte</a></div><div class="ttdeci">std::uint8_t toByte(double value)</div><div class="ttdoc">Переводит канал из [0, 1] в байт с округлением и ограничением.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00033">color.cpp:33</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02color_8cpp_03_html_a7688332dcbc2acf369872aa62a2a8c25"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a7688332dcbc2acf369872aa62a2a8c25">redclean::anonymous_namespace{color.cpp}::toHls</a></div><div class="ttdeci">Hls toHls(const Rgb &amp;c)</div><div class="ttdoc">Переводит цвет в HLS.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00051">color.cpp:51</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02color_8cpp_03_html_a8d41ae511781b1c6bcc644f7cca3c7d5"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#a8d41ae511781b1c6bcc644f7cca3c7d5">redclean::anonymous_namespace{color.cpp}::hexDigit</a></div><div class="ttdeci">int hexDigit(char c)</div><div class="ttdoc">Значение шестнадцатеричной цифры.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00020">color.cpp:20</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02color_8cpp_03_html_ad7f14a43ac4360e93cb7ef5aa8a2e378"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02color_8cpp_03.html#ad7f14a43ac4360e93cb7ef5aa8a2e378">redclean::anonymous_namespace{color.cpp}::fromHls</a></div><div class="ttdeci">Rgb fromHls(const Hls &amp;c)</div><div class="ttdoc">Переводит цвет из HLS в RGB.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00097">color.cpp:97</a></div></div>
+<div class="ttc" id="anamespaceredclean_html"><div class="ttname"><a href="namespaceredclean.html">redclean</a></div><div class="ttdoc">Корневое пространство имён проекта.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00017">cleaner.cpp:17</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_acf58742ccc861b414b7434f09882c2b3"><div class="ttname"><a href="namespaceredclean.html#acf58742ccc861b414b7434f09882c2b3">redclean::legacyIndexedColor</a></div><div class="ttdeci">std::optional&lt; Rgb &gt; legacyIndexedColor(unsigned index)</div><div class="ttdoc">Цвет из устаревшей 64-цветной палитры Excel (атрибут indexed).</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00190">color.cpp:190</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_adb71bc98281f4a9ac1bdfbfb036d1676"><div class="ttname"><a href="namespaceredclean.html#adb71bc98281f4a9ac1bdfbfb036d1676">redclean::applyTint</a></div><div class="ttdeci">Rgb applyTint(const Rgb &amp;color, double tint)</div><div class="ttdoc">Применяет оттенок (атрибут tint из OOXML).</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00178">color.cpp:178</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_ae60cbdb9ada31c0e6de2e962b10586a4"><div class="ttname"><a href="namespaceredclean.html#ae60cbdb9ada31c0e6de2e962b10586a4">redclean::parseHexColor</a></div><div class="ttdeci">std::optional&lt; Rgb &gt; parseHexColor(std::string_view text)</div><div class="ttdoc">Разбирает цвет из шестнадцатеричной записи.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00123">color.cpp:123</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_af51b7663f53cc124cc4f31407ce95f51"><div class="ttname"><a href="namespaceredclean.html#af51b7663f53cc124cc4f31407ce95f51">redclean::toHex</a></div><div class="ttdeci">std::string toHex(const Rgb &amp;color)</div><div class="ttdoc">Форматирует цвет как &quot;RRGGBB&quot; (заглавные буквы).</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00141">color.cpp:141</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_af564a4b9f099e810dda2b9183da60bf2"><div class="ttname"><a href="namespaceredclean.html#af564a4b9f099e810dda2b9183da60bf2">redclean::toHsv</a></div><div class="ttdeci">Hsv toHsv(const Rgb &amp;c)</div><div class="ttdoc">Переводит цвет в HSV.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00153">color.cpp:153</a></div></div>
+<div class="ttc" id="astructredclean_1_1Hsv_html"><div class="ttname"><a href="structredclean_1_1Hsv.html">redclean::Hsv</a></div><div class="ttdoc">Цвет в модели HSV.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00032">color.hpp:33</a></div></div>
+<div class="ttc" id="astructredclean_1_1Hsv_html_ac0faa64f63ae62ffa4868fd2d99d4a4e"><div class="ttname"><a href="structredclean_1_1Hsv.html#ac0faa64f63ae62ffa4868fd2d99d4a4e">redclean::Hsv::h</a></div><div class="ttdeci">double h</div><div class="ttdoc">Оттенок, градусы в диапазоне [0, 360).</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00034">color.hpp:34</a></div></div>
+<div class="ttc" id="astructredclean_1_1Hsv_html_ad197646aec26ed3fc2f0c3a483652a4a"><div class="ttname"><a href="structredclean_1_1Hsv.html#ad197646aec26ed3fc2f0c3a483652a4a">redclean::Hsv::v</a></div><div class="ttdeci">double v</div><div class="ttdoc">Яркость, [0, 1].</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00036">color.hpp:36</a></div></div>
+<div class="ttc" id="astructredclean_1_1Hsv_html_ad6f429810200f9c7585c1f7207157d1a"><div class="ttname"><a href="structredclean_1_1Hsv.html#ad6f429810200f9c7585c1f7207157d1a">redclean::Hsv::s</a></div><div class="ttdeci">double s</div><div class="ttdoc">Насыщенность, [0, 1].</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00035">color.hpp:35</a></div></div>
+<div class="ttc" id="astructredclean_1_1RedCriteria_html_a1dcf7ae74c7be95a8a533ceb6b764768"><div class="ttname"><a href="structredclean_1_1RedCriteria.html#a1dcf7ae74c7be95a8a533ceb6b764768">redclean::RedCriteria::minValue</a></div><div class="ttdeci">double minValue</div><div class="ttdoc">Минимальная яркость.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00089">color.hpp:89</a></div></div>
+<div class="ttc" id="astructredclean_1_1RedCriteria_html_a42c899a6aa7d7aa25f1ef09064d5af70"><div class="ttname"><a href="structredclean_1_1RedCriteria.html#a42c899a6aa7d7aa25f1ef09064d5af70">redclean::RedCriteria::maxHueDeviation</a></div><div class="ttdeci">double maxHueDeviation</div><div class="ttdoc">Допустимое отклонение оттенка от 0°, градусы.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00087">color.hpp:87</a></div></div>
+<div class="ttc" id="astructredclean_1_1RedCriteria_html_a42e85877e28da3d39d43d0459fa8da1e"><div class="ttname"><a href="structredclean_1_1RedCriteria.html#a42e85877e28da3d39d43d0459fa8da1e">redclean::RedCriteria::minSaturation</a></div><div class="ttdeci">double minSaturation</div><div class="ttdoc">Минимальная насыщенность.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00088">color.hpp:88</a></div></div>
+<div class="ttc" id="astructredclean_1_1RedCriteria_html_a642698deff03b66eb6d50a757ac700a2"><div class="ttname"><a href="structredclean_1_1RedCriteria.html#a642698deff03b66eb6d50a757ac700a2">redclean::RedCriteria::matches</a></div><div class="ttdeci">bool matches(const Rgb &amp;color) const</div><div class="ttdoc">Проверяет цвет.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00198">color.cpp:198</a></div></div>
+<div class="ttc" id="astructredclean_1_1RedCriteria_html_afbeebfbcb794236d6314287095b51761"><div class="ttname"><a href="structredclean_1_1RedCriteria.html#afbeebfbcb794236d6314287095b51761">redclean::RedCriteria::exactColors</a></div><div class="ttdeci">std::vector&lt; Rgb &gt; exactColors</div><div class="ttdoc">Точный список «красных» цветов; пустой — эвристика.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00086">color.hpp:86</a></div></div>
+<div class="ttc" id="astructredclean_1_1Rgb_html"><div class="ttname"><a href="structredclean_1_1Rgb.html">redclean::Rgb</a></div><div class="ttdoc">Цвет в RGB, по байту на канал.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00019">color.hpp:20</a></div></div>
+<div class="ttc" id="astructredclean_1_1Rgb_html_a350062246ef9decb477ab6eb78af66af"><div class="ttname"><a href="structredclean_1_1Rgb.html#a350062246ef9decb477ab6eb78af66af">redclean::Rgb::r</a></div><div class="ttdeci">std::uint8_t r</div><div class="ttdoc">Красный канал.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00021">color.hpp:21</a></div></div>
+<div class="ttc" id="astructredclean_1_1Rgb_html_a732bd0bf4c880a8a8bf888c9ae6c619a"><div class="ttname"><a href="structredclean_1_1Rgb.html#a732bd0bf4c880a8a8bf888c9ae6c619a">redclean::Rgb::b</a></div><div class="ttdeci">std::uint8_t b</div><div class="ttdoc">Синий канал.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00023">color.hpp:23</a></div></div>
+<div class="ttc" id="astructredclean_1_1Rgb_html_adb25d456be394f5c45baf56cad13e7d6"><div class="ttname"><a href="structredclean_1_1Rgb.html#adb25d456be394f5c45baf56cad13e7d6">redclean::Rgb::g</a></div><div class="ttdeci">std::uint8_t g</div><div class="ttdoc">Зелёный канал.</div><div class="ttdef"><b>Definition</b> <a href="color_8hpp_source.html#l00022">color.hpp:22</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls_html"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html">redclean::anonymous_namespace{color.cpp}::Hls</a></div><div class="ttdoc">Цвет в модели HLS, все компоненты в [0, 1].</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00039">color.cpp:40</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls_html_a1dcaa20b919b7702928929293561acb8"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a1dcaa20b919b7702928929293561acb8">redclean::anonymous_namespace{color.cpp}::Hls::h</a></div><div class="ttdeci">double h</div><div class="ttdoc">Оттенок, доля оборота.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00041">color.cpp:41</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls_html_a3947affbad8f27c51768576722239519"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a3947affbad8f27c51768576722239519">redclean::anonymous_namespace{color.cpp}::Hls::l</a></div><div class="ttdeci">double l</div><div class="ttdoc">Светлота.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00042">color.cpp:42</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls_html_a4300a624210bfe4a541db4e256eaa826"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02color_8cpp_03_1_1Hls.html#a4300a624210bfe4a541db4e256eaa826">redclean::anonymous_namespace{color.cpp}::Hls::s</a></div><div class="ttdeci">double s</div><div class="ttdoc">Насыщенность.</div><div class="ttdef"><b>Definition</b> <a href="color_8cpp_source.html#l00043">color.cpp:43</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="color_8cpp.html">color.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

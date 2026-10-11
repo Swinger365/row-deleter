@@ -1,0 +1,27 @@
+<map id="src/zip_archive.cpp" name="src/zip_archive.cpp">
+<area shape="rect" id="Node000001" title="Реализация zip&#45;слоя на miniz." alt="" coords="490,5,637,31"/>
+<area shape="rect" id="Node000002" href="$zip__archive_8hpp.html" title="Чтение и запись zip&#45;архивов (miniz) с поддержкой параллельного сжатия." alt="" coords="168,79,292,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="510,33,298,78,297,73,509,28"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="316,79,387,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="530,33,399,77,398,72,528,28"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="411,79,502,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="548,33,487,73,484,69,545,28"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="527,79,600,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="566,31,566,65,561,65,561,31"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="625,79,697,104"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="581,29,635,68,632,72,577,33"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="721,79,808,104"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="597,28,720,71,718,77,595,33"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="832,79,940,104"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="616,28,821,73,820,78,615,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,76,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,107,85,149,84,144,199,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="101,152,167,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="216,106,162,146,159,141,213,102"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="191,152,269,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="233,104,233,138,227,138,227,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="293,152,351,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="246,102,298,141,295,146,243,106"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="376,152,439,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="259,102,367,144,365,149,258,106"/>
+</map>

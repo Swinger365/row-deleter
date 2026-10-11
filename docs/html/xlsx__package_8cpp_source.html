@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Исходный файл src/xlsx_package.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('xlsx__package_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">xlsx_package.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="xlsx__package_8cpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="xlsx__package_8hpp.html">xlsx_package.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="xml__utils_8hpp.html">xml_utils.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceredclean.html">redclean</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html">   18</a></span><span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#a87e93f4d96281b3f954891ba8e59c70b">   21</a></span><span class="keyword">constexpr</span> std::size_t <a class="code hl_variable" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#a87e93f4d96281b3f954891ba8e59c70b">kChunkSize</a> = std::size_t{4} &lt;&lt; 20;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#a055c1ab8f676663643d57777f5dc60fc">   24</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#a055c1ab8f676663643d57777f5dc60fc">endsWith</a>(std::string_view s, std::string_view suffix)</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordflow">return</span> s.size() &gt;= suffix.size() &amp;&amp; s.substr(s.size() - suffix.size()) == suffix;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#ab516ffb34aec95add07618fe74a8cfc3">   34</a></span>std::string <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#ab516ffb34aec95add07618fe74a8cfc3">directoryOf</a>(<span class="keyword">const</span> std::string&amp; path)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> <span class="keyword">auto</span> slash = path.rfind(<span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> slash == std::string::npos ? std::string{} : path.substr(0, slash + 1);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#af53f25fda30b8719c578b3333efbb60f">   45</a></span>std::string <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#af53f25fda30b8719c578b3333efbb60f">relsPathFor</a>(<span class="keyword">const</span> std::string&amp; partPath)</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">const</span> <span class="keyword">auto</span> slash = partPath.rfind(<span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">const</span> std::string dir = slash == std::string::npos ? std::string{} : partPath.substr(0, slash + 1);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keyword">const</span> std::string file = slash == std::string::npos ? partPath : partPath.substr(slash + 1);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordflow">return</span> dir + <span class="stringliteral">&quot;_rels/&quot;</span> + file + <span class="stringliteral">&quot;.rels&quot;</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00059" data-start="{" data-end="}">
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#ae116a48a95d717d185b5b3fa687b4e73">   59</a></span>std::string <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#ae116a48a95d717d185b5b3fa687b4e73">resolveTarget</a>(<span class="keyword">const</span> std::string&amp; baseDir, std::string_view target)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>{</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::string joined = (!target.empty() &amp;&amp; target.front() == <span class="charliteral">&#39;/&#39;</span>) ? std::string(target.substr(1))</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                                                                     : baseDir + std::string(target);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    std::vector&lt;std::string&gt; parts;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    std::size_t pos = 0;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">while</span> (pos &lt;= joined.size()) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">const</span> <span class="keyword">auto</span> next = joined.find(<span class="charliteral">&#39;/&#39;</span>, pos);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keyword">const</span> std::string part = joined.substr(pos, next == std::string::npos ? std::string::npos : next - pos);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keywordflow">if</span> (part == <span class="stringliteral">&quot;..&quot;</span>) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keywordflow">if</span> (!parts.empty()) parts.pop_back();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!part.empty() &amp;&amp; part != <span class="stringliteral">&quot;.&quot;</span>) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            parts.push_back(part);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        }</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <span class="keywordflow">if</span> (next == std::string::npos) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        pos = next + 1;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    std::string out;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : parts) out += (out.empty() ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot;/&quot;</span>) + p;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="};">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html">   83</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html">Relationship</a></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>{</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#a6b80ce8df0bd48f7a1ca310a50262319">   85</a></span>    std::string <a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#a6b80ce8df0bd48f7a1ca310a50262319">id</a>;        </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#ad9577165837640714cbb48ab385803f3">   86</a></span>    std::string <a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#ad9577165837640714cbb48ab385803f3">type</a>;      </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#ac696e3310a9e72e59decc22194d4b348">   87</a></span>    std::string <a class="code hl_variable" href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#ac696e3310a9e72e59decc22194d4b348">target</a>;    </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
+</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#af945195f8af9814c2515e5adb0f73add">   97</a></span>std::vector&lt;Relationship&gt; <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#af945195f8af9814c2515e5adb0f73add">parseRelationships</a>(<span class="keyword">const</span> std::string&amp; data, <span class="keyword">const</span> std::string&amp; what)</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    std::vector&lt;Relationship&gt; rels;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (data.empty()) <span class="keywordflow">return</span> rels;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    pugi::xml_document doc;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_function" href="namespaceredclean_1_1xml.html#afa3a40f30a6becc2036fab4d429c00d2">xml::load</a>(doc, data, what);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_function" href="namespaceredclean_1_1xml.html#ab4d010f842dcd35656f94cde634f64e1">xml::forEachChild</a>(doc.document_element(), <span class="stringliteral">&quot;Relationship&quot;</span>, [&amp;](<span class="keyword">const</span> pugi::xml_node&amp; rel) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        if (std::string_view(xml::attribute(rel, <span class="stringliteral">&quot;TargetMode&quot;</span>).value()) == <span class="stringliteral">&quot;External&quot;</span>) return;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        rels.push_back({xml::attribute(rel, <span class="stringliteral">&quot;Id&quot;</span>).value(), xml::attribute(rel, <span class="stringliteral">&quot;Type&quot;</span>).value(),</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                        xml::attribute(rel, <span class="stringliteral">&quot;Target&quot;</span>).value()});</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    });</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span> rels;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#afb12e049ee1cf047f757c1797aef3463">  117</a></span><a class="code hl_class" href="classredclean_1_1ZipReader.html">ZipReader</a> <a class="code hl_function" href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#afb12e049ee1cf047f757c1797aef3463">openZip</a>(<span class="keyword">const</span> std::string&amp; path)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>{</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    std::error_code ec;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">if</span> (!std::filesystem::is_regular_file(std::filesystem::u8path(path), ec))</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Файл \&quot;&quot;</span> + path + <span class="stringliteral">&quot;\&quot; не найден&quot;</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classredclean_1_1ZipReader.html">ZipReader</a>(path);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Не удалось открыть \&quot;&quot;</span> + path + <span class="stringliteral">&quot;\&quot; как xlsx: &quot;</span> + e.what());</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>}</div>
+</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}    <span class="comment">// namespace</span></div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classredclean_1_1XlsxPackage.html#a17ac8848f96b8f23917c94706d634539">  132</a></span>XlsxPackage::XlsxPackage(<span class="keyword">const</span> std::string&amp; path) : m_zip(openZip(path))</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>{</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; rel : parseRelationships(<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">read</a>(<span class="stringliteral">&quot;_rels/.rels&quot;</span>), <span class="stringliteral">&quot;_rels/.rels&quot;</span>))</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">if</span> (endsWith(rel.type, <span class="stringliteral">&quot;/officeDocument&quot;</span>)) m_workbookPath = resolveTarget(<span class="stringliteral">&quot;&quot;</span>, rel.target);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span> (m_workbookPath.empty() || !m_zip.<a class="code hl_function" href="classredclean_1_1ZipReader.html#ab986f72de7cc5678eb6d5e0c497ca2b5">contains</a>(m_workbookPath))</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;\&quot;&quot;</span> + path + <span class="stringliteral">&quot;\&quot; не похож на книгу Excel: не найден workbook.xml&quot;</span>);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    m_workbookRelsPath = relsPathFor(m_workbookPath);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">const</span> std::string baseDir = directoryOf(m_workbookPath);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    std::unordered_map&lt;std::string, Relationship&gt; relById;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; rel : parseRelationships(<a class="code hl_function" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">read</a>(m_workbookRelsPath), m_workbookRelsPath)) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        rel.target = resolveTarget(baseDir, rel.target);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">if</span> (endsWith(rel.type, <span class="stringliteral">&quot;/styles&quot;</span>)) m_stylesPath = rel.target;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keywordflow">if</span> (endsWith(rel.type, <span class="stringliteral">&quot;/theme&quot;</span>)) m_themePath = rel.target;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">if</span> (endsWith(rel.type, <span class="stringliteral">&quot;/calcChain&quot;</span>)) m_calcChainPath = rel.target;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        relById.emplace(rel.id, rel);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    pugi::xml_document workbook;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <a class="code hl_function" href="namespaceredclean_1_1xml.html#afa3a40f30a6becc2036fab4d429c00d2">xml::load</a>(workbook, <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">read</a>(m_workbookPath), m_workbookPath);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_function" href="namespaceredclean_1_1xml.html#ab4d010f842dcd35656f94cde634f64e1">xml::forEachChild</a>(<a class="code hl_function" href="namespaceredclean_1_1xml.html#a0971543b9d887885db785d0c06923d1a">xml::child</a>(workbook.document_element(), <span class="stringliteral">&quot;sheets&quot;</span>), <span class="stringliteral">&quot;sheet&quot;</span>, [&amp;](<span class="keyword">const</span> pugi::xml_node&amp; sheet) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        const std::string name = xml::attribute(sheet, <span class="stringliteral">&quot;name&quot;</span>).value();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        const auto it = relById.find(xml::attribute(sheet, <span class="stringliteral">&quot;id&quot;</span>).value());</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        if (it != relById.end() &amp;&amp; endsWith(it-&gt;second.type, <span class="stringliteral">&quot;/worksheet&quot;</span>))</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            m_worksheets.push_back({name, it-&gt;second.target});</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>            m_otherSheetNames.push_back(name);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    });</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
+</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classredclean_1_1XlsxPackage.html#a2fce440017c2d76a738733dcd8b1bd86">  162</a></span>std::optional&lt;SheetInfo&gt; <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#a2fce440017c2d76a738733dcd8b1bd86">XlsxPackage::findWorksheet</a>(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; sheet : m_worksheets)</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        <span class="keywordflow">if</span> (sheet.name == name) <span class="keywordflow">return</span> sheet;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; other : m_otherSheetNames)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <span class="keywordflow">if</span> (other == name) <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Лист \&quot;&quot;</span> + name + <span class="stringliteral">&quot;\&quot; не является обычным листом с ячейками&quot;</span>);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}</div>
+</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="foldopen" id="foldopen00171" data-start="{" data-end="}">
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">  171</a></span>std::string <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">XlsxPackage::read</a>(<span class="keyword">const</span> std::string&amp; partPath)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">if</span> (partPath.empty() || m_removed.count(partPath)) <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> it = m_replaced.find(partPath); it != m_replaced.end()) <span class="keywordflow">return</span> it-&gt;second;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordflow">if</span> (!m_zip.<a class="code hl_function" href="classredclean_1_1ZipReader.html#ab986f72de7cc5678eb6d5e0c497ca2b5">contains</a>(partPath)) <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">return</span> m_zip.<a class="code hl_function" href="classredclean_1_1ZipReader.html#a4b434ef5f54149c60f3c9ecc57a26eac">read</a>(partPath);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
+</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="foldopen" id="foldopen00179" data-start="{" data-end="}">
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classredclean_1_1XlsxPackage.html#aa2f0eab4d15a78f40c1f00adb120f0fc">  179</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#aa2f0eab4d15a78f40c1f00adb120f0fc">XlsxPackage::write</a>(<span class="keyword">const</span> std::string&amp; partPath, std::string data)</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>{</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    m_removed.erase(partPath);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    m_replaced[partPath] = std::move(data);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
+</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="foldopen" id="foldopen00185" data-start="{" data-end="}">
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classredclean_1_1XlsxPackage.html#a49444583680116e02629bfcb3a021468">  185</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#a49444583680116e02629bfcb3a021468">XlsxPackage::removeCalcChain</a>()</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>{</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keywordflow">if</span> (m_calcChainPath.empty() || !m_zip.<a class="code hl_function" href="classredclean_1_1ZipReader.html#ab986f72de7cc5678eb6d5e0c497ca2b5">contains</a>(m_calcChainPath)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    m_removed.insert(m_calcChainPath);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    m_replaced.erase(m_calcChainPath);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    pugi::xml_document rels;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <a class="code hl_function" href="namespaceredclean_1_1xml.html#afa3a40f30a6becc2036fab4d429c00d2">xml::load</a>(rels, <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">read</a>(m_workbookRelsPath), m_workbookRelsPath);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    pugi::xml_node relsRoot = rels.document_element();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">for</span> (pugi::xml_node rel = <a class="code hl_function" href="namespaceredclean_1_1xml.html#a0971543b9d887885db785d0c06923d1a">xml::child</a>(relsRoot, <span class="stringliteral">&quot;Relationship&quot;</span>); rel;) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keyword">const</span> pugi::xml_node next = <a class="code hl_function" href="namespaceredclean_1_1xml.html#a9c71fd7c90ea8c1090157967f28750e6">xml::nextSibling</a>(rel, <span class="stringliteral">&quot;Relationship&quot;</span>);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">if</span> (endsWith(<a class="code hl_function" href="namespaceredclean_1_1xml.html#abdd32c6a5fc082838db4bb97ea3329ce">xml::attribute</a>(rel, <span class="stringliteral">&quot;Type&quot;</span>).value(), <span class="stringliteral">&quot;/calcChain&quot;</span>)) relsRoot.remove_child(rel);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        rel = next;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#aa2f0eab4d15a78f40c1f00adb120f0fc">write</a>(m_workbookRelsPath, <a class="code hl_function" href="namespaceredclean_1_1xml.html#a6306b6b38ad20c7c582e01ba293d295c">xml::serialize</a>(rels));</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keyword">const</span> std::string contentTypesPath = <span class="stringliteral">&quot;[Content_Types].xml&quot;</span>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    pugi::xml_document types;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_function" href="namespaceredclean_1_1xml.html#afa3a40f30a6becc2036fab4d429c00d2">xml::load</a>(types, <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">read</a>(contentTypesPath), contentTypesPath);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    pugi::xml_node typesRoot = types.document_element();</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <span class="keyword">const</span> std::string partName = <span class="stringliteral">&quot;/&quot;</span> + m_calcChainPath;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordflow">for</span> (pugi::xml_node node = <a class="code hl_function" href="namespaceredclean_1_1xml.html#a0971543b9d887885db785d0c06923d1a">xml::child</a>(typesRoot, <span class="stringliteral">&quot;Override&quot;</span>); node;) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keyword">const</span> pugi::xml_node next = <a class="code hl_function" href="namespaceredclean_1_1xml.html#a9c71fd7c90ea8c1090157967f28750e6">xml::nextSibling</a>(node, <span class="stringliteral">&quot;Override&quot;</span>);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        <span class="keywordflow">if</span> (partName == <a class="code hl_function" href="namespaceredclean_1_1xml.html#abdd32c6a5fc082838db4bb97ea3329ce">xml::attribute</a>(node, <span class="stringliteral">&quot;PartName&quot;</span>).value()) typesRoot.remove_child(node);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        node = next;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#aa2f0eab4d15a78f40c1f00adb120f0fc">write</a>(contentTypesPath, <a class="code hl_function" href="namespaceredclean_1_1xml.html#a6306b6b38ad20c7c582e01ba293d295c">xml::serialize</a>(types));</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    m_calcChainPath.clear();</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}</div>
+</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="foldopen" id="foldopen00217" data-start="{" data-end="}">
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="classredclean_1_1XlsxPackage.html#aafa959600474ee5ba529899dadd70cb7">  217</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classredclean_1_1XlsxPackage.html#aafa959600474ee5ba529899dadd70cb7">XlsxPackage::saveAs</a>(<span class="keyword">const</span> std::string&amp; path, <a class="code hl_class" href="classredclean_1_1ThreadPool.html">ThreadPool</a>&amp; pool, <span class="keywordtype">int</span> compressionLevel)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keyword">struct </span>Chunk</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    {</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        <span class="keyword">const</span> std::string* data;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        std::size_t begin;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        std::size_t end;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keywordtype">bool</span> last;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    };</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    std::vector&lt;const std::string*&gt; parts;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    std::vector&lt;std::vector&lt;std::size_t&gt;&gt; chunksOfPart;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    std::vector&lt;Chunk&gt; chunks;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [name, data] : m_replaced) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        chunksOfPart.emplace_back();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        parts.push_back(&amp;data);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">for</span> (std::size_t begin = 0;;) {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            <span class="keyword">const</span> std::size_t end = std::min(data.size(), begin + kChunkSize);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            chunksOfPart.back().push_back(chunks.size());</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            chunks.push_back({&amp;data, begin, end, end == data.size()});</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="keywordflow">if</span> (end == data.size()) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>            begin = end;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    std::vector&lt;std::string&gt; deflated(chunks.size());</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    std::vector&lt;std::uint32_t&gt; crcs(parts.size());</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <a class="code hl_function" href="namespaceredclean.html#a6532a1de875b05ac16fb563b7bb45f2c">parallelFor</a>(pool, chunks.<a class="code hl_function" href="classredclean_1_1ThreadPool.html#ac5b0b24b03b11c1f9474cdaa90827f95">size</a>() + parts.size(), 1, [&amp;](std::size_t begin, std::size_t end) {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        for (std::size_t i = begin; i &lt; end; ++i) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            if (i &lt; parts.size()) {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                crcs[i] = crc32(parts[i]-&gt;data(), parts[i]-&gt;size());</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>            }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            else {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                const Chunk&amp; c = chunks[i - parts.size()];</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                deflated[i - parts.size()] = deflateChunk(c.data-&gt;data() + c.begin, c.end - c.begin, compressionLevel, c.last);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        }</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    });</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    std::map&lt;std::string, CompressedEntry&gt; compressed;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    std::size_t index = 0;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [name, data] : m_replaced) {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <a class="code hl_struct" href="structredclean_1_1CompressedEntry.html">CompressedEntry</a> entry;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        entry.<a class="code hl_variable" href="structredclean_1_1CompressedEntry.html#ae332cf7235a8e7f663ad93bbc5bbc533">uncompressedSize</a> = data.size();</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        entry.<a class="code hl_variable" href="structredclean_1_1CompressedEntry.html#a120f988da5de7eaaa5beb8603323771a">crc32</a> = crcs[index];</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> std::size_t c : chunksOfPart[index]) {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            entry.<a class="code hl_variable" href="structredclean_1_1CompressedEntry.html#a7fd9cb8bc06c8ea6182f9660be7d586a">deflated</a> += deflated[c];</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            std::string().swap(deflated[c]);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>        }</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        compressed.emplace(name, std::move(entry));</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        ++index;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    ZipWriter writer;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    std::set&lt;std::string&gt; written;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; name : m_zip.entryNames()) {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keywordflow">if</span> (m_removed.count(name) || !written.insert(name).second) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keywordflow">if</span> (<span class="keyword">const</span> <span class="keyword">auto</span> it = compressed.find(name); it != compressed.end())</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>            writer.addCompressed(name, it-&gt;second);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            writer.copyFrom(m_zip, name);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    }</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [name, entry] : compressed)</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        if (!written.count(name)) writer.addCompressed(name, entry);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    writer.finish(path);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>}</div>
+</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>}    <span class="comment">// namespace redclean</span></div>
+<div class="ttc" id="aclassredclean_1_1ThreadPool_html"><div class="ttname"><a href="classredclean_1_1ThreadPool.html">redclean::ThreadPool</a></div><div class="ttdoc">Пул потоков фиксированного размера с общей очередью задач.</div><div class="ttdef"><b>Definition</b> <a href="thread__pool_8hpp_source.html#l00029">thread_pool.hpp:30</a></div></div>
+<div class="ttc" id="aclassredclean_1_1ThreadPool_html_ac5b0b24b03b11c1f9474cdaa90827f95"><div class="ttname"><a href="classredclean_1_1ThreadPool.html#ac5b0b24b03b11c1f9474cdaa90827f95">redclean::ThreadPool::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdoc">Число рабочих потоков.</div><div class="ttdef"><b>Definition</b> <a href="thread__pool_8hpp_source.html#l00061">thread_pool.hpp:61</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_a2fce440017c2d76a738733dcd8b1bd86"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#a2fce440017c2d76a738733dcd8b1bd86">redclean::XlsxPackage::findWorksheet</a></div><div class="ttdeci">std::optional&lt; SheetInfo &gt; findWorksheet(const std::string &amp;name) const</div><div class="ttdoc">Ищет рабочий лист по имени.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00162">xlsx_package.cpp:162</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_a49444583680116e02629bfcb3a021468"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#a49444583680116e02629bfcb3a021468">redclean::XlsxPackage::removeCalcChain</a></div><div class="ttdeci">bool removeCalcChain()</div><div class="ttdoc">Удаляет xl/calcChain.xml вместе со ссылками на него.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00185">xlsx_package.cpp:185</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_aa2f0eab4d15a78f40c1f00adb120f0fc"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#aa2f0eab4d15a78f40c1f00adb120f0fc">redclean::XlsxPackage::write</a></div><div class="ttdeci">void write(const std::string &amp;partPath, std::string data)</div><div class="ttdoc">Заменяет или добавляет часть.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00179">xlsx_package.cpp:179</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_aafa959600474ee5ba529899dadd70cb7"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#aafa959600474ee5ba529899dadd70cb7">redclean::XlsxPackage::saveAs</a></div><div class="ttdeci">void saveAs(const std::string &amp;path, ThreadPool &amp;pool, int compressionLevel) const</div><div class="ttdoc">Сохраняет книгу.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00217">xlsx_package.cpp:217</a></div></div>
+<div class="ttc" id="aclassredclean_1_1XlsxPackage_html_ad7f48f57d388b0c5f21af784a83ddfa8"><div class="ttname"><a href="classredclean_1_1XlsxPackage.html#ad7f48f57d388b0c5f21af784a83ddfa8">redclean::XlsxPackage::read</a></div><div class="ttdeci">std::string read(const std::string &amp;partPath) const</div><div class="ttdoc">Содержимое части с учётом изменений.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00171">xlsx_package.cpp:171</a></div></div>
+<div class="ttc" id="aclassredclean_1_1ZipReader_html"><div class="ttname"><a href="classredclean_1_1ZipReader.html">redclean::ZipReader</a></div><div class="ttdoc">Zip-архив только для чтения, целиком загруженный в память.</div><div class="ttdef"><b>Definition</b> <a href="zip__archive_8hpp_source.html#l00060">zip_archive.hpp:61</a></div></div>
+<div class="ttc" id="aclassredclean_1_1ZipReader_html_a4b434ef5f54149c60f3c9ecc57a26eac"><div class="ttname"><a href="classredclean_1_1ZipReader.html#a4b434ef5f54149c60f3c9ecc57a26eac">redclean::ZipReader::read</a></div><div class="ttdeci">std::string read(const std::string &amp;name) const</div><div class="ttdoc">Распаковывает запись. Потокобезопасен.</div><div class="ttdef"><b>Definition</b> <a href="zip__archive_8cpp_source.html#l00116">zip_archive.cpp:116</a></div></div>
+<div class="ttc" id="aclassredclean_1_1ZipReader_html_ab986f72de7cc5678eb6d5e0c497ca2b5"><div class="ttname"><a href="classredclean_1_1ZipReader.html#ab986f72de7cc5678eb6d5e0c497ca2b5">redclean::ZipReader::contains</a></div><div class="ttdeci">bool contains(const std::string &amp;name) const</div><div class="ttdoc">Есть ли запись с таким именем.</div><div class="ttdef"><b>Definition</b> <a href="zip__archive_8cpp_source.html#l00109">zip_archive.cpp:109</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_html_a055c1ab8f676663643d57777f5dc60fc"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#a055c1ab8f676663643d57777f5dc60fc">redclean::anonymous_namespace{xlsx_package.cpp}::endsWith</a></div><div class="ttdeci">bool endsWith(std::string_view s, std::string_view suffix)</div><div class="ttdoc">Оканчивается ли s на suffix.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00024">xlsx_package.cpp:24</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_html_a87e93f4d96281b3f954891ba8e59c70b"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#a87e93f4d96281b3f954891ba8e59c70b">redclean::anonymous_namespace{xlsx_package.cpp}::kChunkSize</a></div><div class="ttdeci">constexpr std::size_t kChunkSize</div><div class="ttdoc">Размер куска изменённой части для параллельного сжатия.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00021">xlsx_package.cpp:21</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_html_ab516ffb34aec95add07618fe74a8cfc3"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#ab516ffb34aec95add07618fe74a8cfc3">redclean::anonymous_namespace{xlsx_package.cpp}::directoryOf</a></div><div class="ttdeci">std::string directoryOf(const std::string &amp;path)</div><div class="ttdoc">Папка части с завершающим '/'.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00034">xlsx_package.cpp:34</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_html_ae116a48a95d717d185b5b3fa687b4e73"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#ae116a48a95d717d185b5b3fa687b4e73">redclean::anonymous_namespace{xlsx_package.cpp}::resolveTarget</a></div><div class="ttdeci">std::string resolveTarget(const std::string &amp;baseDir, std::string_view target)</div><div class="ttdoc">Разрешает атрибут Target связи в путь внутри архива.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00059">xlsx_package.cpp:59</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_html_af53f25fda30b8719c578b3333efbb60f"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#af53f25fda30b8719c578b3333efbb60f">redclean::anonymous_namespace{xlsx_package.cpp}::relsPathFor</a></div><div class="ttdeci">std::string relsPathFor(const std::string &amp;partPath)</div><div class="ttdoc">Путь части связей для заданной части.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00045">xlsx_package.cpp:45</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_html_af945195f8af9814c2515e5adb0f73add"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#af945195f8af9814c2515e5adb0f73add">redclean::anonymous_namespace{xlsx_package.cpp}::parseRelationships</a></div><div class="ttdeci">std::vector&lt; Relationship &gt; parseRelationships(const std::string &amp;data, const std::string &amp;what)</div><div class="ttdoc">Разбирает часть связей, пропуская внешние (TargetMode=&quot;External&quot;).</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00097">xlsx_package.cpp:97</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_html_afb12e049ee1cf047f757c1797aef3463"><div class="ttname"><a href="namespaceredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03.html#afb12e049ee1cf047f757c1797aef3463">redclean::anonymous_namespace{xlsx_package.cpp}::openZip</a></div><div class="ttdeci">ZipReader openZip(const std::string &amp;path)</div><div class="ttdoc">Открывает архив с понятными сообщениями об ошибках.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00117">xlsx_package.cpp:117</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_a0971543b9d887885db785d0c06923d1a"><div class="ttname"><a href="namespaceredclean_1_1xml.html#a0971543b9d887885db785d0c06923d1a">redclean::xml::child</a></div><div class="ttdeci">pugi::xml_node child(const pugi::xml_node &amp;parent, std::string_view name)</div><div class="ttdoc">Первый дочерний элемент с заданным локальным именем.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00020">xml_utils.cpp:20</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_a6306b6b38ad20c7c582e01ba293d295c"><div class="ttname"><a href="namespaceredclean_1_1xml.html#a6306b6b38ad20c7c582e01ba293d295c">redclean::xml::serialize</a></div><div class="ttdeci">std::string serialize(const pugi::xml_document &amp;doc)</div><div class="ttdoc">Сериализует документ без переформатирования, в UTF-8.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00052">xml_utils.cpp:52</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_a9c71fd7c90ea8c1090157967f28750e6"><div class="ttname"><a href="namespaceredclean_1_1xml.html#a9c71fd7c90ea8c1090157967f28750e6">redclean::xml::nextSibling</a></div><div class="ttdeci">pugi::xml_node nextSibling(const pugi::xml_node &amp;node, std::string_view name)</div><div class="ttdoc">Следующий соседний элемент с заданным локальным именем.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00027">xml_utils.cpp:27</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_ab4d010f842dcd35656f94cde634f64e1"><div class="ttname"><a href="namespaceredclean_1_1xml.html#ab4d010f842dcd35656f94cde634f64e1">redclean::xml::forEachChild</a></div><div class="ttdeci">void forEachChild(const pugi::xml_node &amp;parent, std::string_view name, Fn &amp;&amp;fn)</div><div class="ttdoc">Вызывает fn для каждого дочернего элемента с локальным именем name.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8hpp_source.html#l00065">xml_utils.hpp:65</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_abdd32c6a5fc082838db4bb97ea3329ce"><div class="ttname"><a href="namespaceredclean_1_1xml.html#abdd32c6a5fc082838db4bb97ea3329ce">redclean::xml::attribute</a></div><div class="ttdeci">pugi::xml_attribute attribute(const pugi::xml_node &amp;node, std::string_view name)</div><div class="ttdoc">Атрибут по имени с откатом на локальное имя.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00034">xml_utils.cpp:34</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_afa3a40f30a6becc2036fab4d429c00d2"><div class="ttname"><a href="namespaceredclean_1_1xml.html#afa3a40f30a6becc2036fab4d429c00d2">redclean::xml::load</a></div><div class="ttdeci">void load(pugi::xml_document &amp;doc, const std::string &amp;data, const std::string &amp;what)</div><div class="ttdoc">Разбирает XML в документ.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00044">xml_utils.cpp:44</a></div></div>
+<div class="ttc" id="anamespaceredclean_html"><div class="ttname"><a href="namespaceredclean.html">redclean</a></div><div class="ttdoc">Корневое пространство имён проекта.</div><div class="ttdef"><b>Definition</b> <a href="cleaner_8cpp_source.html#l00017">cleaner.cpp:17</a></div></div>
+<div class="ttc" id="anamespaceredclean_html_a6532a1de875b05ac16fb563b7bb45f2c"><div class="ttname"><a href="namespaceredclean.html#a6532a1de875b05ac16fb563b7bb45f2c">redclean::parallelFor</a></div><div class="ttdeci">void parallelFor(ThreadPool &amp;pool, std::size_t count, std::size_t grain, Fn &amp;&amp;fn)</div><div class="ttdoc">Параллельно обрабатывает диапазон [0, count) кусками.</div><div class="ttdef"><b>Definition</b> <a href="thread__pool_8hpp_source.html#l00133">thread_pool.hpp:133</a></div></div>
+<div class="ttc" id="astructredclean_1_1CompressedEntry_html"><div class="ttname"><a href="structredclean_1_1CompressedEntry.html">redclean::CompressedEntry</a></div><div class="ttdoc">Данные, уже сжатые raw-deflate (без zlib-заголовка), с CRC-32 и исходным размером.</div><div class="ttdef"><b>Definition</b> <a href="zip__archive_8hpp_source.html#l00017">zip_archive.hpp:18</a></div></div>
+<div class="ttc" id="astructredclean_1_1CompressedEntry_html_a120f988da5de7eaaa5beb8603323771a"><div class="ttname"><a href="structredclean_1_1CompressedEntry.html#a120f988da5de7eaaa5beb8603323771a">redclean::CompressedEntry::crc32</a></div><div class="ttdeci">std::uint32_t crc32</div><div class="ttdoc">CRC-32 несжатых данных.</div><div class="ttdef"><b>Definition</b> <a href="zip__archive_8hpp_source.html#l00020">zip_archive.hpp:20</a></div></div>
+<div class="ttc" id="astructredclean_1_1CompressedEntry_html_a7fd9cb8bc06c8ea6182f9660be7d586a"><div class="ttname"><a href="structredclean_1_1CompressedEntry.html#a7fd9cb8bc06c8ea6182f9660be7d586a">redclean::CompressedEntry::deflated</a></div><div class="ttdeci">std::string deflated</div><div class="ttdoc">Сжатый поток.</div><div class="ttdef"><b>Definition</b> <a href="zip__archive_8hpp_source.html#l00019">zip_archive.hpp:19</a></div></div>
+<div class="ttc" id="astructredclean_1_1CompressedEntry_html_ae332cf7235a8e7f663ad93bbc5bbc533"><div class="ttname"><a href="structredclean_1_1CompressedEntry.html#ae332cf7235a8e7f663ad93bbc5bbc533">redclean::CompressedEntry::uncompressedSize</a></div><div class="ttdeci">std::uint64_t uncompressedSize</div><div class="ttdoc">Размер несжатых данных.</div><div class="ttdef"><b>Definition</b> <a href="zip__archive_8hpp_source.html#l00021">zip_archive.hpp:21</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship_html"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html">redclean::anonymous_namespace{xlsx_package.cpp}::Relationship</a></div><div class="ttdoc">Связь из части .rels.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00083">xlsx_package.cpp:84</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship_html_a6b80ce8df0bd48f7a1ca310a50262319"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#a6b80ce8df0bd48f7a1ca310a50262319">redclean::anonymous_namespace{xlsx_package.cpp}::Relationship::id</a></div><div class="ttdeci">std::string id</div><div class="ttdoc">Идентификатор (Id).</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00085">xlsx_package.cpp:85</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship_html_ac696e3310a9e72e59decc22194d4b348"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#ac696e3310a9e72e59decc22194d4b348">redclean::anonymous_namespace{xlsx_package.cpp}::Relationship::target</a></div><div class="ttdeci">std::string target</div><div class="ttdoc">Цель связи.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00087">xlsx_package.cpp:87</a></div></div>
+<div class="ttc" id="astructredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship_html_ad9577165837640714cbb48ab385803f3"><div class="ttname"><a href="structredclean_1_1anonymous__namespace_02xlsx__package_8cpp_03_1_1Relationship.html#ad9577165837640714cbb48ab385803f3">redclean::anonymous_namespace{xlsx_package.cpp}::Relationship::type</a></div><div class="ttdeci">std::string type</div><div class="ttdoc">URI типа связи.</div><div class="ttdef"><b>Definition</b> <a href="xlsx__package_8cpp_source.html#l00086">xlsx_package.cpp:86</a></div></div>
+<div class="ttc" id="axlsx__package_8hpp_html"><div class="ttname"><a href="xlsx__package_8hpp.html">xlsx_package.hpp</a></div><div class="ttdoc">Пакет .xlsx (Office Open XML): связи книги, листы и части.</div></div>
+<div class="ttc" id="axml__utils_8hpp_html"><div class="ttname"><a href="xml__utils_8hpp.html">xml_utils.hpp</a></div><div class="ttdoc">Вспомогательные функции поверх pugixml, не зависящие от префиксов пространств имён.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="xlsx__package_8cpp.html">xlsx_package.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

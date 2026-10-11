@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Исходный файл src/xml_utils.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('xml__utils_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">xml_utils.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="xml__utils_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;pugixml.hpp&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceredclean_1_1xml.html">redclean::xml</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>std::string_view <a class="code hl_function" href="namespaceredclean_1_1xml.html#a9c4d69652768eb715db24f3e1359092d">localName</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* qualifiedName);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1xml.html#a268407e55e0b818a3228dce55a0728ee">   28</a></span><span class="keyword">inline</span> std::string_view <a class="code hl_function" href="namespaceredclean_1_1xml.html#a9c4d69652768eb715db24f3e1359092d">localName</a>(<span class="keyword">const</span> pugi::xml_node&amp; node) { <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceredclean_1_1xml.html#a9c4d69652768eb715db24f3e1359092d">localName</a>(node.name()); }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>pugi::xml_node <a class="code hl_function" href="namespaceredclean_1_1xml.html#a0971543b9d887885db785d0c06923d1a">child</a>(<span class="keyword">const</span> pugi::xml_node&amp; parent, std::string_view name);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>pugi::xml_node <a class="code hl_function" href="namespaceredclean_1_1xml.html#a9c71fd7c90ea8c1090157967f28750e6">nextSibling</a>(<span class="keyword">const</span> pugi::xml_node&amp; node, std::string_view name);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>pugi::xml_attribute <a class="code hl_function" href="namespaceredclean_1_1xml.html#abdd32c6a5fc082838db4bb97ea3329ce">attribute</a>(<span class="keyword">const</span> pugi::xml_node&amp; node, std::string_view name);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Fn&gt;</div>
+<div class="foldopen" id="foldopen00065" data-start="{" data-end="}">
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1xml.html#ab4d010f842dcd35656f94cde634f64e1">   65</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceredclean_1_1xml.html#ab4d010f842dcd35656f94cde634f64e1">forEachChild</a>(<span class="keyword">const</span> pugi::xml_node&amp; parent, std::string_view name, Fn&amp;&amp; fn)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">for</span> (pugi::xml_node node = <a class="code hl_function" href="namespaceredclean_1_1xml.html#a0971543b9d887885db785d0c06923d1a">child</a>(parent, name); node; node = <a class="code hl_function" href="namespaceredclean_1_1xml.html#a9c71fd7c90ea8c1090157967f28750e6">nextSibling</a>(node, name)) fn(node);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="namespaceredclean_1_1xml.html#a1f3f82543def40d468d9b2b964f38c8a">   75</a></span><span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="namespaceredclean_1_1xml.html#a1f3f82543def40d468d9b2b964f38c8a">kParseFlags</a> = pugi::parse_default | pugi::parse_declaration | pugi::parse_ws_pcdata;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceredclean_1_1xml.html#afa3a40f30a6becc2036fab4d429c00d2">load</a>(pugi::xml_document&amp; doc, <span class="keyword">const</span> std::string&amp; data, <span class="keyword">const</span> std::string&amp; what);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>std::string <a class="code hl_function" href="namespaceredclean_1_1xml.html#a6306b6b38ad20c7c582e01ba293d295c">serialize</a>(<span class="keyword">const</span> pugi::xml_document&amp; doc);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>}    <span class="comment">// namespace redclean::xml</span></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html"><div class="ttname"><a href="namespaceredclean_1_1xml.html">redclean::xml</a></div><div class="ttdoc">Работа с XML-частями пакета.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00011">xml_utils.cpp:11</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_a0971543b9d887885db785d0c06923d1a"><div class="ttname"><a href="namespaceredclean_1_1xml.html#a0971543b9d887885db785d0c06923d1a">redclean::xml::child</a></div><div class="ttdeci">pugi::xml_node child(const pugi::xml_node &amp;parent, std::string_view name)</div><div class="ttdoc">Первый дочерний элемент с заданным локальным именем.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00020">xml_utils.cpp:20</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_a1f3f82543def40d468d9b2b964f38c8a"><div class="ttname"><a href="namespaceredclean_1_1xml.html#a1f3f82543def40d468d9b2b964f38c8a">redclean::xml::kParseFlags</a></div><div class="ttdeci">constexpr unsigned kParseFlags</div><div class="ttdoc">Флаги разбора, сохраняющие документ максимально близким к исходному.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8hpp_source.html#l00075">xml_utils.hpp:75</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_a6306b6b38ad20c7c582e01ba293d295c"><div class="ttname"><a href="namespaceredclean_1_1xml.html#a6306b6b38ad20c7c582e01ba293d295c">redclean::xml::serialize</a></div><div class="ttdeci">std::string serialize(const pugi::xml_document &amp;doc)</div><div class="ttdoc">Сериализует документ без переформатирования, в UTF-8.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00052">xml_utils.cpp:52</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_a9c4d69652768eb715db24f3e1359092d"><div class="ttname"><a href="namespaceredclean_1_1xml.html#a9c4d69652768eb715db24f3e1359092d">redclean::xml::localName</a></div><div class="ttdeci">std::string_view localName(const char *qualifiedName)</div><div class="ttdoc">Отбрасывает префикс пространства имён.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00013">xml_utils.cpp:13</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_a9c71fd7c90ea8c1090157967f28750e6"><div class="ttname"><a href="namespaceredclean_1_1xml.html#a9c71fd7c90ea8c1090157967f28750e6">redclean::xml::nextSibling</a></div><div class="ttdeci">pugi::xml_node nextSibling(const pugi::xml_node &amp;node, std::string_view name)</div><div class="ttdoc">Следующий соседний элемент с заданным локальным именем.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00027">xml_utils.cpp:27</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_ab4d010f842dcd35656f94cde634f64e1"><div class="ttname"><a href="namespaceredclean_1_1xml.html#ab4d010f842dcd35656f94cde634f64e1">redclean::xml::forEachChild</a></div><div class="ttdeci">void forEachChild(const pugi::xml_node &amp;parent, std::string_view name, Fn &amp;&amp;fn)</div><div class="ttdoc">Вызывает fn для каждого дочернего элемента с локальным именем name.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8hpp_source.html#l00065">xml_utils.hpp:65</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_abdd32c6a5fc082838db4bb97ea3329ce"><div class="ttname"><a href="namespaceredclean_1_1xml.html#abdd32c6a5fc082838db4bb97ea3329ce">redclean::xml::attribute</a></div><div class="ttdeci">pugi::xml_attribute attribute(const pugi::xml_node &amp;node, std::string_view name)</div><div class="ttdoc">Атрибут по имени с откатом на локальное имя.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00034">xml_utils.cpp:34</a></div></div>
+<div class="ttc" id="anamespaceredclean_1_1xml_html_afa3a40f30a6becc2036fab4d429c00d2"><div class="ttname"><a href="namespaceredclean_1_1xml.html#afa3a40f30a6becc2036fab4d429c00d2">redclean::xml::load</a></div><div class="ttdeci">void load(pugi::xml_document &amp;doc, const std::string &amp;data, const std::string &amp;what)</div><div class="ttdoc">Разбирает XML в документ.</div><div class="ttdef"><b>Definition</b> <a href="xml__utils_8cpp_source.html#l00044">xml_utils.cpp:44</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="xml__utils_8hpp.html">xml_utils.hpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

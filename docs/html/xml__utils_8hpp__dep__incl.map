@@ -1,0 +1,11 @@
+<map id="src/xml_utils.hpp" name="src/xml_utils.hpp">
+<area shape="rect" id="Node000001" title="Вспомогательные функции поверх pugixml, не зависящие от префиксов пространств имён." alt="" coords="275,5,409,31"/>
+<area shape="rect" id="Node000002" href="$sheet__processor_8cpp.html" title="Реализация обработки листа." alt="" coords="5,79,183,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="290,37,135,81,133,76,288,32"/>
+<area shape="rect" id="Node000003" href="$styles_8cpp.html" title="Реализация анализа стилей." alt="" coords="207,79,317,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="321,42,277,80,273,76,317,38"/>
+<area shape="rect" id="Node000004" href="$xlsx__package_8cpp.html" title="Реализация работы с пакетом .xlsx." alt="" coords="342,79,502,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="367,38,411,76,407,80,363,42"/>
+<area shape="rect" id="Node000005" href="$xml__utils_8cpp.html" title="Реализация вспомогательных функций для XML." alt="" coords="527,79,659,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="396,32,553,76,551,81,395,37"/>
+</map>

@@ -1,0 +1,22 @@
+<map id="redclean::CliCommand" name="redclean::CliCommand">
+<area shape="rect" id="Node000001" title="Результат разбора командной строки." alt="" coords="69,504,240,529"/>
+<area shape="rect" id="Node000002" href="$structredclean_1_1CleanOptions.html" title="Параметры очистки книги." alt="" coords="68,416,241,441"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,455,157,503,152,503,152,455"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="31,115,118,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="68,155,57,194,49,245,49,300,54,327,64,352,77,372,94,389,131,414,128,418,91,393,73,375,59,355,49,328,44,301,44,245,52,193,63,153"/>
+<area shape="rect" id="Node000006" href="$structredclean_1_1SheetSpec.html" title="Лист для обработки и строка, с которой начинать." alt="" coords="75,211,229,236"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="95,149,144,209,140,212,91,153"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,5,144,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="77,59,77,115,72,115,72,59"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="73,313,236,353"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="157,367,157,416,152,416,152,367"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="155,250,157,313,152,313,150,250"/>
+<area shape="rect" id="Node000007" href="$structredclean_1_1StyleOptions.html" title="Параметры анализа стилей." alt="" coords="261,321,430,346"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="311,354,179,418,177,413,309,350"/>
+<area shape="rect" id="Node000008" href="$structredclean_1_1RedCriteria.html" title="Критерий, по которому цвет считается красным." alt="" coords="266,211,425,236"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="348,250,348,320,343,320,343,250"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="264,108,427,148"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="348,162,348,210,343,210,343,162"/>
+<area shape="rect" id="Node000010" href="$structredclean_1_1Rgb.html" title="Цвет в RGB, по байту на канал." alt="" coords="290,13,401,38"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="348,52,348,108,343,108,343,52"/>
+</map>

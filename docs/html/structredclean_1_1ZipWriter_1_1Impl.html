@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>xlsx_red_cleaner: Структура redclean::ZipWriter::Impl</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">xlsx_red_cleaner<span id="projectnumber">&#160;1.0.0</span>
+   </div>
+   <div id="projectbrief">Очистка строк с красными ячейками в книгах Excel</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structredclean_1_1ZipWriter_1_1Impl.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pub-attribs">Открытые атрибуты</a> &#124;
+<a href="structredclean_1_1ZipWriter_1_1Impl-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Структура redclean::ZipWriter::Impl</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Состояние писателя miniz.  
+ <a href="structredclean_1_1ZipWriter_1_1Impl.html#details">Подробнее...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:ab46368ccb5223bcd74c3bbec1e3b89c0" id="r_ab46368ccb5223bcd74c3bbec1e3b89c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1ZipWriter_1_1Impl.html#ab46368ccb5223bcd74c3bbec1e3b89c0">check</a> (bool ok, const std::string &amp;what)</td></tr>
+<tr class="memdesc:ab46368ccb5223bcd74c3bbec1e3b89c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Бросает исключение с текстом ошибки miniz, если операция не удалась.  <br /></td></tr>
+<tr class="separator:ab46368ccb5223bcd74c3bbec1e3b89c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Открытые атрибуты</h2></td></tr>
+<tr class="memitem:af85b0ff9e94273b9847b83cf0c7322c6" id="r_af85b0ff9e94273b9847b83cf0c7322c6"><td class="memItemLeft" align="right" valign="top">mz_zip_archive&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1ZipWriter_1_1Impl.html#af85b0ff9e94273b9847b83cf0c7322c6">zip</a> {}</td></tr>
+<tr class="memdesc:af85b0ff9e94273b9847b83cf0c7322c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Писатель miniz.  <br /></td></tr>
+<tr class="separator:af85b0ff9e94273b9847b83cf0c7322c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a03d67a9ed9ab782a8c034ac5925fe7" id="r_a3a03d67a9ed9ab782a8c034ac5925fe7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structredclean_1_1ZipWriter_1_1Impl.html#a3a03d67a9ed9ab782a8c034ac5925fe7">open</a> = false</td></tr>
+<tr class="memdesc:a3a03d67a9ed9ab782a8c034ac5925fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Писатель инициализирован и ещё не закрыт.  <br /></td></tr>
+<tr class="separator:a3a03d67a9ed9ab782a8c034ac5925fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Состояние писателя miniz. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00138">138</a></p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="ac69b2dabd5d0b8fcf337a9389073e94f" name="ac69b2dabd5d0b8fcf337a9389073e94f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac69b2dabd5d0b8fcf337a9389073e94f">&#9670;&#160;</a></span>~Impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">redclean::ZipWriter::Impl::~Impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00143">143</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ab46368ccb5223bcd74c3bbec1e3b89c0" name="ab46368ccb5223bcd74c3bbec1e3b89c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab46368ccb5223bcd74c3bbec1e3b89c0">&#9670;&#160;</a></span>check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void redclean::ZipWriter::Impl::check </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ok</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>what</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Бросает исключение с текстом ошибки miniz, если операция не удалась. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ok</td><td>Результат операции. </td></tr>
+    <tr><td class="paramname">what</td><td>Описание операции. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00153">153</a></p>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="a3a03d67a9ed9ab782a8c034ac5925fe7" name="a3a03d67a9ed9ab782a8c034ac5925fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a03d67a9ed9ab782a8c034ac5925fe7">&#9670;&#160;</a></span>open</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool redclean::ZipWriter::Impl::open = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Писатель инициализирован и ещё не закрыт. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00141">141</a></p>
+
+</div>
+</div>
+<a id="af85b0ff9e94273b9847b83cf0c7322c6" name="af85b0ff9e94273b9847b83cf0c7322c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af85b0ff9e94273b9847b83cf0c7322c6">&#9670;&#160;</a></span>zip</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mz_zip_archive redclean::ZipWriter::Impl::zip {}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Писатель miniz. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a> строка <a class="el" href="zip__archive_8cpp_source.html#l00140">140</a></p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов структуры находятся в файле:<ul>
+<li>src/<a class="el" href="zip__archive_8cpp_source.html">zip_archive.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceredclean.html">redclean</a></li><li class="navelem"><a class="el" href="classredclean_1_1ZipWriter.html">ZipWriter</a></li><li class="navelem"><a class="el" href="structredclean_1_1ZipWriter_1_1Impl.html">Impl</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

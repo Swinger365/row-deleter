@@ -1,0 +1,11 @@
+<map id="src/zip_archive.hpp" name="src/zip_archive.hpp">
+<area shape="rect" id="Node000001" title="Чтение и запись zip&#45;архивов (miniz) с поддержкой параллельного сжатия." alt="" coords="162,5,309,31"/>
+<area shape="rect" id="Node000002" href="$xlsx__package_8hpp.html" title="Пакет .xlsx (Office Open XML): связи книги, листы и части." alt="" coords="65,79,227,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,41,162,81,159,76,209,37"/>
+<area shape="rect" id="Node000005" href="$zip__archive_8cpp.html" title="Реализация zip&#45;слоя на miniz." alt="" coords="251,79,398,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="262,37,312,76,308,81,259,41"/>
+<area shape="rect" id="Node000003" href="$cleaner_8cpp.html" title="Реализация cleanWorkbook: параллельные этапы обработки книги." alt="" coords="5,152,124,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="124,115,80,154,76,150,121,111"/>
+<area shape="rect" id="Node000004" href="$xlsx__package_8cpp.html" title="Реализация работы с пакетом .xlsx." alt="" coords="147,152,307,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="171,111,216,150,212,154,168,115"/>
+</map>

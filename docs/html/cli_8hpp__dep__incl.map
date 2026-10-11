@@ -1,0 +1,7 @@
+<map id="src/cli.hpp" name="src/cli.hpp">
+<area shape="rect" id="Node000001" title="Командная строка программы." alt="" coords="65,5,153,31"/>
+<area shape="rect" id="Node000002" href="$cli_8cpp.html" title="Разбор аргументов командной строки и текст справки." alt="" coords="5,79,92,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,43,60,80,56,77,88,40"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Точка входа консольной утилиты xlsx_red_cleaner." alt="" coords="116,79,221,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="129,40,161,77,157,80,125,43"/>
+</map>
